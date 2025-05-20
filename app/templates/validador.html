@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='validador.css') }}">
+    <title>Validador de Excel</title>
+</head>
+<body>
+    <header class="bg-danger text-white py-3 mb-4">
+        <div class="container d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center">
+                <img src="{{ url_for('static', filename='logoBlanco.png') }}" alt="Logo Universidad del Rosario" class="me-3 logo-ur" />
+                <h1 class="m-4">Validador de Excel</h1>
+            </div>
+            <div>
+                <button type="button" class="btn btn-outline-light me-2"onclick="window.location.href='{{ url_for('cargar_plantilla') }}'">Cargar Plantillas</button>
+                <button type="button" class="btn btn-outline-light me-2"onclick="window.location.href='{{ url_for('index') }}'">Crear Plantilla</button>
+                <button type="button" class="btn btn-outline-light"onclick="window.location.href='{{ url_for('cerrar_sesion') }}'">Cerrar Sesión</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <form id="formulario-validacion" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label for="file_excel" class="form-label">Archivo Excel:</label>
+                        <input type="file" class="form-control" name="file_excel" id="file_excel" accept=".xlsx, .xls" required />
+                        <div class="form-text">Por favor, sube un archivo Excel (.xlsx o .xls).</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="processSelect" class="form-label">Seleccione su proceso:</label>
+                        <select id="processSelect" class="form-select" name="processSelect" required onchange="filtrarJsonPorProceso()">
+                            <option value="" disabled selected>Seleccione su proceso...</option>
+                            {% for proceso in procesos %}
+                                <option value="{{ proceso.idProcesoAdmin }}">{{ proceso.nombreProcesoAdmin }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="jsonSelect" class="form-label">Selecciona un archivo JSON:</label>
+                        <select id="jsonSelect" class="form-select" name="jsonSelect" onchange="actualizarFechas()" required>
+                            <option value="">Seleccione un archivo...</option>
+                            {% for json_file in json_files %}
+                                <option value="{{ json_file }}">{{ json_file }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="file_date" class="form-label">Selecciona la fecha del archivo:</label>
+                        <select class="form-select" id="file_date" name="file_date" required>
+                            <option value="" disabled selected>Selecciona una fecha</option>
+                        </select>
+                    </div>
+
+                    <div id="fileDateInfo" class="file-date-info">
+                        <strong>Fecha del archivo seleccionado:</strong> <span id="selectedFileDate"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-danger">Validar</button>
+                </form>
+
+                <div id="resultado-validacion" class="mt-4"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-danger text-white text-center py-3 mt-5">
+        <p class="mb-0">© 2025 Universidad del Rosario. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='validador.js') }}"></script>
+    <script>
+        const jsonSelect = document.getElementById("jsonSelect");
+        const fileDateInfo = document.getElementById("fileDateInfo");
+        const selectedFileDateSpan = document.getElementById("selectedFileDate");
+        const resultadoDiv = document.getElementById("resultado-validacion");
+        const formularioValidacion = document.getElementById("formulario-validacion");
+
+
+        jsonSelect.addEventListener("change", () => {
+            const selectedOption = jsonSelect.options[jsonSelect.selectedIndex];
+            const fecha = selectedOption.getAttribute("data-fecha");
+
+            if (fecha) {
+                selectedFileDateSpan.textContent = fecha;
+                fileDateInfo.style.display = "block";
+            } else {
+                fileDateInfo.style.display = "none";
+                selectedFileDateSpan.textContent = ""; // Clear previous date
+            }
+            actualizarFechas();
+        });
+
+        formularioValidacion.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const formData = new FormData(formularioValidacion);
+
+            resultadoDiv.innerHTML = `<div class="alert alert-info">Validando...</div>`; // Mensaje de carga
+
+            fetch("/api/validar", {   // Asegúrate de que esta ruta coincide con tu backend
+                method: "POST",
+                body: formData,
+            })
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then((data) => {
+                resultadoDiv.innerHTML = ""; // Clear previous content
+                let html = '';
+                if (data.status === "success") {
+                    html = `<div class="alert alert-success feedback-message">${data.message}</div>`;
+                } else if (data.status === "success_empty_sheet") {
+                    html = `<div class="alert alert-warning feedback-message">${data.message}</div>`;
+                }
+                else {
+                    html = `<div class="alert alert-danger feedback-message"><strong>${data.message}</strong><ul>`;
+                    if (data.errores && Array.isArray(data.errores)) {   // Seguridad: Verifica que data.errores sea un array
+                        data.errores.forEach((error) => {
+                            html += `<li><strong>Fila ${error.fila}:</strong> ${JSON.stringify(error.errores)}</li>`;
+                        });
+                    } else {
+                        html += `<li>Error desconocido: No se proporcionaron detalles de errores.</li>`;
+                    }
+                    html += "</ul></div>";
+                }
+                resultadoDiv.innerHTML = html;
+            })
+            .catch((error) => {
+                console.error("Error al validar:", error);
+                resultadoDiv.innerHTML = `<div class="alert alert-danger feedback-message">Error al procesar la solicitud: ${error.message}</div>`;
+            });
+        });
+
+
+        function filtrarJsonPorProceso() {
+            const procesoId = document.getElementById("processSelect").value;
+            const jsonSelectElement = document.getElementById("jsonSelect");
+
+            jsonSelectElement.innerHTML = '<option value="">Seleccione un archivo...</option>';
+
+            if (procesoId) {
+                fetch(`/api/json_files?proceso_id=${procesoId}`)   // Endpoint para obtener archivos JSON por ID de proceso
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    const archivos = data.plantillas || data.archivos || [];   //backend
+                    if (!Array.isArray(archivos)) {
+                        console.error("La respuesta del servidor no es un array:", data);
+                        resultadoDiv.innerHTML = `<div class="alert alert-danger feedback-message">Error: El servidor devolvió un formato de datos incorrecto.</div>`;
+                        return;
+                    }
+                    archivos.forEach(archivo => {
+                        const option = document.createElement("option");
+                        option.value = archivo.NombrePlantilla;
+                        option.textContent = archivo.NombrePlantilla;
+                        if (archivo.fecha) {
+                            option.setAttribute("data-fecha", archivo.fecha);
+                        }
+                        jsonSelectElement.appendChild(option);
+                    });
+                })
+                .catch(error => {
+                    console.error("Error al obtener archivos JSON:", error);
+                    resultadoDiv.innerHTML = `<div class="alert alert-danger feedback-message">Error al obtener la lista de archivos: ${error.message}</div>`;
+                });
+            }
+        }
+
+        function actualizarFechas() {
+            const nombrePlantilla = jsonSelect.value;
+            const fechaSelect = document.getElementById("file_date");
+            fechaSelect.innerHTML = '<option value="" disabled selected>Selecciona una fecha</option>';
+
+            if (!nombrePlantilla) return;   // No hacer la petición si no hay plantilla seleccionada
+
+            fetch(`/obtener_fechas_json?nombre_plantilla=${encodeURIComponent(nombrePlantilla)}`) //cambiar el nombre del endpoint si es necesario
+            .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                return response.json();
+            })
+            .then(data => {
+                if (data && Array.isArray(data.fechas)) {
+                    data.fechas.forEach(fecha => {
+                        const option = document.createElement("option");
+                        option.value = fecha;
+                        option.textContent = fecha;
+                        fechaSelect.appendChild(option);
+                    });
+                }
+                else{
+                    console.error("La respuesta del servidor no es un array:", data);
+                     resultadoDiv.innerHTML = `<div class="alert alert-danger feedback-message">Error: El servidor devolvió un formato de datos incorrecto.</div>`;
+                }
+
+            })
+            .catch(error => {
+                console.error("Error al obtener fechas:", error);
+                resultadoDiv.innerHTML = `<div class="alert alert-danger feedback-message">Error al obtener las fechas del archivo: ${error.message}</div>`;
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+ :root {
+            --color-rojo-urosario: #b31b1b;
+            --color-azul-urosario: #1a3e72;
+            --color-gris-bordes: #dee2e6;
+            --color-fondo-tabla: #f8f9fa;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1e3a8a, #e11d48);
+            color: #212529;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            font-family: 'Segoe UI', 'Roboto', sans-serif;
+        }
+
+        .header-universidad {
+            background-color: var(--color-rojo-urosario);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .footer-universidad {
+            background-color: var(--color-rojo-urosario);
+            color: white;
+            padding: 1.5rem 0;
+            margin-top: auto;
+            font-size: 0.9rem;
+        }
+
+        .main-content {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            margin: 2rem auto;
+            padding: 2rem;
+            width: 95%;
+        }
+
+        .titulo-seccion {
+            color: var(--color-azul-urosario);
+            font-weight: 600;
+            border-bottom: 2px solid var(--color-gris-bordes);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Tabla profesional con bordes mejorados */
+        .tabla-expresiones {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .tabla-expresiones thead th {
+            background-color: var(--color-azul-urosario);
+            color: white;
+            font-weight: 500;
+            padding: 12px 15px;
+            text-align: left;
+            border: 1px solid var(--color-azul-urosario);
+        }
+
+        .tabla-expresiones tbody td {
+            padding: 12px 15px;
+            border: 1px solid var(--color-gris-bordes);
+            vertical-align: middle;
+        }
+
+        .tabla-expresiones tbody tr:nth-child(even) {
+            background-color: var(--color-fondo-tabla);
+        }
+
+        /* Botones */
+        .btn-universidad {
+            background-color: var(--color-azul-urosario);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            padding: 0.6rem 1.2rem;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .btn-universidad:hover {
+            background-color: #0d2b57;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .btn-editar {
+            background-color: #17a2b8;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            margin-right: 5px;
+        }
+
+        .btn-eliminar {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+        }
+
+        /* Badges */
+        .badge-estado {
+            font-weight: 500;
+            padding: 0.4em 0.75em;
+            border-radius: 1rem;
+            font-size: 0.85em;
+        }
+
+        .activo {
+            background-color: #28a745;
+        }
+
+        .inactivo {
+            background-color: #6c757d;
+        }
+
+        /* Código de expresiones */
+        .expresion-codigo {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+            background-color: rgba(0,0,0,0.05);
+            padding: 0.3em 0.6em;
+            border-radius: 0.3em;
+            word-break: break-word;
+            border: 1px solid #ddd;
+            display: inline-block;
+            max-width: 100%;
+            overflow-x: auto;
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .main-content {
+                padding: 1rem;
+                width: 100%;
+            }
+            
+            .tabla-expresiones {
+                font-size: 0.9rem;
+            }
+            
+            .tabla-expresiones thead th,
+            .tabla-expresiones tbody td {
+                padding: 8px 10px;
+            }
+            
+            .btn-editar, .btn-eliminar {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.8rem;
+            }
+        }

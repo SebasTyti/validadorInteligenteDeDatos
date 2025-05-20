@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: validador-inteligente
+    env: python
+    buildCommand: "./startup.sh && pip install -r requirements.txt"
+    startCommand: gunicorn run:app
+    envVars:
+      - key: FLASK_ENV
+        value: production
+      - key: DATABASE_SERVER
+        value: sqls-ur-datamining-dev.database.windows.net
+      - key: DATABASE_NAME
+        value: DB_ValidadorArchivos
+      - key: DATABASE_USER
+        value: your-username
+      - key: DATABASE_PASSWORD
+        value: your-password
+      - key: DATABASE_DRIVER
+        value: ODBC Driver 18 for SQL Server

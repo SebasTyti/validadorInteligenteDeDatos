@@ -1,0 +1,15 @@
+{
+  "nombre_excel": "indicadores3.xlsx",
+  "nombre_hoja": "ur_areas_propiedad",
+  "contenido_excel": [
+    {
+      "Nombre": "EDIFICIO",
+      "Type": "string",
+      "Required": "opcional",
+      "Regex": "FormatoTexto"
+    }
+  ],
+  "fecha_creacion": "2025-03-12",
+  "usuario": "juanse.barrios@urosario.edu.co",
+  "proceso_admin": 2
+}

@@ -1,0 +1,129 @@
+{
+  "nombre_excel": "indicadores_habitat.xlsx",
+  "nombre_hoja": "ur_areas_propiedad",
+  "contenido_excel": [
+    {
+      "Nombre": "SEDE",
+      "Type": "string",
+      "Required": "obligatorio",
+      "Regex": "FormatoVariedad"
+    },
+    {
+      "Nombre": "EDIFICIO",
+      "Type": "string",
+      "Required": "obligatorio",
+      "Regex": "FormatoVariedad"
+    },
+    {
+      "Nombre": "AREA_m2_CONSTRUIDA",
+      "Type": "number",
+      "Required": "obligatorio",
+      "Regex": "FormatoSeparadorMiles           "
+    },
+    {
+      "Nombre": "PROPIEDAD",
+      "Type": "string",
+      "Required": "obligatorio",
+      "Regex": "FormatoTexto"
+    },
+    {
+      "Nombre": "PATRIMONIO",
+      "Type": "string",
+      "Required": "obligatorio",
+      "Regex": "FormatoVariedad"
+    },
+    {
+      "Nombre": "USO_ACTUAL",
+      "Type": "string",
+      "Required": "obligatorio",
+      "Regex": "FormatoVariedad"
+    },
+    {
+      "Nombre": "DIRECC",
+      "Type": "string",
+      "Required": "obligatorio",
+      "Regex": "FormatoVariedad"
+    },
+    {
+      "Nombre": "USO_PROYECTADO",
+      "Type": "string",
+      "Required": "obligatorio",
+      "Regex": "FormatoVariedad"
+    },
+    {
+      "Nombre": "USO_PRINCIPAL_SUELO",
+      "Type": "string",
+      "Required": "obligatorio",
+      "Regex": "FormatoVariedad"
+    },
+    {
+      "Nombre": "FOLIO",
+      "Type": "string",
+      "Required": "opcional",
+      "Regex": "FormatoVariedad"
+    },
+    {
+      "Nombre": "CHIP",
+      "Type": "string",
+      "Required": "opcional",
+      "Regex": "FormatoVariedad"
+    },
+    {
+      "Nombre": "INCLUIDO_EN_VALOR_BIC",
+      "Type": "string",
+      "Required": "opcional",
+      "Regex": "FormatoSiNo"
+    },
+    {
+      "Nombre": "VALOR_CATASTRAL_2023",
+      "Type": "number",
+      "Required": "obligatorio",
+      "Regex": "FormatoSeparadorMiles           "
+    },
+    {
+      "Nombre": "VALOR_CATASTRAL_2024",
+      "Type": "number",
+      "Required": "obligatorio",
+      "Regex": "FormatoSeparadorMiles           "
+    },
+    {
+      "Nombre": "OCUPACIÓN",
+      "Type": "number",
+      "Required": "obligatorio",
+      "Regex": "FormatoSeparadorMiles           "
+    },
+    {
+      "Nombre": "SITUACION_JURIDICA",
+      "Type": "string",
+      "Required": "obligatorio",
+      "Regex": "FormatoVariedad"
+    },
+    {
+      "Nombre": "DETERMINANTES",
+      "Type": "string",
+      "Required": "opcional",
+      "Regex": "FormatoVariedad"
+    },
+    {
+      "Nombre": "AFECTACION_PLANEACION",
+      "Type": "string",
+      "Required": "obligatorio",
+      "Regex": "FormatoTexto"
+    },
+    {
+      "Nombre": "ANNO",
+      "Type": "integer",
+      "Required": "obligatorio",
+      "Regex": "FormatoNumeroEntero"
+    },
+    {
+      "Nombre": "MES",
+      "Type": "string",
+      "Required": "obligatorio",
+      "Regex": "FormatoTexto"
+    }
+  ],
+  "fecha_creacion": "2025-03-12",
+  "usuario": "juanse.barrios@urosario.edu.co",
+  "proceso_admin": 1
+}

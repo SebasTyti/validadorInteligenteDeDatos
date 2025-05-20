@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gestor de Expresiones Regulares - Universidad del Rosario</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='IndexEx.css') }}">
+</head>
+<body>
+    <header class="header-universidad">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <h1 class="h4 mb-0">Expresiones Regulares</h1>
+                <img src="{{ url_for('static', filename='logoBlanco.png') }}" height="40" alt="Logo Universidad">
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="main-content">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2 class="titulo-seccion h5">Listado de Expresiones</h2>
+                <a href="{{ url_for('expresiones_crear') }}" class="btn btn-universidad">
+                    <i class="bi bi-plus-lg"></i> Nueva Expresión
+                </a>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table tabla-expresiones">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Descripción</th>
+                            <th>Expresión</th>
+                            <th>Tipo</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for e in expresiones %}
+                        <tr>
+                            <td>{{ e.nombre_ExpresionRegular }}</td>
+                            <td>{{ e.descripcion_ExpresionRegular }}</td>
+                            <td><code class="expresion-codigo">{{ e.expresion_Regular }}</code></td>
+                            <td>{{ e.tipoDato }}</td>
+                            <td>
+                                <span class="badge badge-estado {% if e.estado_ExpresionRegular == 'Activo' %}activo{% else %}inactivo{% endif %}">
+                                    {{ e.estado_ExpresionRegular }}
+                                </span>
+                            </td>
+                            <td>
+                                <div class="d-flex">
+                                    <a href="{{ url_for('expresiones_editar', id=e.id_ExpresionRegular) }}" class="btn btn-editar" title="Editar">
+                                        <i class="bi bi-pencil-fill"></i> Editar
+                                    </a>
+                                    <a href="{{ url_for('expresiones_eliminar', id=e.id_ExpresionRegular) }}" 
+                                       class="btn btn-eliminar" 
+                                       title="Eliminar"
+                                       onclick="return confirm('¿Está seguro de eliminar esta expresión?')">
+                                        <i class="bi bi-trash-fill"></i> Eliminar
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer-universidad">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mb-0">© 2025 Universidad del Rosario. Todos los derechos reservados.</p>
+                </div>
+               
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+{
+  "nombre_excel": "indicadores1.xlsx",
+  "nombre_hoja": "ur_areas_propiedad",
+  "contenido_excel": [
+    {
+      "Nombre": "OCUPACIÓN",
+      "Type": "number",
+      "Required": "obligatorio",
+      "Regex": "FormatoSeparadorMiles           "
+    },
+    {
+      "Nombre": "EDIFICIO",
+      "Type": "string",
+      "Required": "obligatorio",
+      "Regex": "FormatoVariedad"
+    },
+    {
+      "Nombre": "OCUPACIÓN",
+      "Type": "number",
+      "Required": "obligatorio",
+      "Regex": "FormatoSeparadorMiles           "
+    },
+    {
+      "Nombre": "FOLIO",
+      "Type": "string",
+      "Required": "obligatorio",
+      "Regex": "FormatoVariedad"
+    },
+    {
+      "Nombre": "CHIP",
+      "Type": "string",
+      "Required": "obligatorio",
+      "Regex": "FormatoVariedad"
+    }
+  ],
+  "fecha_creacion": "2025-03-12",
+  "usuario": "juanse.barrios@urosario.edu.co",
+  "proceso_admin": 1
+}

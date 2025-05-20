@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validador de Archivo</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffe5e5; /* Fondo rojo claro */
+        }
+
+        header h1 {
+            margin: 0;
+        }
+        .btn-custom {
+            min-width: 150px;
+        }
+        .content-section {
+            background: #ffcccc; /* Fondo rojo claro */
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-danger text-white py-3 mb-4">
+        <div class="container d-flex justify-content-between align-items-center">
+            <img src="{{ url_for('static', filename='logoBlanco.png') }}" alt="Logo" class="me-3" style="height: 100px;">
+            <h1 class="h4">Validador de Archivo</h1>
+            <button type="button" class="btn btn-outline-light"onclick="window.location.href='{{ url_for('cerrar_sesion') }}'">Cerrar Sesión</button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container mt-5">
+        <!-- Mensaje de bienvenida -->
+        <div class="alert alert-success text-center" role="alert">
+            <h4 class="alert-heading">¡Bienvenido!</h4>
+            <p>{{ session['user'] }}</p>
+        </div>
+
+        <div class="content-section">
+            <h2 class="mb-3">¿Qué es el Validador de Archivos?</h2>
+            <p>
+                El Validador de Archivos es una herramienta diseñada para ayudarte a verificar y validar 
+                la estructura y el contenido de tus archivos de datos. Puedes crear plantillas, cargar 
+                plantillas existentes y validar tus archivos de manera eficiente.
+            </p>
+        </div>
+        <div class="d-flex gap-3 justify-content-center mt-4">
+            <button class="btn btn-danger btn-custom"onclick="window.location.href='{{ url_for('index') }}'">Crear Plantilla</button>
+            <button class="btn btn-danger btn-custom"onclick="window.location.href='{{ url_for('cargar_plantilla') }}'">Cargar Plantilla</button>
+            <button class="btn btn-danger btn-custom"onclick="window.location.href='{{ url_for('validador') }}'">Validar Archivo</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-danger text-white text-center py-3 mt-5">
+        <p class="mb-0">© 2025 Universidad del rosario. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

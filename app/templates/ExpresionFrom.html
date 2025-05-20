@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ modo }} Expresión Regular</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='fromEx.css') }}">
+    
+</head>
+<body>
+    <header class="text-white py-3">
+        <div class="container">
+            <h1 class="mb-0">{{ modo }} Expresión Regular</h1>
+        </div>
+    </header>
+
+    <main class="container my-4">
+        <div class="form-container">
+            <h2 class="form-title">Detalles de la Expresión</h2>
+            <form method="post">
+                <div class="mb-3">
+                    <label class="form-label">Nombre *</label>
+                    <input type="text" name="nombre" class="form-control" 
+                           value="{{ expresion.nombre_ExpresionRegular if expresion else '' }}" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Descripción</label>
+                    <textarea name="descripcion" class="form-control" rows="3">{{ expresion.descripcion_ExpresionRegular if expresion else '' }}</textarea>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Expresión Regular *</label>
+                    <input type="text" name="expresion" class="form-control" 
+                           value="{{ expresion.expresion_Regular if expresion else '' }}" required>
+                    <small class="text-muted">Ingrese la expresión regular válida</small>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Tipo de Dato *</label>
+                        <select name="tipoDato" class="form-select" required>
+                            <option value="">Seleccione...</option>
+                            <option value="date" {% if expresion and expresion.tipoDato == 'date' %}selected{% endif %}>Fecha</option>
+                            <option value="email" {% if expresion and expresion.tipoDato == 'email' %}selected{% endif %}>Email</option>
+                            <option value="integer" {% if expresion and expresion.tipoDato == 'integer' %}selected{% endif %}>Entero</option>
+                            <option value="number" {% if expresion and expresion.tipoDato == 'number' %}selected{% endif %}>Decimal</option>
+                            <option value="string" {% if expresion and expresion.tipoDato == 'string' %}selected{% endif %}>Texto</option>
+                            <option value="url" {% if expresion and expresion.tipoDato == 'url' %}selected{% endif %}>URL</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Estado</label>
+                        <select name="estado" class="form-select">
+                            <option value="Activo" {% if expresion and expresion.estado_ExpresionRegular == 'Activo' %}selected{% endif %}>Activo</option>
+                            <option value="Inactivo" {% if expresion and expresion.estado_ExpresionRegular == 'Inactivo' %}selected{% endif %}>Inactivo</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between pt-3">
+                    <a href="{{ url_for('index') }}" class="btn btn-outline-custom">
+                        <i class="bi bi-arrow-left"></i> Cancelar
+                    </a>
+                    <button type="submit" class="btn btn-primary-custom">
+                        <i class="bi bi-save"></i> Guardar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer class="text-center py-3">
+        <div class="container">
+            <p class="mb-0">© 2025 Universidad del Rosario. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

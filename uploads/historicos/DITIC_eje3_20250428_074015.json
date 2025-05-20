@@ -1,0 +1,23 @@
+[
+  {
+    "Nombre": "Fecha_Pedido",
+    "Type": "date",
+    "Required": "obligatorio",
+    "Regex": "FormatoFechaDiaMesAño",
+    "ExpresionRegex": "^([1-9]|0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/((19|20)\\d{2})$"
+  },
+  {
+    "Nombre": "Correo",
+    "Type": "gmail",
+    "Required": "obligatorio",
+    "Regex": "FormatoCorreoElectronico",
+    "ExpresionRegex": "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"
+  },
+  {
+    "Nombre": "Monto",
+    "Type": "integer",
+    "Required": "obligatorio",
+    "Regex": "FormatoNumeroEntero",
+    "ExpresionRegex": "^\\d+$"
+  }
+]

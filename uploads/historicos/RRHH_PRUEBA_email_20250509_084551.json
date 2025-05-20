@@ -1,0 +1,21 @@
+{
+  "nombre_excel": "PRUEBA_email.xlsx",
+  "nombre_hoja": "Hoja1",
+  "contenido_excel": [
+    {
+      "Nombre": "CorreoUniversidad",
+      "Type": "number",
+      "Required": "obligatorio",
+      "Regex": "FormatoSeparadorMiles           "
+    },
+    {
+      "Nombre": "CorreoPersonal",
+      "Type": "string",
+      "Required": "obligatorio",
+      "Regex": "FormatoURL"
+    }
+  ],
+  "fecha_creacion": "2025-03-12",
+  "usuario": "juanse.barrios@urosario.edu.co",
+  "proceso_admin": 1
+}

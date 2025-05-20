@@ -1,0 +1,69 @@
+{
+    "hojas": {
+        "Hoja1": {
+            
+            "Emisor": {
+                "tipo": "string",
+                "maxlength": 50,
+                "required": true,
+                "regex": "^(?=.*[A-ZÁÉÍÓÚÑ])([A-ZÁÉÍÓÚÑ0-9\\s.,@#\\$%&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?-]*)$|^(?=.*\\d)(?=.*-).*"},
+                  
+                  
+                
+            "Grupo Económico": {
+                      "tipo": "string",
+                      "maxlength": 50,
+                      "required": true,
+                      "regex": "^[a-záéíóúñ\\s]+$"},
+                  
+                  
+                  
+            "Sector": { "tipo": "string", "maxlength": 50, "required": true, "regex": "^[A-ZÁÉÍÓÚÑa-záéíóúñ0-9\\s.,@#\\$%&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?]*$"},
+            "Calificacion del emisor": { "tipo": "string", "maxlength": 50, "required": true, "regex": "^[A-ZÁÉÍÓÚÑa-záéíóúñ0-9\\s.,@#\\$%&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?]*$"},
+            "Intermediario": { "tipo": "string", "maxlength": 50, "required": true, "regex": "^[A-ZÁÉÍÓÚÑa-záéíóúñ0-9\\s.,@#\\$%&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?]*$"},
+            "Titulo": { "tipo": "string", "maxlength": 50, "required": true, "regex": "^[A-ZÁÉÍÓÚÑa-záéíóúñ0-9\\s.,@#\\$%&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?]*$" },
+            "Nemotécnico": { "tipo": "string", "maxlength": 50, "required": true, "regex": "^[A-ZÁÉÍÓÚÑa-záéíóúñ0-9\\s.,@#\\$%&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?]*$" },
+            "ISIN": { "tipo": "string", "maxlength": 50, "required": true, "regex": "^[A-ZÁÉÍÓÚÑa-záéíóúñ0-9\\s.,@#\\$%&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?]*$" },
+            "Calificación Emisión": { "tipo": "string", "maxlength": 50, "required": true, "regex": "^[A-ZÁÉÍÓÚÑa-záéíóúñ0-9\\s.,@#\\$%&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?]*$"},
+            "Operación": { "tipo": "integer", "required": true},
+            "Tipo de Garantia": { "tipo": "string", "maxlength": 50, "required": true, "regex": "^[A-ZÁÉÍÓÚÑa-záéíóúñ0-9\\s.,@#\\$%&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?]*$"},
+            "Fecha.Compra": { "tipo": "string", "maxlength": 50, "required": true, "regex": "^[A-ZÁÉÍÓÚÑa-záéíóúñ0-9\\s.,@#\\$%&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?]*$" },
+            "Mod/Per": { "tipo": "string", "maxlength": 50, "required": true, "regex": "^[A-ZÁÉÍÓÚÑa-záéíóúñ0-9\\s.,@#\\$%&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?]*$" },
+            "Tasa de Valoración": { "tipo": "integer", "required": true },
+            "Tasa de negociación": { "tipo": "integer", "required": true },
+            "F. Precio Mdo": { "tipo": "string", "maxlength": 50, "required": true, "regex": "^[A-ZÁÉÍÓÚÑa-záéíóúñ0-9\\s.,@#\\$%&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?]*$"},
+            "Precio de mercado": { "tipo": "number", "maxlength": 50, "required": true },
+            "Moneda de posición": { "tipo": "string", "maxlength": 50, "required": true, "regex": "^[A-ZÁÉÍÓÚÑa-záéíóúñ0-9\\s.,@#\\$%&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?]*$" },
+            "Unidades": { "tipo": "number", "maxlength": 50, "required": true},
+            "Valor nominal":  {"tipo": "integer","required": true},  
+            "Valor de compra":  {"tipo": "integer","required": true},
+            "Valor contable en moneda de posición":  {"tipo": "integer","required": true},
+            "Valor contable en moneda de valoración":  {"tipo": "integer","required": true},
+            "Fecha Reporte": { "tipo": "string", "maxlength": 50, "required": true, "regex": "^[A-ZÁÉÍÓÚÑa-záéíóúñ0-9\\s.,@#\\$%&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?]*$"},
+            "Segmento":  {"tipo": "integer","required": true},
+            "Nombre Portafolio": { "tipo": "string", "maxlength": 50, "required": true, "regex": "^[A-ZÁÉÍÓÚÑa-záéíóúñ0-9\\s.,@#\\$%&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?]*$" },
+            "Corredor": { "tipo": "string", "maxlength": 50, "required": true, "regex": "^[A-ZÁÉÍÓÚÑa-záéíóúñ0-9\\s.,@#\\$%&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?]*$"},
+            "IND": { "tipo": "string", "maxlength": 50, "required": true, "regex": "^[A-ZÁÉÍÓÚÑa-záéíóúñ0-9\\s.,@#\\$%&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?]*$"},
+            "Clase de Producto": { "tipo": "string", "maxlength": 50, "required": true, "regex": "^[A-ZÁÉÍÓÚÑa-záéíóúñ0-9\\s.,@#\\$%&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?]*$"},
+            "CVG": { "tipo": "string", "maxlength": 50, "required": true, "regex": "^[A-ZÁÉÍÓÚÑa-záéíóúñ0-9\\s.,@#\\$%&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?]*$" },
+            "Depósito": { "tipo": "string", "maxlength": 50, "required": true, "regex": "^[A-ZÁÉÍÓÚÑa-záéíóúñ0-9\\s.,@#\\$%&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?]*$" },
+            "Àrea de Valoración":  {"tipo": "integer","required": true},
+            "Precio Mdo promedio":{ "tipo": "number", "maxlength": 50, "required": true},
+            "Base": { "tipo": "string", "maxlength": 50, "required": true, "regex": "^[A-ZÁÉÍÓÚÑa-záéíóúñ0-9\\s.,@#\\$%&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?]*$"},
+            "Clase de contrato": {"tipo": "integer","required": true},
+            "Clase Operación":  {"tipo": "integer","required": true},
+            "Cod Cl Prod": { "tipo": "string", "maxlength": 50, "required": true, "regex": "^[A-ZÁÉÍÓÚÑa-záéíóúñ0-9\\s.,@#\\$%&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?]*$"},
+            "Código Intermediario": {"tipo": "integer","required": true},
+            "Interlocutor con el que hay un compromis":  {"tipo": "integer","required": true},
+            "lot_id": { "tipo": "string", "maxlength": 50, "required": true, "regex": "^[A-ZÁÉÍÓÚÑa-záéíóúñ0-9\\s.,@#\\$%&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?]*$" },
+            "Modalidad Inversión":  {"tipo": "integer","required": true},
+            "Moneda valoración": { "tipo": "string", "maxlength": 50, "required": true, "regex": "^[A-ZÁÉÍÓÚÑa-záéíóúñ0-9\\s.,@#\\$%&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?]*$"},
+            "Plaza Bursatil": { "tipo": "string", "maxlength": 50, "required": true, "regex": "^[A-ZÁÉÍÓÚÑa-záéíóúñ0-9\\s.,@#\\$%&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?]*$"},
+            "Portafolio": {"tipo": "integer","required": true},
+            "Rol Interlocutor": { "tipo": "string", "maxlength": 50, "required": true, "regex": "^[A-ZÁÉÍÓÚÑa-záéíóúñ0-9\\s.,@#\\$%&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?]*$" },
+            "Sociedad": { "tipo": "string", "maxlength": 50, "required": true, "regex": "^[A-ZÁÉÍÓÚÑa-záéíóúñ0-9\\s.,@#\\$%&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?]*$" },
+            "Tipo de cambio": { "tipo": "string", "maxlength": 50, "required": true, "regex": "^[A-ZÁÉÍÓÚÑa-záéíóúñ0-9\\s.,@#\\$%&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?]*$" },
+            "Valor compra en mon.valoración": { "tipo": "integer", "required": true}
+        }
+    }
+}

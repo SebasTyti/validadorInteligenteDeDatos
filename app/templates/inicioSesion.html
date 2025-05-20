@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Quitar el scroll */
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            background: linear-gradient(135deg, #1e3a8a, #e11d48);
+            color: #fff;
+        }
+        .content-wrapper {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .card {
+            background-color: #f8f9fa;
+            border: none;
+            border-radius: 10px;
+        }
+        .btn-primary {
+            background-color: #1e3a8a;
+            border-color: #1e3a8a;
+        }
+        .btn-primary:hover {
+            background-color: #e11d48;
+            border-color: #e11d48;
+        }
+        a {
+            color: #1e3a8a;
+        }
+        a:hover {
+            color: #e11d48;
+        }
+        header {
+            flex-shrink: 0;
+        }
+        footer {
+            background-color: #b30000; /* Rojo oscuro */
+            color: #ffffff;
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-danger text-white py-3">
+        <div class="container d-flex align-items-center">
+            <img src="{{ url_for('static', filename='logoBlanco.png') }}" alt="Logo" class="me-3" style="height: 100px;">
+            <h1 class="m-4 container d-flex align-items-center">Validador de Archivos</h1>
+        </div>
+    </header>
+
+    <div class="content-wrapper">
+        <div class="card p-4 shadow" style="width: 25rem;">
+            <h3 class="text-center mb-4 text-primary">Inicio de Sesión</h3>
+            
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}">{{ message }}</div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            
+            <form action="{{ url_for('inicio_sesion') }}" method="POST">
+                <div class="mb-3">
+                    <label for="email" class="form-label text-primary">Correo Electrónico</label>
+                    <input type="email" class="form-control" id="email" name="email"
+                           placeholder="Ingresa tu correo" required autocomplete="email">
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label text-primary">Contraseña</label>
+                    <input type="password" class="form-control" id="password" name="password"
+                           placeholder="Ingresa tu contraseña" required autocomplete="current-password">
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Iniciar Sesión</button>
+            </form>
+            
+            <div class="text-center mt-3">
+                <a href="#">¿Olvidaste tu contraseña?</a>
+            </div>
+            <div class="text-center mt-2">
+                <span>¿No tienes una cuenta? <a href="#">Regístrate</a></span>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center py-3">
+        <p class="mb-0">© 2025 Universidad del Rosario. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

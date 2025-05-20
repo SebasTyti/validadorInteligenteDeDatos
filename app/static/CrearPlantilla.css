@@ -1,0 +1,83 @@
+:root {
+  --azul-oscuro: #1e3a8a;
+  --rojo-primario: #e11d48;
+  --rojo-oscuro: #b30000;
+  --rojo-bootstrap: #dc3545;
+}
+
+body {
+    background: linear-gradient(135deg, var(--azul-oscuro), var(--rojo-primario));
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.btn-primary {
+    background-color: var(--azul-oscuro);
+    border-color: var(--azul-oscuro);
+}
+
+.btn-primary:hover {
+    background-color: var(--rojo-primario);
+    border-color: var(--rojo-primario);
+}
+
+.titulo-rojo {
+    background-color: var(--rojo-bootstrap);
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.25rem;
+}
+
+.file-upload-container {
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+header {
+    background-color: var(--rojo-bootstrap);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+footer {
+    background-color: var(--rojo-oscuro);
+    color: white;
+    padding: 15px 0;
+    margin-top: auto;
+}
+
+.logo-header {
+    height: 70px;
+    transition: transform 0.3s;
+}
+
+.logo-header:hover {
+    transform: scale(1.05);
+}
+
+#nombreArchivo {
+    min-height: 24px;
+    margin-top: 8px;
+}
+
+.form-control:focus {
+    border-color: var(--azul-oscuro);
+    box-shadow: 0 0 0 0.25rem rgba(30, 58, 138, 0.25);
+}
