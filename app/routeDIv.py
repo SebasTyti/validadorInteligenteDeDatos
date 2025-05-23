@@ -538,6 +538,7 @@ uploaded_excel = None  # Esta variable global no es necesaria con el manejo de s
 
 @app.route('/upload_excel', methods=["POST"])
 def upload_excel():
+    
     """
     Función para manejar la subida de archivos Excel.
     Guarda el archivo y lo registra en la sesión.
@@ -570,32 +571,29 @@ def upload_excel():
 @app.route('/mostrar_tabla')
 def mostrar_tabla():
     try:
-        print("Entrando a la funcion mostrar_tabla")
         uploaded_excel = session.get("uploaded_excel")
-        print("En mostrar_tabla, la ruta obtenida de la sesión:", uploaded_excel)
 
         if not uploaded_excel or not os.path.exists(uploaded_excel):
-            print("Error: No se ha subido ningún archivo Excel o no existe.")
             flash("No se ha subido ningún archivo Excel o no existe.", "error")
             return redirect(url_for('index'))
 
-        now = datetime.now()
-        fecha_actual = now.strftime("%d/%m/%Y")
-        hora_actual = now.strftime("%H:%M:%S")
-        nombre_usuario = session.get('user', 'Usuario no identificado')
+        # Cargar el Excel y obtener lista de hojas
+        xls = pd.ExcelFile(uploaded_excel)
+        hojas = xls.sheet_names
 
-        try:
-          xls = pd.ExcelFile(uploaded_excel)
-          hoja_nombre = xls.sheet_names[0]
-          df = pd.read_excel(xls, sheet_name=hoja_nombre)
-        except ValueError as e:
-           print(f"Error al leer la hoja: {e}")
-           flash(f"Error al leer la hoja: {e}", "error")
-           return redirect(url_for('index'))   
+        # Verifica si ya se seleccionó una hoja
+        hoja_seleccionada = request.args.get("hoja")
+        if not hoja_seleccionada:
+            return render_template("SeleccionarHoja.html", hojas=hojas)
+
+        session["hoja_seleccionada"] = hoja_seleccionada  # Guardar hoja en sesión
+
+        # Cargar DataFrame de la hoja seleccionada
+        df = pd.read_excel(xls, sheet_name=hoja_seleccionada)
 
         for col in df.columns:
-                if pd.api.types.is_datetime64_any_dtype(df[col]):
-                    df[col] = df[col].dt.strftime('%d/%m/%Y')
+            if pd.api.types.is_datetime64_any_dtype(df[col]):
+                df[col] = df[col].dt.strftime('%d/%m/%Y')
 
         df_transpuesto = df.T
         df_campos = pd.DataFrame(df_transpuesto.index, columns=["Nombre"])
@@ -604,40 +602,45 @@ def mostrar_tabla():
         df_campos["Regex"] = ""
         rows = df_campos.to_dict(orient='records')
         original_json = json.dumps(rows, ensure_ascii=False) if rows else "[]"
-        nombre_archivo = os.path.basename(uploaded_excel)
+
+        now = datetime.now()
+        fecha_actual = now.strftime("%d/%m/%Y")
+        hora_actual = now.strftime("%H:%M:%S")
+        nombre_usuario = session.get('user', 'Usuario no identificado')
 
         conn = conectar_db()
         if conn:
-                cursor = conn.cursor()
-                cursor.execute("""
-                    SELECT er.nombre_ExpresionRegular, td.NombreTipoDato
-                    FROM dbo.ExpresionesRegulares er
-                    JOIN dbo.TipoDato td ON er.tipoDato = td.NombreTipoDato
-                    WHERE er.estado_ExpresionRegular = 'activo'
-                """)
-                regex_options_by_type = {}
-                for nombre, tipo in cursor.fetchall():
-                    regex_options_by_type.setdefault(tipo, []).append(nombre)
-                conn.close()
+            cursor = conn.cursor()
+            cursor.execute("""
+                SELECT er.nombre_ExpresionRegular, td.NombreTipoDato
+                FROM dbo.ExpresionesRegulares er
+                JOIN dbo.TipoDato td ON er.tipoDato = td.NombreTipoDato
+                WHERE er.estado_ExpresionRegular = 'activo'
+            """)
+            regex_options_by_type = {}
+            for nombre, tipo in cursor.fetchall():
+                regex_options_by_type.setdefault(tipo, []).append(nombre)
+            conn.close()
         else:
-                regex_options_by_type = {}
+            regex_options_by_type = {}
+
+        return render_template(
+            'EditarPlantilla.html',
+            rows=rows,
+            original_json=json.dumps(original_json),
+            uploaded_excel=json.dumps(uploaded_excel),
+            regex_options_by_type=json.dumps(regex_options_by_type),
+            regex_options_dict=regex_options_by_type,
+            fecha_actual=fecha_actual,
+            hora_actual=hora_actual,
+            nombre_usuario=nombre_usuario
+        )
 
     except Exception as e_excel:
-            print(f"Error al procesar el archivo Excel: {e_excel}\n{traceback.format_exc()}")
-            flash(f"Error al procesar el archivo Excel: {e_excel}", "error")
-            return redirect(url_for('index'))
+        print(f"Error al procesar el archivo Excel: {e_excel}\n{traceback.format_exc()}")
+        flash(f"Error al procesar el archivo Excel: {e_excel}", "error")
+        return redirect(url_for('index'))
 
-    return render_template(
-    'EditarPlantilla.html',
-    rows=rows,
-    original_json=json.dumps(original_json),  # Para JS
-    uploaded_excel=json.dumps(uploaded_excel),  # Para JS
-    regex_options_by_type=json.dumps(regex_options_by_type),  # Para JS
-    regex_options_dict=regex_options_by_type,  # Para Jinja (aquí está la clave)
-    fecha_actual=fecha_actual,
-    hora_actual=hora_actual,
-    nombre_usuario=nombre_usuario
-)
 
 
 @app.route('/expresiones')

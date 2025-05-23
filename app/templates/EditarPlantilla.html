@@ -17,7 +17,9 @@
 
 <main class="container my-4">
     <div class="info-archivo">
-        <h2>Archivo Seleccionado: {{ nombre_archivo }}</h2>
+        <h2><p>Hoja Seleccionada: {{ session['hoja_seleccionada'] if session['hoja_seleccionada'] else 'No definida' }}</p>
+</h2>
+
         <p>Ruta Del Archivo Excel: {{ uploaded_excel }}</p>
     </div>
 
@@ -99,8 +101,10 @@
 <div id="data-container"
      data-original-json='{{ original_json|safe }}'
      data-uploaded-excel='{{ uploaded_excel|safe }}'
-     data-regex-options-by-type='{{ regex_options_by_type|safe }}'>
+     data-regex-options-by-type='{{ regex_options_by_type|safe }}'
+     data-hoja-seleccionada='{{ session["hoja_seleccionada"] if session["hoja_seleccionada"] else "" }}'>
 </div>
+
 
 <script>
     // Obtener los datos iniciales del data-container

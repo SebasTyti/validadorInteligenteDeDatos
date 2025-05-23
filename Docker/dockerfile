@@ -24,7 +24,7 @@ ENV LD_LIBRARY_PATH=/opt/microsoft/msodbcsql18/lib64:$LD_LIBRARY_PATH
 
 # 5. Instalar dependencias de Python
 WORKDIR /app
-COPY requirements.txt .
+COPY Docker/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # 6. Copiar la aplicación
