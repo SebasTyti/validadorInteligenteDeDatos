@@ -177,7 +177,6 @@ def inicio_sesion():
         # Verifica las credenciales con LDAP
         if ldap_authenticate(email, password):
             session['user'] = email  # Guarda el usuario en la sesión
-            flash("Inicio de sesión exitoso.", "success")
             return redirect(url_for('index_page'))  # Redirige a la página principal
         else:
             flash("Usuario y/o Contraseña incorrecta.", "error")

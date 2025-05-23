@@ -1,0 +1,27 @@
+{
+  "nombre_excel": "PRUEBA_texto.xlsx",
+  "nombre_hoja": "Hoja1",
+  "contenido_excel": [
+    {
+      "Nombre": "Nombre",
+      "Type": "string",
+      "Required": "obligatorio",
+      "Regex": "FormatoTexto"
+    },
+    {
+      "Nombre": "Apellido",
+      "Type": "string",
+      "Required": "obligatorio",
+      "Regex": "FormatoTexto"
+    },
+    {
+      "Nombre": "Ciudad",
+      "Type": "string",
+      "Required": "obligatorio",
+      "Regex": "FormatoTexto"
+    }
+  ],
+  "fecha_creacion": "2025-03-12",
+  "usuario": "juanse.barrios@urosario.edu.co",
+  "proceso_admin": 1
+}
