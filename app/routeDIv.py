@@ -70,8 +70,10 @@ def enviar_reporte_errores(errores, destinatario, asunto="Reporte de Errores en 
     html = [
         "<html>",
         "<body>",
+        "<div style='text-align: center;'>",  # Centrar todo el contenido
         f"<h2>{asunto}</h2>",
-        "<table border='1' style='border-collapse: collapse;'>",
+        "<img src='https://urosario.edu.co/sites/default/files/2025-04/logo_vertical_ur_rojo.png' alt='Universidad del Rosario' style='height: 80px; margin-bottom: 10px;'>",
+        "<table border='1' style='border-collapse: collapse; margin: 0 auto;'>",  # Centrar la tabla
         "<tr><th>hoja</th><th>fila</th><th>Error</th></tr>"
     ]
     for error in errores:
@@ -80,9 +82,9 @@ def enviar_reporte_errores(errores, destinatario, asunto="Reporte de Errores en 
         error_desc = error.get('errores', 'N/A')
         html.append(f"<tr><td>{hoja}</td><td>{fila}</td><td>{error_desc}</td></tr>")
 
-    html.extend(["</table>", "</body>", "</html>"])
+    html.extend(["</table>", "</div>", "</body>", "</html>"])  # Cerrar el div de centrado
     html_content = "".join(html)
-    msg.attach(MIMEText(html_content, "html"))
+    msg.attach(MIMEText(html_content, "html", "utf-8")) # Especificar utf-8
 
     try:
         server = smtplib.SMTP(smtp_server, smtp_port)
@@ -281,8 +283,7 @@ def validador():
     finally:
         cursor.close()
         conn.close()
-
-    # Validar con Cerberus
+      # Validar con Cerberus
     resultado = validar_excel_con_cerberus(excel_path, ruta_json)
     estadoValidacion = 2  # Por defecto error
     reporte = ""
@@ -290,35 +291,37 @@ def validador():
 
     if resultado['status'] == 'success':
         estadoValidacion = 1
-        reporte = f"Validación exitosa. Archivo procesado: {file_excel.filename}"
+        reporte = f"""
+        <div style='text-align:center;'>
+            <img src='/static/logoBlanco.png' alt='Universidad del Rosario' style='height:80px; margin-bottom:10px;'><br>
+            <strong>Universidad del Rosario</strong><br>
+            Validación exitosa. Archivo procesado: {file_excel.filename}
+        </div>
+    """
         shutil.copy(excel_path, validated_excel_path)
-
-        # Enviar correo de éxito
         destinatario = ["hectord.godoy@urosario.edu.co", "juanse.barrios@urosario.edu.co"]
         enviar_reporte_errores(
             errores=[{
                 "hoja": "N/A",
                 "fila": "N/A",
-                "errores": reporte
+                "errores": "Validación exitosa. Archivo procesado: " + file_excel.filename
             }],
             destinatario=destinatario,
             asunto="Validación Exitosa de Archivo Excel"
         )
-
         flash(reporte, "success")
     else:
         errores = resultado.get("errores", [])
-        reporte = "\n".join([
+        reporte = "<div style='text-align:center;'>" \
+              "<img src='/static/logoBlanco.png' alt='Universidad del Rosario' style='height:80px; margin-bottom:10px;'><br>" \
+              "<strong>Universidad del Rosario</strong><br>" \
+              "Errores detectados:<br>" + "<br>".join([
             f"Hoja: {e.get('hoja', 'N/A')}, Fila: {e.get('fila', 'N/A')}, Error: {e.get('errores', 'N/A')}"
             for e in errores
-        ])
-
-        # Enviar correo con errores
+        ]) + "</div>"
         destinatario = ["hectord.godoy@urosario.edu.co", "juanse.barrios@urosario.edu.co"]
         enviar_reporte_errores(errores, destinatario, asunto="Reporte de Errores en Validación de Excel")
-
-        flash("Errores detectados. Se envió un reporte al correo corporativo.", "error")
-
+        flash(reporte, "error")
     # Guardar validación en la BD
     conn = conectar_db()
     if conn:
