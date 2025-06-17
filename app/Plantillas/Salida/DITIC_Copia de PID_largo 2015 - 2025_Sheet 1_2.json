@@ -1,0 +1,33 @@
+{
+  "nombre_excel": "Copia de PID_largo 2015 - 2025.xlsx",
+  "nombre_hoja": "Sheet 1",
+  "contenido_excel": [
+    {
+      "Nombre": "SNIES",
+      "Type": "string",
+      "Required": "obligatorio",
+      "Regex": "FormatoURL"
+    },
+    {
+      "Nombre": "PREGRADO",
+      "Type": "string",
+      "Required": "obligatorio",
+      "Regex": "FormatoVacio"
+    },
+    {
+      "Nombre": "Periodo",
+      "Type": "string",
+      "Required": "obligatorio",
+      "Regex": "FormatoSiNo"
+    },
+    {
+      "Nombre": "Proyeción Matriculados",
+      "Type": "string",
+      "Required": "obligatorio",
+      "Regex": "FormatoSemestre"
+    }
+  ],
+  "fecha_creacion": "2025-03-12",
+  "usuario": "juanse.barrios@urosario.edu.co",
+  "proceso_admin": 2
+}

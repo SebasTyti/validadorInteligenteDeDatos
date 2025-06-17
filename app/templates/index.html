@@ -57,6 +57,14 @@
             <button class="btn btn-danger btn-custom"onclick="window.location.href='{{ url_for('index') }}'">Crear Plantilla</button>
             <button class="btn btn-danger btn-custom"onclick="window.location.href='{{ url_for('cargar_plantilla') }}'">Cargar Plantilla</button>
             <button class="btn btn-danger btn-custom"onclick="window.location.href='{{ url_for('validador') }}'">Validar Archivo</button>
+            <a class="btn btn-primary btn-custom" href="{{ url_for('filtro_informe') }}">Generar Informe</a>
+           {% if session['rol'] == 'administrador' %}
+                <a class="btn btn-primary" href="{{ url_for('admin_gestion_plantillas') }}">
+                    Ver todas las plantillas
+                </a>
+           {% endif %}
+
+
         </div>
     </div>
 

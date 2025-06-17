@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Plantillas JSON en la Base de Datos</title>
+    <style>
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { padding: 8px; border: 1px solid #ccc; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .btn { background-color: #007bff; color: white; padding: 6px 12px; border: none; border-radius: 4px; text-decoration: none; }
+        .btn:hover { background-color: #0056b3; }
+    </style>
+</head>
+<body>
+    <h2>Plantillas JSON almacenadas en la base de datos</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Usuario</th>
+                <th>Nombre de Plantilla</th>
+                <th>Fecha de Carga</th>
+                <th>Descargar</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for r in resultados %}
+            <tr>
+                <td>{{ r.UsuarioCargue }}</td>
+                <td>{{ r.NombrePlantilla }}</td>
+                <td>{{ r.FechaCarga.strftime('%d/%m/%Y %H:%M') if r.FechaCarga else '' }}</td>
+                <td><a class="btn" href="{{ url_for('descargar_archivo', nombre_archivo=r.NombrePlantilla) }}">Ver/Descargar</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

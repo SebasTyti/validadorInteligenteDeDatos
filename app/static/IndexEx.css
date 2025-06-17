@@ -1,6 +1,7 @@
  :root {
             --color-rojo-urosario: #b31b1b;
             --color-azul-urosario: #1a3e72;
+            --color-rojo-oscuro: #b30000;
             --color-gris-bordes: #dee2e6;
             --color-fondo-tabla: #f8f9fa;
         }
@@ -23,14 +24,12 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
-        .footer-universidad {
-            background-color: var(--color-rojo-urosario);
+        footer {
+            background-color: var(--color-rojo-oscuro);
             color: white;
-            padding: 1.5rem 0;
+            padding: 15px 0;
             margin-top: auto;
-            font-size: 0.9rem;
         }
-
         .main-content {
             background-color: white;
             border-radius: 8px;

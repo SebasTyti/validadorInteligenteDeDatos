@@ -23,6 +23,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 
 
+
 # Determina la ruta base (la carpeta donde se encuentra este archivo)
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 # Define las carpetas relativas para guardar archivos
@@ -69,11 +70,11 @@ def enviar_reporte_errores(errores, destinatario, asunto="Reporte de Errores en 
 
     html = [
         "<html>",
-        "<body>",
+        "<body style='font-size:12px;'>",  # Cambia el tamaño de la letra aquí
         "<div style='text-align: center;'>",  # Centrar todo el contenido
         f"<h2>{asunto}</h2>",
         "<img src='https://urosario.edu.co/sites/default/files/2025-04/logo_vertical_ur_rojo.png' alt='Universidad del Rosario' style='height: 80px; margin-bottom: 10px;'>",
-        "<table border='1' style='border-collapse: collapse; margin: 0 auto;'>",  # Centrar la tabla
+        "<table border='1' style='border-collapse: collapse; margin: 0 auto;'>",
         "<tr><th>hoja</th><th>fila</th><th>Error</th></tr>"
     ]
     for error in errores:
@@ -168,8 +169,9 @@ def index_page():
 def inicio_sesion():
     print(f"Request method: {request.method}")  # Depuración
     if request.method == 'GET':
-        # Renderiza la página de inicio de sesión
+        session.pop('_flashes', None)  # Limpia mensajes flash antiguos
         return render_template('inicioSesion.html')
+
 
     if request.method == 'POST':
         # Obtiene las credenciales del formulario
@@ -178,11 +180,16 @@ def inicio_sesion():
 
         # Verifica las credenciales con LDAP
         if ldap_authenticate(email, password):
-            session['user'] = email  # Guarda el usuario en la sesión
-            return redirect(url_for('index_page'))  # Redirige a la página principal
+            session['user'] = email
+            rol = obtener_rol_usuario(email)
+            session['rol'] = rol
+
+            return redirect(url_for('index_page'))  # SIEMPRE redirige al index
+
+
         else:
-            flash("Usuario y/o Contraseña incorrecta.", "error")
-            return redirect(url_for('inicio_sesion'))
+               flash("Usuario y/o Contraseña incorrecta.", "error")
+               return redirect(url_for('inicio_sesion'))
 
     # Si por alguna razón no se ejecuta ninguno de los bloques anteriores
     return redirect(url_for('inicio_sesion'))
@@ -283,46 +290,57 @@ def validador():
     finally:
         cursor.close()
         conn.close()
-      # Validar con Cerberus
+
+    # Validar con Cerberus
     resultado = validar_excel_con_cerberus(excel_path, ruta_json)
-    estadoValidacion = 2  # Por defecto error
-    reporte = ""
+    estadoValidacion = 2  # Por defecto: con error
     validated_excel_path = os.path.join(app.config['VALIDATED_FOLDER'], file_excel.filename)
+    destinatario = ["hectord.godoy@urosario.edu.co", "juanse.barrios@urosario.edu.co"]
 
     if resultado['status'] == 'success':
         estadoValidacion = 1
-        reporte = f"""
+        reporte_texto = f"Validación exitosa. Archivo procesado: {file_excel.filename}"
+        reporte_html = f"""
         <div style='text-align:center;'>
             <img src='/static/logoBlanco.png' alt='Universidad del Rosario' style='height:80px; margin-bottom:10px;'><br>
             <strong>Universidad del Rosario</strong><br>
-            Validación exitosa. Archivo procesado: {file_excel.filename}
+            {reporte_texto}
         </div>
-    """
+        """
         shutil.copy(excel_path, validated_excel_path)
-        destinatario = ["hectord.godoy@urosario.edu.co", "juanse.barrios@urosario.edu.co"]
+
         enviar_reporte_errores(
             errores=[{
                 "hoja": "N/A",
                 "fila": "N/A",
-                "errores": "Validación exitosa. Archivo procesado: " + file_excel.filename
+                "errores": reporte_texto
             }],
             destinatario=destinatario,
             asunto="Validación Exitosa de Archivo Excel"
         )
-        flash(reporte, "success")
+
+        flash(reporte_html, "success")
+
     else:
         errores = resultado.get("errores", [])
-        reporte = "<div style='text-align:center;'>" \
-              "<img src='/static/logoBlanco.png' alt='Universidad del Rosario' style='height:80px; margin-bottom:10px;'><br>" \
-              "<strong>Universidad del Rosario</strong><br>" \
-              "Errores detectados:<br>" + "<br>".join([
+        reporte_texto = "\n".join([
+            f"Hoja: {e.get('hoja', 'N/A')}, Fila: {e.get('fila', 'N/A')}, Error: {e.get('errores', 'N/A')}"
+            for e in errores
+        ])
+
+        reporte_html = "<div style='text-align:center;'>" \
+                       "<img src='/static/logoBlanco.png' alt='Universidad del Rosario' style='height:80px; margin-bottom:10px;'><br>" \
+                       "<strong>Universidad del Rosario</strong><br>" \
+                       "Errores detectados:<br>" + "<br>".join([
             f"Hoja: {e.get('hoja', 'N/A')}, Fila: {e.get('fila', 'N/A')}, Error: {e.get('errores', 'N/A')}"
             for e in errores
         ]) + "</div>"
-        destinatario = ["hectord.godoy@urosario.edu.co", "juanse.barrios@urosario.edu.co"]
+
         enviar_reporte_errores(errores, destinatario, asunto="Reporte de Errores en Validación de Excel")
-        flash(reporte, "error")
-    # Guardar validación en la BD
+
+        flash(reporte_html, "error")
+
+    # Guardar validación en la base de datos (reporte plano, sin HTML)
     conn = conectar_db()
     if conn:
         try:
@@ -333,7 +351,7 @@ def validador():
                 ) VALUES (?, ?, ?, ?, ?, ?, ?)
             """, (
                 process_id, 1, datetime.now(), estadoValidacion,
-                id_plantilla, file_excel.filename[:50], reporte
+                id_plantilla, file_excel.filename[:50], reporte_texto
             ))
             conn.commit()
         except pyodbc.Error as e:
@@ -345,6 +363,7 @@ def validador():
         flash("Error al conectar a la base de datos para guardar la validación.", "error")
 
     return redirect(url_for("validador"))
+
 
 # Ruta para AJAX/API sin recarga
 @app.route('/api/validar', methods=['POST'])
@@ -429,6 +448,171 @@ def api_validar():
             conn.close()
 
     return jsonify(resultado)
+
+@app.route('/generar_informe', methods=['GET'])
+def generar_informe():
+    if 'user' not in session:
+        flash("Debe iniciar sesión para generar el informe.", "error")
+        return redirect(url_for('inicio_sesion'))
+
+    filtros = session.get('informe_filtros', {})
+    usuario = filtros.get('usuario')
+    fecha_inicio = filtros.get('fecha_inicio')
+    fecha_fin = filtros.get('fecha_fin')
+
+    try:
+        conn = conectar_db()
+        cursor = conn.cursor()
+
+        query = """
+        SELECT 
+            v.FechaValidacion,
+            u.nombreUsuario,
+            v.nombreArchivo,
+            p.NombrePlantilla,
+            pa.nombreProcesoAdmin,
+            ev.nombreEstado,
+            v.reporte
+        FROM dbo.Validaciones v
+        JOIN dbo.usuariosValidador u ON v.idUsuario = u.idUsuario
+        JOIN dbo.PlantillasValidacion p ON v.idPlantillasValidacion = p.idPlantillasValidacion
+        JOIN dbo.ProcesosAdministrativos pa ON v.idProcesoAdmin = pa.idProcesoAdmin
+        JOIN dbo.estadoValidacion ev ON v.idEstado = ev.idEstado
+        WHERE 1=1
+        """
+
+        params = []
+        if usuario:
+            query += " AND u.nombreUsuario = ?"
+            params.append(usuario)
+        if fecha_inicio:
+            query += " AND v.FechaValidacion >= ?"
+            params.append(fecha_inicio)
+        if fecha_fin:
+            query += " AND v.FechaValidacion <= ?"
+            params.append(fecha_fin)
+
+        cursor.execute(query + " ORDER BY v.FechaValidacion DESC", params)
+        rows = cursor.fetchall()
+        headers = [col[0] for col in cursor.description]
+
+        df = pd.DataFrame(rows, columns=headers)
+        filename = f"informe_{datetime.now().strftime('%Y%m%d_%H%M%S')}.xlsx"
+        path = os.path.join(OUTPUT_FOLDER, filename)
+        df.to_excel(path, index=False)
+
+        return send_from_directory(OUTPUT_FOLDER, filename, as_attachment=True)
+
+    except Exception as e:
+        flash(f"Error al generar informe: {str(e)}", "error")
+        return redirect(url_for('filtro_informe'))
+
+    finally:
+        cursor.close()
+        conn.close()
+
+
+@app.route('/filtro_informe', methods=['GET', 'POST'])
+def filtro_informe():
+    if 'user' not in session:
+        flash("Debe iniciar sesión para acceder al informe.", "error")
+        return redirect(url_for('inicio_sesion'))
+
+    conn = conectar_db()
+    cursor = conn.cursor()
+    cursor.execute("SELECT DISTINCT nombreUsuario FROM dbo.usuariosValidador")
+    usuarios = [row[0] for row in cursor.fetchall()]
+    conn.close()
+
+    return render_template('filtro_informe.html', usuarios=usuarios)
+
+@app.route('/ver_resultados', methods=['GET'])
+def ver_resultados():
+    if 'user' not in session:
+        flash("Debe iniciar sesión para ver los resultados.", "error")
+        return redirect(url_for('inicio_sesion'))
+
+    usuario = request.args.get('usuario')
+    fecha_inicio = request.args.get('fecha_inicio')
+    fecha_fin = request.args.get('fecha_fin')
+    archivo = request.args.get('archivo')
+    proceso = request.args.get('proceso')  # ✅ nuevo filtro
+
+    try:
+        conn = conectar_db()
+        cursor = conn.cursor()
+
+        query = """
+        SELECT 
+            v.FechaValidacion,
+            u.nombreUsuario,
+            v.nombreArchivo,
+            p.NombrePlantilla,
+            pa.nombreProcesoAdmin,
+            ev.nombreEstado,
+            v.reporte
+        FROM dbo.Validaciones v
+        JOIN dbo.usuariosValidador u ON v.idUsuario = u.idUsuario
+        JOIN dbo.PlantillasValidacion p ON v.idPlantillasValidacion = p.idPlantillasValidacion
+        JOIN dbo.ProcesosAdministrativos pa ON v.idProcesoAdmin = pa.idProcesoAdmin
+        JOIN dbo.estadoValidacion ev ON v.idEstado = ev.idEstado
+        WHERE 1=1
+        """
+
+        params = []
+        if usuario:
+            query += " AND u.nombreUsuario = ?"
+            params.append(usuario)
+        if fecha_inicio:
+            query += " AND v.FechaValidacion >= ?"
+            params.append(fecha_inicio)
+        if fecha_fin:
+            query += " AND v.FechaValidacion <= ?"
+            params.append(fecha_fin)
+        if archivo:
+            query += " AND v.nombreArchivo = ?"
+            params.append(archivo)
+        if proceso:
+            query += " AND pa.nombreProcesoAdmin = ?"
+            params.append(proceso)
+
+        query += " ORDER BY v.FechaValidacion DESC"
+
+        cursor.execute(query, params)
+        rows = cursor.fetchall()
+        headers = [column[0] for column in cursor.description]
+
+        # Listas únicas para selects
+        archivos_unicos = sorted(set([row[2] for row in rows]))  # nombreArchivo
+        procesos_unicos = sorted(set([row[4] for row in rows]))  # nombreProcesoAdmin
+
+        # Guardar filtros activos para Excel
+        session['informe_filtros'] = {
+            'usuario': usuario,
+            'fecha_inicio': fecha_inicio,
+            'fecha_fin': fecha_fin,
+            'archivo': archivo,
+            'proceso': proceso
+        }
+
+        return render_template(
+            'tabla_resultados.html',
+            headers=headers,
+            rows=rows,
+            archivos=archivos_unicos,
+            archivo_actual=archivo,
+            procesos=procesos_unicos,
+            proceso_actual=proceso
+        )
+
+    except Exception as e:
+        flash(f"Error al obtener resultados: {str(e)}", "error")
+        return redirect(url_for('filtro_informe'))
+
+    finally:
+        cursor.close()
+        conn.close()
+
 
 # Ruta para cargar y guardar JSON
 @app.route('/cargar_plantilla', methods=['GET', 'POST'])
@@ -755,9 +939,29 @@ def guardar_plantilla():
                 return super().default(obj)
 
         # Crear nombre del archivo con fecha y abreviatura
-        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        nombre_archivo = f"{abreviatura}_{nombre_base}_{timestamp}.json"
+        nombre_hoja = plantilla_final["nombre_hoja"]
+        prefijo_archivo = f"{abreviatura}_{nombre_base}_{nombre_hoja}"
+
+        # Buscar archivos existentes con el mismo prefijo
+        archivos_existentes = [
+            f for f in os.listdir(OUTPUT_FOLDER)
+            if f.startswith(prefijo_archivo) and f.endswith(".json")
+        ]
+
+        # Extraer número de versión más alto y sumar 1
+        numeros = []
+        for nombre in archivos_existentes:
+            partes = nombre.replace(".json", "").split("_")
+            if len(partes) >= 4 and partes[-1].isdigit():
+                numeros.append(int(partes[-1]))
+
+        siguiente_numero = max(numeros) + 1 if numeros else 1
+       
+
+        # Crear nombre final con número consecutivo
+        nombre_archivo = f"{prefijo_archivo}_{siguiente_numero}.json"
         ruta_archivo = os.path.join(OUTPUT_FOLDER, nombre_archivo)
+
 
         # Guardar JSON en archivo con el encoder personalizado
         with open(ruta_archivo, "w", encoding="utf-8") as f:
@@ -815,11 +1019,93 @@ def guardar_plantilla():
 @app.route('/descargar_archivo/<nombre_archivo>')
 def descargar_archivo(nombre_archivo):
     try:
-        file_path = os.path.join(OUTPUT_FOLDER, nombre_archivo)
-        if not os.path.exists(file_path):
-            return "Archivo no encontrado.", 404
-        return send_from_directory(OUTPUT_FOLDER, nombre_archivo, as_attachment=True)
-    except Exception as e:
-        print("Error al descargar archivo:", str(e))
-        return f"Error al descargar el archivo: {str(e)}", 500
+        conn = conectar_db()
+        cursor = conn.cursor()
+        cursor.execute("""
+            SELECT ContenidoJSON 
+            FROM dbo.PlantillasValidacion 
+            WHERE NombrePlantilla = ?
+        """, (nombre_archivo,))
+        row = cursor.fetchone()
+        conn.close()
 
+        if not row:
+            if 'user' in session and session.get('rol') == 'administrador':
+                flash("Archivo no encontrado en la base de datos.", "danger")
+                return redirect(url_for('admin_gestion_plantillas'))
+            else:
+                flash("No tiene permisos para acceder o el archivo no existe.", "danger")
+                return redirect(url_for('inicio_sesion'))
+
+        contenido_json = row.ContenidoJSON if hasattr(row, 'ContenidoJSON') else row[0]
+
+        # Formatear JSON con indentación (4 espacios)
+        contenido_formateado = json.dumps(json.loads(contenido_json), indent=4, ensure_ascii=False)
+
+        return app.response_class(
+            response=contenido_formateado,
+            mimetype='application/json',
+            headers={
+                "Content-Disposition": f"attachment; filename={nombre_archivo}"
+    }
+)
+
+
+    except Exception as e:
+        print("Error al acceder al archivo:", str(e))
+        flash("No se pudo acceder al archivo.", "danger")
+        return redirect(url_for('admin_gestion_plantillas'))
+
+
+def obtener_rol_usuario(email):
+    """
+    Retorna el rol del usuario según su correo.
+    """
+    try:
+        conn = conectar_db()
+        cursor = conn.cursor()
+        cursor.execute(
+            "SELECT rol FROM dbo.usuariosValidador WHERE correoUsuario = ? AND estadoUsuario = 'activo'",
+            (email,)
+        )
+        row = cursor.fetchone()
+        return row.rol if row else None
+    except Exception as e:
+        print(f"Error al obtener rol: {e}")
+        return None
+    finally:
+        if conn:
+            conn.close()
+
+
+
+@app.route('/admin/gestion_plantillas')
+def admin_gestion_plantillas():
+    if 'user' not in session or session.get('rol') != 'administrador':
+        flash("Acceso restringido solo para administradores.", "error")
+        return redirect(url_for('inicio_sesion'))
+
+    conn = conectar_db()
+    cursor = conn.cursor()
+
+    # Plantillas registradas
+    cursor.execute("""
+        SELECT idPlantillasValidacion, NombrePlantilla, FechaCarga, UsuarioCargue
+        FROM dbo.PlantillasValidacion
+        ORDER BY FechaCarga DESC
+    """)
+    plantillas = cursor.fetchall()
+
+    # Validaciones realizadas
+    cursor.execute("""
+        SELECT u.nombreUsuario, u.correoUsuario, p.NombrePlantilla, v.FechaValidacion, v.nombreArchivo
+        FROM dbo.usuariosValidador u
+        JOIN dbo.Validaciones v ON u.idUsuario = v.idUsuario
+        JOIN dbo.PlantillasValidacion p ON v.idPlantillasValidacion = p.idPlantillasValidacion
+        ORDER BY v.FechaValidacion DESC
+    """)
+    validaciones = cursor.fetchall()
+
+    conn.close()
+
+    return render_template('admin_gestion_plantillas.html', plantillas=plantillas, validaciones=validaciones)

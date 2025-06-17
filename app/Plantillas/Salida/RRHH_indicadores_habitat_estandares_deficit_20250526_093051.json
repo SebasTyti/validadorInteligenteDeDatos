@@ -1,0 +1,51 @@
+{
+  "nombre_excel": "indicadores_habitat.xlsx",
+  "nombre_hoja": "estandares_deficit",
+  "contenido_excel": [
+    {
+      "Nombre": "Anno",
+      "Type": "string",
+      "Required": "obligatorio",
+      "Regex": "FormatoVariedad"
+    },
+    {
+      "Nombre": "M2_areas_academicas",
+      "Type": "string",
+      "Required": "obligatorio",
+      "Regex": "FormatoVariedad"
+    },
+    {
+      "Nombre": "M2_areas_administrativas",
+      "Type": "string",
+      "Required": "obligatorio",
+      "Regex": "FormatoVariedad"
+    },
+    {
+      "Nombre": "M2_estudiante",
+      "Type": "string",
+      "Required": "obligatorio",
+      "Regex": "FormatoVariedad"
+    },
+    {
+      "Nombre": "Total_m2_utiles_sede_Claustro",
+      "Type": "string",
+      "Required": "obligatorio",
+      "Regex": "FormatoVariedad"
+    },
+    {
+      "Nombre": "Total_m2_utiles_sede_Quinta_de_Mutis",
+      "Type": "string",
+      "Required": "obligatorio",
+      "Regex": "FormatoVariedad"
+    },
+    {
+      "Nombre": "Total_m2_utiles_SEIC",
+      "Type": "string",
+      "Required": "obligatorio",
+      "Regex": "FormatoVariedad"
+    }
+  ],
+  "fecha_creacion": "2025-03-12",
+  "usuario": "juanse.barrios@urosario.edu.co",
+  "proceso_admin": 1
+}

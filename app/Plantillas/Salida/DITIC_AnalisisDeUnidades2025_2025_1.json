@@ -1,0 +1,147 @@
+{
+  "nombre_excel": "AnalisisDeUnidades2025.xlsx",
+  "nombre_hoja": "2025",
+  "contenido_excel": [
+    {
+      "Nombre": "Centro de beneficio",
+      "Type": "string",
+      "Required": "obligatorio",
+      "Regex": "FormatoTextoYNum"
+    },
+    {
+      "Nombre": "Número de cuenta",
+      "Type": "integer",
+      "Required": "obligatorio",
+      "Regex": "FormatoNumeroEntero"
+    },
+    {
+      "Nombre": "Período/Año.1",
+      "Type": "integer",
+      "Required": "obligatorio",
+      "Regex": "FormatoNumeroEntero"
+    },
+    {
+      "Nombre": "Nivel 1",
+      "Type": "string",
+      "Required": "obligatorio",
+      "Regex": "FormatoTexto"
+    },
+    {
+      "Nombre": "Nivel 2",
+      "Type": "string",
+      "Required": "obligatorio",
+      "Regex": "FormatoTexto"
+    },
+    {
+      "Nombre": "Nivel 3",
+      "Type": "string",
+      "Required": "obligatorio",
+      "Regex": "FormatoTexto"
+    },
+    {
+      "Nombre": "Nivel 4",
+      "Type": "string",
+      "Required": "obligatorio",
+      "Regex": "FormatoTextoYNum"
+    },
+    {
+      "Nombre": "Nivel 5",
+      "Type": "string",
+      "Required": "obligatorio",
+      "Regex": "FormatoTextoYNum"
+    },
+    {
+      "Nombre": "Nivel 6",
+      "Type": "string",
+      "Required": "opcional",
+      "Regex": "FormatoTexto"
+    },
+    {
+      "Nombre": "Nivel 7",
+      "Type": "string",
+      "Required": "opcional",
+      "Regex": "FormatoTexto"
+    },
+    {
+      "Nombre": "Nivel 8",
+      "Type": "string",
+      "Required": "opcional",
+      "Regex": "FormatoTexto"
+    },
+    {
+      "Nombre": "Nombre Centro",
+      "Type": "string",
+      "Required": "obligatorio",
+      "Regex": "FormatoVariedad"
+    },
+    {
+      "Nombre": "Nombre Cuenta",
+      "Type": "string",
+      "Required": "obligatorio",
+      "Regex": "FormatoTexto"
+    },
+    {
+      "Nombre": "Nivel 2.1",
+      "Type": "string",
+      "Required": "obligatorio",
+      "Regex": "FormatoTexto"
+    },
+    {
+      "Nombre": "Nivel 3.1",
+      "Type": "string",
+      "Required": "obligatorio",
+      "Regex": "FormatoTexto"
+    },
+    {
+      "Nombre": "Nivel 4.1",
+      "Type": "string",
+      "Required": "obligatorio",
+      "Regex": "FormatoTexto"
+    },
+    {
+      "Nombre": "Nivel 5.1",
+      "Type": "string",
+      "Required": "obligatorio",
+      "Regex": "FormatoTexto"
+    },
+    {
+      "Nombre": "Función Sustantiva",
+      "Type": "string",
+      "Required": "obligatorio",
+      "Regex": "FormatoTexto"
+    },
+    {
+      "Nombre": "Nombre Función Sustantiva",
+      "Type": "string",
+      "Required": "obligatorio",
+      "Regex": "FormatoTexto"
+    },
+    {
+      "Nombre": "Tipo1.Tipo",
+      "Type": "string",
+      "Required": "opcional",
+      "Regex": "FormatoTexto"
+    },
+    {
+      "Nombre": "Presupuesto",
+      "Type": "integer",
+      "Required": "opcional",
+      "Regex": "FormatoNumeroEntero"
+    },
+    {
+      "Nombre": "Ejecución",
+      "Type": "integer",
+      "Required": "opcional",
+      "Regex": "FormatoNumeroEntero"
+    },
+    {
+      "Nombre": "Diferencia",
+      "Type": "integer",
+      "Required": "opcional",
+      "Regex": "FormatoNumeroEntero"
+    }
+  ],
+  "fecha_creacion": "2025-03-12",
+  "usuario": "juanse.barrios@urosario.edu.co",
+  "proceso_admin": 2
+}

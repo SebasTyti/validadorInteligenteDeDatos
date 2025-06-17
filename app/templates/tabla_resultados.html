@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultados del Informe</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body class="bg-light">
+<div class="container mt-5">
+    <h2 class="mb-4">Resultados del Informe</h2>
+   <form method="get" class="mb-4 row g-3 align-items-end">
+    <!-- Mantener filtros anteriores -->
+    <input type="hidden" name="usuario" value="{{ request.args.get('usuario', '') }}">
+    <input type="hidden" name="fecha_inicio" value="{{ request.args.get('fecha_inicio', '') }}">
+    <input type="hidden" name="fecha_fin" value="{{ request.args.get('fecha_fin', '') }}">
+
+    <!-- Selector de archivo -->
+    <div class="col-md-4">
+        <label for="archivo" class="form-label fw-bold">Filtrar por archivo:</label>
+        <select name="archivo" id="archivo" class="form-select" onchange="this.form.submit()">
+            <option value="">--</option>
+            {% for a in archivos %}
+                <option value="{{ a }}" {% if archivo_actual == a %}selected{% endif %}>{{ a }}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <!-- Selector de proceso administrativo -->
+    <div class="col-md-4">
+        <label for="proceso" class="form-label fw-bold">Filtrar por proceso:</label>
+        <select name="proceso" id="proceso" class="form-select" onchange="this.form.submit()">
+            <option value="">--</option>
+            {% for p in procesos %}
+                <option value="{{ p }}" {% if proceso_actual == p %}selected{% endif %}>{{ p }}</option>
+            {% endfor %}
+        </select>
+    </div>
+</form>
+
+
+
+    {% if rows %}
+        <table class="table table-bordered table-striped align-middle">
+            <thead class="table-dark">
+                <tr>
+                    {% for col in headers %}
+                        <th>{{ col }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in rows %}
+                    <tr>
+                        {% for col_index in range(row | length) %}
+                            <td>
+                                {% if headers[col_index] == 'reporte' %}
+                                    {% set es_exito = 'exitosa' in row[col_index]|lower %}
+
+<button type="button"
+        class="btn btn-sm {{ 'btn-outline-success' if es_exito else 'btn-outline-danger' }}"
+        data-bs-toggle="modal"
+        data-bs-target="#modal{{ loop.index }}">
+    {{ 'Ver detalle' if es_exito else 'Ver error' }}
+</button>
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="modal{{ loop.index }}" tabindex="-1" aria-labelledby="modalLabel{{ loop.index }}" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-scrollable modal-lg">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="modalLabel{{ loop.index }}">Detalle del Error</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                                                </div>
+                                                <div class="modal-body text-start" style="white-space: pre-wrap; font-family: monospace; font-size: 14px;">
+    {{ row[col_index] }}
+</div>
+
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% else %}
+                                    {{ row[col_index] }}
+                                {% endif %}
+                            </td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <div class="text-end">
+            
+            <a href="{{ url_for('filtro_informe') }}" class="btn btn-secondary">Volver</a>
+        </div>
+    {% else %}
+        <div class="alert alert-warning">No se encontraron resultados con los filtros aplicados.</div>
+        <a href="{{ url_for('filtro_informe') }}" class="btn btn-secondary">Volver</a>
+    {% endif %}
+</div>
+</body>
+</html>

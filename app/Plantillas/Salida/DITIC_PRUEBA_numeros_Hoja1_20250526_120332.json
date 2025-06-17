@@ -1,0 +1,21 @@
+{
+  "nombre_excel": "PRUEBA_numeros.xlsx",
+  "nombre_hoja": "Hoja1",
+  "contenido_excel": [
+    {
+      "Nombre": "Cedula",
+      "Type": "string",
+      "Required": "obligatorio",
+      "Regex": "FormatoVariedad"
+    },
+    {
+      "Nombre": "Edad",
+      "Type": "string",
+      "Required": "obligatorio",
+      "Regex": "FormatoVariedad"
+    }
+  ],
+  "fecha_creacion": "2025-03-12",
+  "usuario": "juanse.barrios@urosario.edu.co",
+  "proceso_admin": 2
+}

@@ -1,0 +1,21 @@
+{
+  "nombre_excel": "PRUEBA_numeros2.xlsx",
+  "nombre_hoja": "Hoja1",
+  "contenido_excel": [
+    {
+      "Nombre": "edad",
+      "Type": "string",
+      "Required": "obligatorio",
+      "Regex": "FormatoSiNo"
+    },
+    {
+      "Nombre": "celular",
+      "Type": "string",
+      "Required": "obligatorio",
+      "Regex": "FormatoVacio"
+    }
+  ],
+  "fecha_creacion": "2025-03-12",
+  "usuario": "juanse.barrios@urosario.edu.co",
+  "proceso_admin": 2
+}
