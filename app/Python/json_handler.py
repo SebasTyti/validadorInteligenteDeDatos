@@ -17,6 +17,7 @@ logging.basicConfig(
     ]
 )
 
+
 def conectar_db():
     try:
         db_config = Config.DB_CONFIG

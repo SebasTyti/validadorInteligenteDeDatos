@@ -194,6 +194,41 @@ def inicio_sesion():
     # Si por alguna razón no se ejecuta ninguno de los bloques anteriores
     return redirect(url_for('inicio_sesion'))
 
+@app.route("/historicos")
+def ver_historicos():
+    historico_folder = os.path.join("uploads", "historicos")
+    archivos = [f for f in os.listdir(historico_folder) if f.endswith(".json")]
+    return render_template("historicos.html", archivos=archivos)
+
+
+@app.route("/restaurar_historico", methods=["POST"])
+def restaurar_historico():
+    archivo = request.form.get("archivo")
+    if not archivo:
+        return "No se proporcionó archivo", 400
+
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+    origen = os.path.join(BASE_DIR, "uploads", "historicos", archivo)
+    destino = os.path.join(BASE_DIR, "Plantillas", "Salidas", archivo)
+
+    print("Ruta origen:", origen)
+    print("Ruta destino:", destino)
+
+    try:
+        if not os.path.exists(origen):
+            return f"No se encontró el archivo: {origen}", 404
+
+        os.makedirs(os.path.dirname(destino), exist_ok=True)
+        shutil.move(origen, destino)
+
+        return redirect(url_for("ver_historicos"))
+    except Exception as e:
+        return f"Error al restaurar: {str(e)}", 500
+
+
+
+
+
 @app.route('/cerrar_sesion')
 def cerrar_sesion():
     # Elimina la sesión del usuario
