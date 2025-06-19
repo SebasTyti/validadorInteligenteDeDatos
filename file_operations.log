@@ -7302,3 +7302,222 @@
 2025-06-18 08:06:07,559 - INFO - 127.0.0.1 - - [18/Jun/2025 08:06:07] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
 2025-06-18 08:06:08,951 - INFO - Conexión a la base de datos exitosa.
 2025-06-18 08:06:09,260 - INFO - 127.0.0.1 - - [18/Jun/2025 08:06:09] "GET /descargar_archivo/RRHH_Copia%20de%20PID_largo%202015%20-%202025_Sheet%201_2.json HTTP/1.1" 200 -
+2025-06-18 09:28:48,274 - INFO -  * Detected change in 'c:\\Users\\juanse.barrios\\Universidad del rosario\\Datamining - ValidadorDataAnalitic\\validadorInteligenteDeDatos\\app\\routeDIv.py', reloading
+2025-06-18 09:28:49,631 - INFO -  * Restarting with stat
+2025-06-18 09:47:20,029 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://10.39.90.164:8000
+2025-06-18 09:47:20,030 - INFO - [33mPress CTRL+C to quit[0m
+2025-06-18 09:47:20,033 - INFO -  * Restarting with stat
+2025-06-18 09:47:21,304 - WARNING -  * Debugger is active!
+2025-06-18 09:47:21,310 - INFO -  * Debugger PIN: 846-591-789
+2025-06-18 09:47:24,210 - INFO - 127.0.0.1 - - [18/Jun/2025 09:47:24] "GET / HTTP/1.1" 200 -
+2025-06-18 09:47:24,534 - INFO - 127.0.0.1 - - [18/Jun/2025 09:47:24] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-18 09:47:30,361 - INFO - Conexión a la base de datos exitosa.
+2025-06-18 09:47:31,250 - INFO - Conexión a la base de datos exitosa.
+2025-06-18 09:47:31,644 - INFO - 127.0.0.1 - - [18/Jun/2025 09:47:31] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-06-18 09:47:31,692 - INFO - 127.0.0.1 - - [18/Jun/2025 09:47:31] "GET /paginaInicial HTTP/1.1" 200 -
+2025-06-18 09:47:31,750 - INFO - 127.0.0.1 - - [18/Jun/2025 09:47:31] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-18 09:47:41,424 - INFO - 127.0.0.1 - - [18/Jun/2025 09:47:41] "GET /crear_plantilla HTTP/1.1" 200 -
+2025-06-18 09:47:41,481 - INFO - 127.0.0.1 - - [18/Jun/2025 09:47:41] "[36mGET /static/CrearPlantilla.css HTTP/1.1[0m" 304 -
+2025-06-18 09:47:41,490 - INFO - 127.0.0.1 - - [18/Jun/2025 09:47:41] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-18 09:47:41,491 - INFO - 127.0.0.1 - - [18/Jun/2025 09:47:41] "[36mGET /static/CrearPlantilla.js HTTP/1.1[0m" 304 -
+2025-06-18 09:52:33,213 - INFO - 127.0.0.1 - - [18/Jun/2025 09:52:33] "[32mPOST /upload_excel HTTP/1.1[0m" 302 -
+2025-06-18 09:52:34,667 - INFO - 127.0.0.1 - - [18/Jun/2025 09:52:34] "GET /mostrar_tabla HTTP/1.1" 200 -
+2025-06-18 09:52:34,722 - INFO - 127.0.0.1 - - [18/Jun/2025 09:52:34] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-18 09:52:55,783 - INFO - Conexión a la base de datos exitosa.
+2025-06-18 09:52:56,100 - INFO - 127.0.0.1 - - [18/Jun/2025 09:52:56] "GET /mostrar_tabla?hoja=Sheet+1 HTTP/1.1" 200 -
+2025-06-18 09:52:56,191 - INFO - 127.0.0.1 - - [18/Jun/2025 09:52:56] "[36mGET /static/EditarPlantilla.css HTTP/1.1[0m" 304 -
+2025-06-18 09:52:56,192 - INFO - 127.0.0.1 - - [18/Jun/2025 09:52:56] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-18 09:52:56,193 - INFO - 127.0.0.1 - - [18/Jun/2025 09:52:56] "[36mGET /static/EditarPlantilla.js HTTP/1.1[0m" 304 -
+2025-06-18 09:56:10,393 - INFO - Conexión a la base de datos exitosa.
+2025-06-18 09:56:10,876 - INFO - 127.0.0.1 - - [18/Jun/2025 09:56:10] "POST /guardar_plantilla HTTP/1.1" 200 -
+2025-06-18 09:56:14,379 - INFO - Conexión a la base de datos exitosa.
+2025-06-18 09:56:14,699 - INFO - 127.0.0.1 - - [18/Jun/2025 09:56:14] "GET /descargar_archivo/RRHH_Copia%20de%20PID_largo%202015%20-%202025_Sheet%201_3.json HTTP/1.1" 200 -
+2025-06-18 09:59:14,814 - INFO - 127.0.0.1 - - [18/Jun/2025 09:59:14] "GET /mostrar_tabla HTTP/1.1" 200 -
+2025-06-18 09:59:14,861 - INFO - 127.0.0.1 - - [18/Jun/2025 09:59:14] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-18 09:59:15,839 - INFO - 127.0.0.1 - - [18/Jun/2025 09:59:15] "GET /crear_plantilla HTTP/1.1" 200 -
+2025-06-18 09:59:15,871 - INFO - 127.0.0.1 - - [18/Jun/2025 09:59:15] "[36mGET /static/CrearPlantilla.css HTTP/1.1[0m" 304 -
+2025-06-18 09:59:15,880 - INFO - 127.0.0.1 - - [18/Jun/2025 09:59:15] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-18 09:59:15,880 - INFO - 127.0.0.1 - - [18/Jun/2025 09:59:15] "[36mGET /static/CrearPlantilla.js HTTP/1.1[0m" 304 -
+2025-06-18 09:59:17,006 - INFO - 127.0.0.1 - - [18/Jun/2025 09:59:17] "GET /paginaInicial HTTP/1.1" 200 -
+2025-06-18 09:59:17,042 - INFO - 127.0.0.1 - - [18/Jun/2025 09:59:17] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-18 09:59:21,218 - INFO - Conexión a la base de datos exitosa.
+2025-06-18 09:59:21,541 - INFO - 127.0.0.1 - - [18/Jun/2025 09:59:21] "GET /validador HTTP/1.1" 200 -
+2025-06-18 09:59:21,621 - INFO - 127.0.0.1 - - [18/Jun/2025 09:59:21] "[36mGET /static/validador.css HTTP/1.1[0m" 304 -
+2025-06-18 09:59:21,622 - INFO - 127.0.0.1 - - [18/Jun/2025 09:59:21] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-18 09:59:21,624 - INFO - 127.0.0.1 - - [18/Jun/2025 09:59:21] "[36mGET /static/validador.js HTTP/1.1[0m" 304 -
+2025-06-18 10:00:00,332 - INFO - Conexión a la base de datos exitosa.
+2025-06-18 10:00:00,682 - INFO - 127.0.0.1 - - [18/Jun/2025 10:00:00] "GET /api/json_files?proceso_id=1 HTTP/1.1" 200 -
+2025-06-18 10:00:11,191 - INFO - Conexión a la base de datos exitosa.
+2025-06-18 10:00:11,507 - INFO - 127.0.0.1 - - [18/Jun/2025 10:00:11] "GET /obtener_fechas_json?nombre_plantilla=RRHH_Copia%20de%20PID_largo%202015%20-%202025_Sheet%201_3.json HTTP/1.1" 200 -
+2025-06-18 10:00:11,625 - INFO - Conexión a la base de datos exitosa.
+2025-06-18 10:00:11,944 - INFO - 127.0.0.1 - - [18/Jun/2025 10:00:11] "GET /obtener_fechas_json?nombre_plantilla=RRHH_Copia%20de%20PID_largo%202015%20-%202025_Sheet%201_3.json HTTP/1.1" 200 -
+2025-06-18 10:00:55,998 - INFO - Conexión a la base de datos exitosa.
+2025-06-18 10:00:56,535 - INFO - Conexión a la base de datos exitosa.
+2025-06-18 10:01:01,401 - INFO - Conexión a la base de datos exitosa.
+2025-06-18 10:01:01,752 - INFO - 127.0.0.1 - - [18/Jun/2025 10:01:01] "POST /api/validar HTTP/1.1" 200 -
+2025-06-18 10:05:15,260 - INFO - Conexión a la base de datos exitosa.
+2025-06-18 10:05:15,608 - INFO - 127.0.0.1 - - [18/Jun/2025 10:05:15] "GET /validador HTTP/1.1" 200 -
+2025-06-18 10:05:15,648 - INFO - 127.0.0.1 - - [18/Jun/2025 10:05:15] "[36mGET /static/validador.css HTTP/1.1[0m" 304 -
+2025-06-18 10:05:15,655 - INFO - 127.0.0.1 - - [18/Jun/2025 10:05:15] "[36mGET /static/validador.js HTTP/1.1[0m" 304 -
+2025-06-18 10:05:15,656 - INFO - 127.0.0.1 - - [18/Jun/2025 10:05:15] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-18 10:05:32,560 - INFO - Conexión a la base de datos exitosa.
+2025-06-18 10:05:32,886 - INFO - 127.0.0.1 - - [18/Jun/2025 10:05:32] "GET /api/json_files?proceso_id=1 HTTP/1.1" 200 -
+2025-06-18 10:05:37,281 - INFO - Conexión a la base de datos exitosa.
+2025-06-18 10:05:37,605 - INFO - 127.0.0.1 - - [18/Jun/2025 10:05:37] "GET /obtener_fechas_json?nombre_plantilla=RRHH_Copia%20de%20PID_largo%202015%20-%202025_Sheet%201_3.json HTTP/1.1" 200 -
+2025-06-18 10:05:37,700 - INFO - Conexión a la base de datos exitosa.
+2025-06-18 10:05:38,017 - INFO - 127.0.0.1 - - [18/Jun/2025 10:05:38] "GET /obtener_fechas_json?nombre_plantilla=RRHH_Copia%20de%20PID_largo%202015%20-%202025_Sheet%201_3.json HTTP/1.1" 200 -
+2025-06-18 10:05:59,782 - INFO - Conexión a la base de datos exitosa.
+2025-06-18 10:06:00,199 - INFO - 127.0.0.1 - - [18/Jun/2025 10:06:00] "GET /obtener_fechas_json?nombre_plantilla=DITIC_Copia%20de%20PID_largo%202015%20-%202025_Sheet%201_1.json HTTP/1.1" 200 -
+2025-06-18 10:06:00,321 - INFO - Conexión a la base de datos exitosa.
+2025-06-18 10:06:00,725 - INFO - 127.0.0.1 - - [18/Jun/2025 10:06:00] "GET /obtener_fechas_json?nombre_plantilla=DITIC_Copia%20de%20PID_largo%202015%20-%202025_Sheet%201_1.json HTTP/1.1" 200 -
+2025-06-18 10:06:14,296 - INFO - Conexión a la base de datos exitosa.
+2025-06-18 10:06:14,610 - INFO - 127.0.0.1 - - [18/Jun/2025 10:06:14] "GET /obtener_fechas_json?nombre_plantilla=RRHH_Copia%20de%20PID_largo%202015%20-%202025_Sheet%201_3.json HTTP/1.1" 200 -
+2025-06-18 10:06:14,701 - INFO - Conexión a la base de datos exitosa.
+2025-06-18 10:06:15,015 - INFO - 127.0.0.1 - - [18/Jun/2025 10:06:15] "GET /obtener_fechas_json?nombre_plantilla=RRHH_Copia%20de%20PID_largo%202015%20-%202025_Sheet%201_3.json HTTP/1.1" 200 -
+2025-06-18 10:06:24,125 - INFO - Conexión a la base de datos exitosa.
+2025-06-18 10:06:24,715 - INFO - Conexión a la base de datos exitosa.
+2025-06-18 10:06:27,827 - INFO - Conexión a la base de datos exitosa.
+2025-06-18 10:06:28,171 - INFO - 127.0.0.1 - - [18/Jun/2025 10:06:28] "POST /api/validar HTTP/1.1" 200 -
+2025-06-18 10:18:39,556 - INFO -  * Detected change in 'c:\\Users\\juanse.barrios\\Universidad del rosario\\Datamining - ValidadorDataAnalitic\\validadorInteligenteDeDatos\\app\\routeDIv.py', reloading
+2025-06-18 10:18:40,102 - INFO -  * Restarting with stat
+2025-06-18 11:28:39,610 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://10.39.90.164:8000
+2025-06-18 11:28:39,611 - INFO - [33mPress CTRL+C to quit[0m
+2025-06-18 11:28:39,615 - INFO -  * Restarting with stat
+2025-06-18 11:28:40,937 - WARNING -  * Debugger is active!
+2025-06-18 11:28:40,943 - INFO -  * Debugger PIN: 846-591-789
+2025-06-18 11:28:43,740 - INFO - 127.0.0.1 - - [18/Jun/2025 11:28:43] "GET / HTTP/1.1" 200 -
+2025-06-18 11:28:44,007 - INFO - 127.0.0.1 - - [18/Jun/2025 11:28:44] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-18 11:28:49,735 - INFO - Conexión a la base de datos exitosa.
+2025-06-18 11:28:50,559 - INFO - Conexión a la base de datos exitosa.
+2025-06-18 11:28:50,901 - INFO - 127.0.0.1 - - [18/Jun/2025 11:28:50] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-06-18 11:28:50,946 - INFO - 127.0.0.1 - - [18/Jun/2025 11:28:50] "GET /paginaInicial HTTP/1.1" 200 -
+2025-06-18 11:28:51,024 - INFO - 127.0.0.1 - - [18/Jun/2025 11:28:51] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-18 11:37:32,790 - INFO - 127.0.0.1 - - [18/Jun/2025 11:37:32] "GET /crear_plantilla HTTP/1.1" 200 -
+2025-06-18 11:37:32,845 - INFO - 127.0.0.1 - - [18/Jun/2025 11:37:32] "[36mGET /static/CrearPlantilla.css HTTP/1.1[0m" 304 -
+2025-06-18 11:37:32,856 - INFO - 127.0.0.1 - - [18/Jun/2025 11:37:32] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-18 11:37:32,856 - INFO - 127.0.0.1 - - [18/Jun/2025 11:37:32] "[36mGET /static/CrearPlantilla.js HTTP/1.1[0m" 304 -
+2025-06-18 11:37:43,955 - INFO - 127.0.0.1 - - [18/Jun/2025 11:37:43] "[32mPOST /upload_excel HTTP/1.1[0m" 302 -
+2025-06-18 11:37:44,468 - INFO - 127.0.0.1 - - [18/Jun/2025 11:37:44] "GET /mostrar_tabla HTTP/1.1" 200 -
+2025-06-18 11:37:44,513 - INFO - 127.0.0.1 - - [18/Jun/2025 11:37:44] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-18 11:37:48,016 - INFO - Conexión a la base de datos exitosa.
+2025-06-18 11:37:48,313 - INFO - 127.0.0.1 - - [18/Jun/2025 11:37:48] "GET /mostrar_tabla?hoja=Sheet+1 HTTP/1.1" 200 -
+2025-06-18 11:37:48,394 - INFO - 127.0.0.1 - - [18/Jun/2025 11:37:48] "[36mGET /static/EditarPlantilla.css HTTP/1.1[0m" 304 -
+2025-06-18 11:37:48,394 - INFO - 127.0.0.1 - - [18/Jun/2025 11:37:48] "[36mGET /static/EditarPlantilla.js HTTP/1.1[0m" 304 -
+2025-06-18 11:37:48,395 - INFO - 127.0.0.1 - - [18/Jun/2025 11:37:48] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-18 11:38:43,134 - INFO - Conexión a la base de datos exitosa.
+2025-06-18 11:38:43,588 - INFO - 127.0.0.1 - - [18/Jun/2025 11:38:43] "POST /guardar_plantilla HTTP/1.1" 200 -
+2025-06-18 11:38:45,167 - INFO - Conexión a la base de datos exitosa.
+2025-06-18 11:38:45,504 - INFO - 127.0.0.1 - - [18/Jun/2025 11:38:45] "GET /descargar_archivo/DITIC_Copia%20de%20PID_largo%202015%20-%202025_Sheet%201_3.json HTTP/1.1" 200 -
+2025-06-18 11:38:47,915 - INFO - 127.0.0.1 - - [18/Jun/2025 11:38:47] "GET /mostrar_tabla HTTP/1.1" 200 -
+2025-06-18 11:38:47,953 - INFO - 127.0.0.1 - - [18/Jun/2025 11:38:47] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-18 11:38:49,039 - INFO - 127.0.0.1 - - [18/Jun/2025 11:38:49] "GET /crear_plantilla HTTP/1.1" 200 -
+2025-06-18 11:38:49,085 - INFO - 127.0.0.1 - - [18/Jun/2025 11:38:49] "[36mGET /static/CrearPlantilla.js HTTP/1.1[0m" 304 -
+2025-06-18 11:38:49,086 - INFO - 127.0.0.1 - - [18/Jun/2025 11:38:49] "[36mGET /static/CrearPlantilla.css HTTP/1.1[0m" 304 -
+2025-06-18 11:38:49,087 - INFO - 127.0.0.1 - - [18/Jun/2025 11:38:49] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-18 11:38:50,186 - INFO - 127.0.0.1 - - [18/Jun/2025 11:38:50] "GET /paginaInicial HTTP/1.1" 200 -
+2025-06-18 11:38:50,221 - INFO - 127.0.0.1 - - [18/Jun/2025 11:38:50] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-18 11:38:51,440 - INFO - Conexión a la base de datos exitosa.
+2025-06-18 11:38:51,799 - INFO - 127.0.0.1 - - [18/Jun/2025 11:38:51] "GET /validador HTTP/1.1" 200 -
+2025-06-18 11:38:51,863 - INFO - 127.0.0.1 - - [18/Jun/2025 11:38:51] "[36mGET /static/validador.css HTTP/1.1[0m" 304 -
+2025-06-18 11:38:51,867 - INFO - 127.0.0.1 - - [18/Jun/2025 11:38:51] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-18 11:38:51,869 - INFO - 127.0.0.1 - - [18/Jun/2025 11:38:51] "[36mGET /static/validador.js HTTP/1.1[0m" 304 -
+2025-06-18 11:39:00,786 - INFO - Conexión a la base de datos exitosa.
+2025-06-18 11:39:01,118 - INFO - 127.0.0.1 - - [18/Jun/2025 11:39:01] "GET /api/json_files?proceso_id=1 HTTP/1.1" 200 -
+2025-06-18 11:39:04,240 - INFO - Conexión a la base de datos exitosa.
+2025-06-18 11:39:04,571 - INFO - 127.0.0.1 - - [18/Jun/2025 11:39:04] "GET /api/json_files?proceso_id=2 HTTP/1.1" 200 -
+2025-06-18 11:39:06,942 - INFO - Conexión a la base de datos exitosa.
+2025-06-18 11:39:07,275 - INFO - 127.0.0.1 - - [18/Jun/2025 11:39:07] "GET /obtener_fechas_json?nombre_plantilla=DITIC_Copia%20de%20PID_largo%202015%20-%202025_Sheet%201_3.json HTTP/1.1" 200 -
+2025-06-18 11:39:07,397 - INFO - Conexión a la base de datos exitosa.
+2025-06-18 11:39:07,728 - INFO - 127.0.0.1 - - [18/Jun/2025 11:39:07] "GET /obtener_fechas_json?nombre_plantilla=DITIC_Copia%20de%20PID_largo%202015%20-%202025_Sheet%201_3.json HTTP/1.1" 200 -
+2025-06-18 11:39:09,706 - INFO - Conexión a la base de datos exitosa.
+2025-06-18 11:39:10,267 - INFO - Conexión a la base de datos exitosa.
+2025-06-18 11:39:13,184 - INFO - Conexión a la base de datos exitosa.
+2025-06-18 11:39:13,522 - INFO - 127.0.0.1 - - [18/Jun/2025 11:39:13] "POST /api/validar HTTP/1.1" 200 -
+2025-06-18 11:55:01,460 - INFO - Conexión a la base de datos exitosa.
+2025-06-18 11:55:01,810 - INFO - 127.0.0.1 - - [18/Jun/2025 11:55:01] "GET /validador HTTP/1.1" 200 -
+2025-06-18 11:55:01,875 - INFO - 127.0.0.1 - - [18/Jun/2025 11:55:01] "[36mGET /static/validador.css HTTP/1.1[0m" 304 -
+2025-06-18 11:55:01,877 - INFO - 127.0.0.1 - - [18/Jun/2025 11:55:01] "[36mGET /static/validador.js HTTP/1.1[0m" 304 -
+2025-06-18 11:55:01,878 - INFO - 127.0.0.1 - - [18/Jun/2025 11:55:01] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-18 12:20:23,439 - INFO -  * Detected change in 'c:\\Users\\juanse.barrios\\Universidad del rosario\\Datamining - ValidadorDataAnalitic\\validadorInteligenteDeDatos\\app\\routeDIv.py', reloading
+2025-06-18 12:20:24,613 - INFO -  * Restarting with stat
+2025-06-18 12:20:31,828 - WARNING -  * Debugger is active!
+2025-06-18 12:20:31,835 - INFO -  * Debugger PIN: 846-591-789
+2025-06-18 12:20:49,053 - INFO -  * Detected change in 'c:\\Users\\juanse.barrios\\Universidad del rosario\\Datamining - ValidadorDataAnalitic\\validadorInteligenteDeDatos\\app\\routeDIv.py', reloading
+2025-06-18 12:20:49,344 - INFO -  * Restarting with stat
+2025-06-18 12:20:50,914 - WARNING -  * Debugger is active!
+2025-06-18 12:20:50,920 - INFO -  * Debugger PIN: 846-591-789
+2025-06-18 12:20:52,598 - INFO -  * Detected change in 'c:\\Users\\juanse.barrios\\Universidad del rosario\\Datamining - ValidadorDataAnalitic\\validadorInteligenteDeDatos\\app\\routeDIv.py', reloading
+2025-06-18 12:20:52,824 - INFO -  * Restarting with stat
+2025-06-18 12:59:31,206 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://10.39.90.164:8000
+2025-06-18 12:59:31,207 - INFO - [33mPress CTRL+C to quit[0m
+2025-06-18 12:59:31,212 - INFO -  * Restarting with stat
+2025-06-18 12:59:32,723 - WARNING -  * Debugger is active!
+2025-06-18 12:59:32,727 - INFO -  * Debugger PIN: 846-591-789
+2025-06-18 12:59:35,081 - INFO - 127.0.0.1 - - [18/Jun/2025 12:59:35] "GET / HTTP/1.1" 200 -
+2025-06-18 12:59:35,469 - INFO - 127.0.0.1 - - [18/Jun/2025 12:59:35] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-18 12:59:42,152 - INFO - Conexión a la base de datos exitosa.
+2025-06-18 12:59:43,033 - INFO - Conexión a la base de datos exitosa.
+2025-06-18 12:59:43,374 - INFO - 127.0.0.1 - - [18/Jun/2025 12:59:43] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-06-18 12:59:43,433 - INFO - 127.0.0.1 - - [18/Jun/2025 12:59:43] "GET /paginaInicial HTTP/1.1" 200 -
+2025-06-18 12:59:43,512 - INFO - 127.0.0.1 - - [18/Jun/2025 12:59:43] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-19 06:34:36,823 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://10.39.90.164:8000
+2025-06-19 06:34:36,826 - INFO - [33mPress CTRL+C to quit[0m
+2025-06-19 06:34:36,834 - INFO -  * Restarting with stat
+2025-06-19 06:34:38,364 - WARNING -  * Debugger is active!
+2025-06-19 06:34:38,373 - INFO -  * Debugger PIN: 846-591-789
+2025-06-19 06:36:32,863 - INFO - 127.0.0.1 - - [19/Jun/2025 06:36:32] "GET / HTTP/1.1" 200 -
+2025-06-19 06:36:34,056 - INFO - 127.0.0.1 - - [19/Jun/2025 06:36:34] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-19 06:36:34,099 - INFO - 127.0.0.1 - - [19/Jun/2025 06:36:34] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-06-19 06:38:36,953 - INFO - Conexión a la base de datos exitosa.
+2025-06-19 06:38:38,065 - INFO - Conexión a la base de datos exitosa.
+2025-06-19 06:38:38,398 - INFO - 127.0.0.1 - - [19/Jun/2025 06:38:38] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-06-19 06:38:38,447 - INFO - 127.0.0.1 - - [19/Jun/2025 06:38:38] "GET /paginaInicial HTTP/1.1" 200 -
+2025-06-19 06:38:38,531 - INFO - 127.0.0.1 - - [19/Jun/2025 06:38:38] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-19 06:57:19,537 - INFO -  * Detected change in 'c:\\Users\\juanse.barrios\\Universidad del rosario\\Datamining - ValidadorDataAnalitic\\validadorInteligenteDeDatos\\app\\routeDIv.py', reloading
+2025-06-19 06:57:20,718 - INFO -  * Restarting with stat
+2025-06-19 06:57:25,090 - WARNING -  * Debugger is active!
+2025-06-19 06:57:25,098 - INFO -  * Debugger PIN: 846-591-789
+2025-06-19 07:02:28,683 - INFO -  * Detected change in 'c:\\Users\\juanse.barrios\\Universidad del rosario\\Datamining - ValidadorDataAnalitic\\validadorInteligenteDeDatos\\app\\json_handler.py', reloading
+2025-06-19 07:02:28,964 - INFO -  * Restarting with stat
+2025-06-19 07:02:30,800 - WARNING -  * Debugger is active!
+2025-06-19 07:02:30,805 - INFO -  * Debugger PIN: 846-591-789
+2025-06-19 07:03:06,274 - INFO -  * Detected change in 'c:\\Users\\juanse.barrios\\Universidad del rosario\\Datamining - ValidadorDataAnalitic\\validadorInteligenteDeDatos\\app\\Python\\json_handler.py', reloading
+2025-06-19 07:03:06,493 - INFO -  * Restarting with stat
+2025-06-19 07:03:07,904 - WARNING -  * Debugger is active!
+2025-06-19 07:03:07,908 - INFO -  * Debugger PIN: 846-591-789
+2025-06-19 07:05:33,587 - INFO -  * Detected change in 'c:\\Users\\juanse.barrios\\Universidad del rosario\\Datamining - ValidadorDataAnalitic\\validadorInteligenteDeDatos\\app\\routeDIv.py', reloading
+2025-06-19 07:05:33,926 - INFO -  * Restarting with stat
+2025-06-19 07:05:35,566 - WARNING -  * Debugger is active!
+2025-06-19 07:05:35,571 - INFO -  * Debugger PIN: 846-591-789
+2025-06-19 07:09:34,367 - INFO -  * Detected change in 'c:\\Users\\juanse.barrios\\Universidad del rosario\\Datamining - ValidadorDataAnalitic\\validadorInteligenteDeDatos\\app\\routeDIv.py', reloading
+2025-06-19 07:09:34,646 - INFO -  * Restarting with stat
+2025-06-19 07:09:36,184 - WARNING -  * Debugger is active!
+2025-06-19 07:09:36,189 - INFO -  * Debugger PIN: 846-591-789
+2025-06-19 07:11:00,957 - INFO -  * Detected change in 'c:\\Users\\juanse.barrios\\Universidad del rosario\\Datamining - ValidadorDataAnalitic\\validadorInteligenteDeDatos\\app\\routeDIv.py', reloading
+2025-06-19 07:11:01,180 - INFO -  * Restarting with stat
+2025-06-19 07:11:02,682 - WARNING -  * Debugger is active!
+2025-06-19 07:11:02,686 - INFO -  * Debugger PIN: 846-591-789
+2025-06-19 07:17:44,325 - INFO -  * Detected change in 'c:\\Users\\juanse.barrios\\Universidad del rosario\\Datamining - ValidadorDataAnalitic\\validadorInteligenteDeDatos\\app\\routeDIv.py', reloading
+2025-06-19 07:17:44,571 - INFO -  * Restarting with stat
+2025-06-19 07:17:46,155 - WARNING -  * Debugger is active!
+2025-06-19 07:17:46,159 - INFO -  * Debugger PIN: 846-591-789
+2025-06-19 07:22:17,878 - INFO -  * Detected change in 'c:\\Users\\juanse.barrios\\Universidad del rosario\\Datamining - ValidadorDataAnalitic\\validadorInteligenteDeDatos\\app\\routeDIv.py', reloading
+2025-06-19 07:22:18,258 - INFO -  * Restarting with stat
+2025-06-19 07:22:20,790 - WARNING -  * Debugger is active!
+2025-06-19 07:22:20,796 - INFO -  * Debugger PIN: 846-591-789
+2025-06-19 07:22:31,900 - INFO -  * Detected change in 'c:\\Users\\juanse.barrios\\Universidad del rosario\\Datamining - ValidadorDataAnalitic\\validadorInteligenteDeDatos\\app\\routeDIv.py', reloading
+2025-06-19 07:22:32,102 - INFO -  * Restarting with stat
+2025-06-19 07:22:33,469 - WARNING -  * Debugger is active!
+2025-06-19 07:22:33,474 - INFO -  * Debugger PIN: 846-591-789

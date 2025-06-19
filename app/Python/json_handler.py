@@ -5,7 +5,7 @@ import json
 import shutil
 import time
 import logging
-from .config import Config
+from app.Python.config import Config
 
 # Configuración de logging
 logging.basicConfig(
@@ -16,7 +16,6 @@ logging.basicConfig(
         logging.StreamHandler()
     ]
 )
-
 
 def conectar_db():
     try:
@@ -95,6 +94,32 @@ def mover_a_historicos(nombre_plantilla, ruta_actual, max_reintentos=5, delay=1)
 
     logging.error(f"Fallo después de {max_reintentos} intentos")
     raise last_exception if last_exception else PermissionError("No se pudo mover el archivo")
+
+def obtener_id_usuario_por_correo(correo):
+    """
+    Retorna el idUsuario de la tabla dbo.usuariosValidador dado un correo electrónico.
+    """
+    conn = None
+    try:
+        conn = conectar_db()
+        if not conn:
+            logging.error("Error: No se pudo establecer conexión con la base de datos para obtener idUsuario.")
+            return None
+        
+        cursor = conn.cursor()
+        cursor.execute("SELECT idUsuario FROM dbo.usuariosValidador WHERE correoUsuario = ?", (correo,))
+        row = cursor.fetchone()
+        if row:
+            # Asumiendo que idUsuario es el primer (y único) campo seleccionado
+            return row.idUsuario # Acceder por nombre de columna si el cursor lo permite o por índice row[0]
+        logging.warning(f"No se encontró idUsuario para el correo: {correo}")
+        return None
+    except Exception as e:
+        logging.error(f"Error al obtener idUsuario por correo: {e}")
+        return None
+    finally:
+        if conn:
+            conn.close()
 
 def subir_json(json_path, idProcesoAdmin):
     """Función mejorada para subir JSON con manejo seguro de archivos"""

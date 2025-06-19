@@ -2,7 +2,7 @@ from flask import Flask, render_template, render_template_string, request, redir
 from app import app  # Asegúrate de que 'app' se importa correctamente
 import pyodbc
 from datetime import datetime
-from app.Python.json_handler import conectar_db, obtener_nombres_json, subir_json  # "."
+from app.Python.json_handler import conectar_db, obtener_nombres_json, subir_json, obtener_id_usuario_por_correo  # "."
 from app.Python.validations import validar_excel_con_cerberus  # "."
 from app.Python.json_handler import obtener_fechas_json  # "."
 import shutil
@@ -265,7 +265,6 @@ def validador():
                 WHERE estadoProcesoAdmin IN ('Activo', 'Inactivo')
             """)
             procesos = cursor.fetchall()
-
         except pyodbc.Error as e:
             flash(f"Error al obtener datos: {str(e)}", "error")
             json_files, procesos = [], []
@@ -275,7 +274,7 @@ def validador():
 
         return render_template('validador.html', json_files=json_files, procesos=procesos)
 
-    # POST: Validación
+     # POST: Validación
     file_excel = request.files.get('file_excel')
     json_select = request.form.get('jsonSelect')
     process_id = request.form.get('processSelect')
@@ -295,11 +294,44 @@ def validador():
         flash("El proceso seleccionado no es válido.", "error")
         return redirect(url_for("validador"))
 
+    # Obtener el correo electrónico del usuario de la sesión
+    usuario_correo = session.get('user')
+    if not usuario_correo:
+        flash("Error: Sesión de usuario no encontrada. Por favor, inicie sesión de nuevo.", "error")
+        return redirect(url_for('inicio_sesion'))
+
+    # Obtener el idUsuario usando la nueva función
+    id_usuario = obtener_id_usuario_por_correo(usuario_correo)
+    if id_usuario is None:
+        flash(f"Error: No se pudo encontrar el ID para el usuario '{usuario_correo}'.", "error")
+        return redirect(url_for('inicio_sesion'))
+
     # Guardar archivo Excel temporalmente
     excel_path = os.path.join(app.config['UPLOAD_FOLDER'], file_excel.filename)
     file_excel.save(excel_path)
 
-    # Obtener plantilla
+    # Leer contenido del Excel para guardar en BD
+    try:
+        df_contenido = pd.read_excel(excel_path)
+        contenido_excel_str = df_contenido.to_json(orient='records', force_ascii=False)
+
+        print("→ contenido_excel_str es None:", contenido_excel_str is None)
+        print("→ tipo:", type(contenido_excel_str))
+        print("→ contenido_excel_str (preview):", contenido_excel_str[:300])
+
+        if contenido_excel_str.strip() == "[]":
+            print("⚠️ Atención: El Excel leído no contenía datos útiles.")
+
+    except Exception as e:
+        flash(f"Error al leer el archivo Excel: {e}", "error")
+        contenido_excel_str = None
+
+    if not contenido_excel_str:
+        contenido_excel_str = "[]"
+
+    print("Contenido Excel (preview):", contenido_excel_str[:300])
+
+    # Obtener plantillaF
     conn = conectar_db()
     if not conn:
         flash("Error al conectar a la base de datos para obtener la plantilla.", "error")
@@ -328,6 +360,7 @@ def validador():
 
     # Validar con Cerberus
     resultado = validar_excel_con_cerberus(excel_path, ruta_json)
+
     estadoValidacion = 2  # Por defecto: con error
     validated_excel_path = os.path.join(app.config['VALIDATED_FOLDER'], file_excel.filename)
     destinatario = ["hectord.godoy@urosario.edu.co", "juanse.barrios@urosario.edu.co"]
@@ -375,19 +408,21 @@ def validador():
 
         flash(reporte_html, "error")
 
-    # Guardar validación en la base de datos (reporte plano, sin HTML)
+    # Guardar validación en la base de datos (incluyendo contenido del Excel)
     conn = conectar_db()
     if conn:
         try:
             cursor = conn.cursor()
             cursor.execute("""
                 INSERT INTO dbo.Validaciones (
-                    idProcesoAdmin, idUsuario, FechaValidacion, idEstado, idPlantillasValidacion, nombreArchivo, reporte
-                ) VALUES (?, ?, ?, ?, ?, ?, ?)
+                    idProcesoAdmin, idUsuario, FechaValidacion, idEstado,
+                    idPlantillasValidacion, nombreArchivo, reporte, contenidoExcel
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
             """, (
-                process_id, 1, datetime.now(), estadoValidacion,
-                id_plantilla, file_excel.filename[:50], reporte_texto
+                process_id, id_usuario, datetime.now(), estadoValidacion,
+                id_plantilla, file_excel.filename[:50], reporte_texto, contenido_excel_str
             ))
+
             conn.commit()
         except pyodbc.Error as e:
             flash(f"Error al guardar validación: {str(e)}", "error")
@@ -400,6 +435,7 @@ def validador():
     return redirect(url_for("validador"))
 
 
+
 # Ruta para AJAX/API sin recarga
 @app.route('/api/validar', methods=['POST'])
 def api_validar():
@@ -410,6 +446,16 @@ def api_validar():
 
     if not all([file_excel, json_select, file_date, process_id]):
         return jsonify({"status": "error", "message": "Faltan campos requeridos.", "errores": []})
+
+    # Obtener el correo electrónico del usuario de la sesión
+    usuario_correo = session.get('user')
+    if not usuario_correo:
+        return jsonify({"status": "error", "message": "Sesión de usuario no encontrada. Por favor, inicie sesión de nuevo.", "errores": []})
+
+    # Obtener el idUsuario usando la nueva función
+    id_usuario = obtener_id_usuario_por_correo(usuario_correo)
+    if id_usuario is None:
+        return jsonify({"status": "error", "message": f"No se pudo encontrar el ID para el usuario '{usuario_correo}'.", "errores": []})
 
     # Guardar Excel temporalmente
     excel_path = os.path.join(app.config['UPLOAD_FOLDER'], file_excel.filename)
@@ -464,7 +510,7 @@ def api_validar():
         ])
         enviar_reporte_errores(errores, destinatario, asunto="Reporte de Errores en Validación de Excel")
 
-    # (Opcional) Guardar en la base de datos también
+    # Guardar en la base de datos también
     conn = conectar_db()
     if conn:
         try:
@@ -474,7 +520,7 @@ def api_validar():
                     idProcesoAdmin, idUsuario, FechaValidacion, idEstado, idPlantillasValidacion, nombreArchivo, reporte
                 ) VALUES (?, ?, ?, ?, ?, ?, ?)
             """, (
-                int(process_id), 1, datetime.now(), estadoValidacion,
+                int(process_id), id_usuario, datetime.now(), estadoValidacion,
                 id_plantilla, file_excel.filename[:50], reporte
             ))
             conn.commit()
@@ -483,7 +529,6 @@ def api_validar():
             conn.close()
 
     return jsonify(resultado)
-
 @app.route('/generar_informe', methods=['GET'])
 def generar_informe():
     if 'user' not in session:
@@ -585,7 +630,8 @@ def ver_resultados():
             p.NombrePlantilla,
             pa.nombreProcesoAdmin,
             ev.nombreEstado,
-            v.reporte
+            v.reporte,
+            v.contenidoExcel
         FROM dbo.Validaciones v
         JOIN dbo.usuariosValidador u ON v.idUsuario = u.idUsuario
         JOIN dbo.PlantillasValidacion p ON v.idPlantillasValidacion = p.idPlantillasValidacion
