@@ -310,27 +310,7 @@ def validador():
     excel_path = os.path.join(app.config['UPLOAD_FOLDER'], file_excel.filename)
     file_excel.save(excel_path)
 
-    # Leer contenido del Excel para guardar en BD
-    try:
-        df_contenido = pd.read_excel(excel_path)
-        contenido_excel_str = df_contenido.to_json(orient='records', force_ascii=False)
-
-        print("→ contenido_excel_str es None:", contenido_excel_str is None)
-        print("→ tipo:", type(contenido_excel_str))
-        print("→ contenido_excel_str (preview):", contenido_excel_str[:300])
-
-        if contenido_excel_str.strip() == "[]":
-            print("⚠️ Atención: El Excel leído no contenía datos útiles.")
-
-    except Exception as e:
-        flash(f"Error al leer el archivo Excel: {e}", "error")
-        contenido_excel_str = None
-
-    if not contenido_excel_str:
-        contenido_excel_str = "[]"
-
-    print("Contenido Excel (preview):", contenido_excel_str[:300])
-
+    
     # Obtener plantillaF
     conn = conectar_db()
     if not conn:
@@ -416,11 +396,11 @@ def validador():
             cursor.execute("""
                 INSERT INTO dbo.Validaciones (
                     idProcesoAdmin, idUsuario, FechaValidacion, idEstado,
-                    idPlantillasValidacion, nombreArchivo, reporte, contenidoExcel
+                    idPlantillasValidacion, nombreArchivo, reporte,
                 ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
             """, (
                 process_id, id_usuario, datetime.now(), estadoValidacion,
-                id_plantilla, file_excel.filename[:50], reporte_texto, contenido_excel_str
+                id_plantilla, file_excel.filename[:50], reporte_texto, 
             ))
 
             conn.commit()
@@ -441,27 +421,27 @@ def validador():
 def api_validar():
     file_excel = request.files.get("file_excel")
     json_select = request.form.get("jsonSelect")
-    file_date = request.form.get("file_date")
+    file_date_from_form = request.form.get("file_date") # Fecha de la validación, del formulario
     process_id = request.form.get("processSelect")
 
-    if not all([file_excel, json_select, file_date, process_id]):
+    # ✅ NUEVO: Capturar las fechas de datos del formulario (si el usuario las ingresó)
+    fecha_inicio_datos_form = request.form.get('fecha_inicio_datos')
+    fecha_fin_datos_form = request.form.get('fecha_fin_datos')
+
+    if not all([file_excel, json_select, file_date_from_form, process_id]):
         return jsonify({"status": "error", "message": "Faltan campos requeridos.", "errores": []})
 
-    # Obtener el correo electrónico del usuario de la sesión
     usuario_correo = session.get('user')
     if not usuario_correo:
         return jsonify({"status": "error", "message": "Sesión de usuario no encontrada. Por favor, inicie sesión de nuevo.", "errores": []})
 
-    # Obtener el idUsuario usando la nueva función
     id_usuario = obtener_id_usuario_por_correo(usuario_correo)
     if id_usuario is None:
         return jsonify({"status": "error", "message": f"No se pudo encontrar el ID para el usuario '{usuario_correo}'.", "errores": []})
 
-    # Guardar Excel temporalmente
     excel_path = os.path.join(app.config['UPLOAD_FOLDER'], file_excel.filename)
     file_excel.save(excel_path)
 
-    # Obtener plantilla JSON
     conn = conectar_db()
     if not conn:
         return jsonify({"status": "error", "message": "Error de conexión a BD.", "errores": []})
@@ -478,18 +458,26 @@ def api_validar():
             return jsonify({"status": "error", "message": "Plantilla no encontrada.", "errores": []})
         id_plantilla, ruta_json = row
     finally:
-        cursor.close()
-        conn.close()
+        if cursor: cursor.close()
+        if conn: conn.close()
 
-    # Validación
-    resultado = validar_excel_con_cerberus(excel_path, ruta_json)
+    # ✅ LLAMAR a validar_excel_con_cerberus y obtener las fechas extraídas
+    resultado_validacion = validar_excel_con_cerberus(excel_path, ruta_json)
+    
+    # ✅ Obtener las fechas extraídas del Excel
+    fecha_inicio_datos_excel = resultado_validacion.get('fecha_inicio_datos')
+    fecha_fin_datos_excel = resultado_validacion.get('fecha_fin_datos')
+
+    # ✅ Lógica para priorizar: si el usuario ingresó fechas en el formulario, úsalas; si no, usa las extraídas.
+    final_fecha_inicio_datos = fecha_inicio_datos_form if fecha_inicio_datos_form else (fecha_inicio_datos_excel.strftime('%Y-%m-%d') if fecha_inicio_datos_excel else None)
+    final_fecha_fin_datos = fecha_fin_datos_form if fecha_fin_datos_form else (fecha_fin_datos_excel.strftime('%Y-%m-%d') if fecha_fin_datos_excel else None)
+
     estadoValidacion = 2  # Por defecto error
     reporte = ""
     validated_excel_path = os.path.join(app.config['VALIDATED_FOLDER'], file_excel.filename)
-
     destinatario = ["hectord.godoy@urosario.edu.co", "juanse.barrios@urosario.edu.co"]
 
-    if resultado['status'] == 'success':
+    if resultado_validacion['status'] == 'success':
         estadoValidacion = 1
         reporte = f"Validación exitosa. Archivo procesado: {file_excel.filename}"
         shutil.copy(excel_path, validated_excel_path)
@@ -503,32 +491,46 @@ def api_validar():
             asunto="Validación Exitosa de Archivo Excel"
         )
     else:
-        errores = resultado.get("errores", [])
+        errores = resultado_validacion.get("errores", [])
         reporte = "\n".join([
             f"Hoja: {e.get('hoja', 'N/A')}, Fila: {e.get('fila', 'N/A')}, Error: {e.get('errores', 'N/A')}"
             for e in errores
         ])
         enviar_reporte_errores(errores, destinatario, asunto="Reporte de Errores en Validación de Excel")
 
-    # Guardar en la base de datos también
+    # ✅ Guardar en la base de datos (AHORA incluyendo las nuevas fechas)
     conn = conectar_db()
     if conn:
         try:
             cursor = conn.cursor()
             cursor.execute("""
                 INSERT INTO dbo.Validaciones (
-                    idProcesoAdmin, idUsuario, FechaValidacion, idEstado, idPlantillasValidacion, nombreArchivo, reporte
-                ) VALUES (?, ?, ?, ?, ?, ?, ?)
+                    idProcesoAdmin, idUsuario, FechaValidacion, idEstado, idPlantillasValidacion, 
+                    nombreArchivo, reporte, FechaInicioDeDatos, FechaFinDeDatos
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
             """, (
-                int(process_id), id_usuario, datetime.now(), estadoValidacion,
-                id_plantilla, file_excel.filename[:50], reporte
+                int(process_id),
+                id_usuario,
+                datetime.now(), # Esta es la fecha y hora de la validación actual
+                estadoValidacion,
+                id_plantilla,
+                file_excel.filename[:50],
+                reporte,
+                final_fecha_inicio_datos, # ✅ Insertar la fecha de inicio de datos
+                final_fecha_fin_datos    # ✅ Insertar la fecha de fin de datos
             ))
             conn.commit()
+        except pyodbc.Error as e:
+            # Aquí podrías querer registrar el error y devolver un mensaje más específico
+            print(f"Error al guardar validación en BD: {e}")
+            return jsonify({"status": "error", "message": f"Error al guardar validación en BD: {str(e)}", "errores": []})
         finally:
-            cursor.close()
-            conn.close()
+            if cursor: cursor.close()
+            if conn: conn.close()
+    else:
+        return jsonify({"status": "error", "message": "Error al conectar a la base de datos para guardar la validación.", "errores": []})
 
-    return jsonify(resultado)
+    return jsonify(resultado_validacion) # Devolver el resultado de la validación al frontend
 @app.route('/generar_informe', methods=['GET'])
 def generar_informe():
     if 'user' not in session:
@@ -606,56 +608,77 @@ def filtro_informe():
 
     return render_template('filtro_informe.html', usuarios=usuarios)
 
-@app.route('/ver_resultados', methods=['GET'])
+app.route('/ver_resultados', methods=['GET'])
 def ver_resultados():
     if 'user' not in session:
         flash("Debe iniciar sesión para ver los resultados.", "error")
         return redirect(url_for('inicio_sesion'))
 
     usuario = request.args.get('usuario')
-    fecha_inicio = request.args.get('fecha_inicio')
-    fecha_fin = request.args.get('fecha_fin')
+    fecha_inicio_validacion = request.args.get('fecha_inicio') # Fecha de validación desde el formulario
+    fecha_fin_validacion = request.args.get('fecha_fin')       # Fecha de validación desde el formulario
     archivo = request.args.get('archivo')
-    proceso = request.args.get('proceso')  # ✅ nuevo filtro
+    proceso = request.args.get('proceso')
+
+    # ✅ CORREGIDO: Nuevos filtros de fecha para los datos del Excel, ahora coinciden con HTML
+    fecha_inicio_datos = request.args.get('fecha_datos_inicio')
+    fecha_fin_datos = request.args.get('fecha_datos_fin')
+
+    conn = None
+    cursor = None
 
     try:
         conn = conectar_db()
         cursor = conn.cursor()
 
         query = """
-        SELECT 
+        SELECT
+            v.idValidaciones,
+            v.idProcesoAdmin,
+            v.idUsuario,
             v.FechaValidacion,
-            u.nombreUsuario,
+            v.idEstado,
+            v.idPlantillasValidacion,
             v.nombreArchivo,
-            p.NombrePlantilla,
-            pa.nombreProcesoAdmin,
-            ev.nombreEstado,
             v.reporte,
-            v.contenidoExcel
+            v.FechaInicioDeDatos,
+            v.FechaFinDeDatos
         FROM dbo.Validaciones v
-        JOIN dbo.usuariosValidador u ON v.idUsuario = u.idUsuario
-        JOIN dbo.PlantillasValidacion p ON v.idPlantillasValidacion = p.idPlantillasValidacion
-        JOIN dbo.ProcesosAdministrativos pa ON v.idProcesoAdmin = pa.idProcesoAdmin
-        JOIN dbo.estadoValidacion ev ON v.idEstado = ev.idEstado
+        -- Puedes reincorporar los JOINs si necesitas mostrar los nombres en lugar de los IDs
+        -- JOIN dbo.usuariosValidador u ON v.idUsuario = u.idUsuario
+        -- JOIN dbo.PlantillasValidacion p ON v.idPlantillasValidacion = p.idPlantillasValidacion
+        -- JOIN dbo.ProcesosAdministrativos pa ON v.idProcesoAdmin = pa.idProcesoAdmin
+        -- JOIN dbo.estadoValidacion ev ON v.idEstado = ev.idEstado
         WHERE 1=1
         """
 
         params = []
         if usuario:
-            query += " AND u.nombreUsuario = ?"
-            params.append(usuario)
-        if fecha_inicio:
+            # Si 'usuario' en la URL es el nombre de usuario, necesitas un JOIN o una subconsulta.
+            # Asumiendo que 'usuario' es el idUsuario para simplificar de momento:
+            query += " AND v.idUsuario = ?" # O u.nombreUsuario si el JOIN está activo
+            params.append(usuario) # Convertir a int si es un ID
+        if fecha_inicio_validacion: # Aplicar filtro para FechaValidacion
             query += " AND v.FechaValidacion >= ?"
-            params.append(fecha_inicio)
-        if fecha_fin:
+            params.append(fecha_inicio_validacion)
+        if fecha_fin_validacion: # Aplicar filtro para FechaValidacion
             query += " AND v.FechaValidacion <= ?"
-            params.append(fecha_fin)
+            params.append(fecha_fin_validacion)
         if archivo:
-            query += " AND v.nombreArchivo = ?"
-            params.append(archivo)
+            query += " AND v.nombreArchivo LIKE ?"
+            params.append(f"%{archivo}%")
         if proceso:
-            query += " AND pa.nombreProcesoAdmin = ?"
-            params.append(proceso)
+            # Asumiendo que 'proceso' es el idProcesoAdmin para simplificar de momento:
+            query += " AND v.idProcesoAdmin = ?" # O pa.nombreProcesoAdmin si el JOIN está activo
+            params.append(proceso) # Convertir a int si es un ID
+        
+        # ✅ Filtros para FechaInicioDeDatos y FechaFinDeDatos con los nombres del HTML
+        if fecha_inicio_datos:
+            query += " AND v.FechaInicioDeDatos >= ?"
+            params.append(fecha_inicio_datos)
+        if fecha_fin_datos:
+            query += " AND v.FechaFinDeDatos <= ?"
+            params.append(fecha_fin_datos)
 
         query += " ORDER BY v.FechaValidacion DESC"
 
@@ -663,27 +686,57 @@ def ver_resultados():
         rows = cursor.fetchall()
         headers = [column[0] for column in cursor.description]
 
-        # Listas únicas para selects
-        archivos_unicos = sorted(set([row[2] for row in rows]))  # nombreArchivo
-        procesos_unicos = sorted(set([row[4] for row in rows]))  # nombreProcesoAdmin
+        processed_rows = []
+        for row in rows:
+            new_row = list(row)
+            try:
+                idx_fecha_validacion = headers.index('FechaValidacion')
+                idx_fecha_inicio_datos = headers.index('FechaInicioDeDatos')
+                idx_fecha_fin_datos = headers.index('FechaFinDeDatos')
 
-        # Guardar filtros activos para Excel
+                if new_row[idx_fecha_validacion] is not None:
+                    new_row[idx_fecha_validacion] = new_row[idx_fecha_validacion].strftime('%Y-%m-%d %H:%M:%S')
+
+                if new_row[idx_fecha_inicio_datos] is not None:
+                    new_row[idx_fecha_inicio_datos] = new_row[idx_fecha_inicio_datos].strftime('%Y-%m-%d %H:%M:%S')
+                else:
+                    new_row[idx_fecha_inicio_datos] = 'NULL'
+
+                if new_row[idx_fecha_fin_datos] is not None:
+                    new_row[idx_fecha_fin_datos] = new_row[idx_fecha_fin_datos].strftime('%Y-%m-%d %H:%M:%S')
+                else:
+                    new_row[idx_fecha_fin_datos] = 'NULL'
+            except ValueError:
+                pass # Esto maneja casos donde las columnas no se encuentren
+
+            processed_rows.append(new_row)
+
+        archivos_unicos = sorted(set([row[headers.index('nombreArchivo')] for row in rows]))
+        procesos_unicos = sorted(set([row[headers.index('idProcesoAdmin')] for row in rows]))
+
+        # ✅ Guardar filtros activos para Excel (actualizar con nuevos filtros)
         session['informe_filtros'] = {
             'usuario': usuario,
-            'fecha_inicio': fecha_inicio,
-            'fecha_fin': fecha_fin,
+            'fecha_inicio': fecha_inicio_validacion,
+            'fecha_fin': fecha_fin_validacion,
             'archivo': archivo,
-            'proceso': proceso
+            'proceso': proceso,
+            'fecha_datos_inicio': fecha_inicio_datos, # ✅ Usar el nuevo nombre del parámetro
+            'fecha_datos_fin': fecha_fin_datos       # ✅ Usar el nuevo nombre del parámetro
         }
 
         return render_template(
             'tabla_resultados.html',
             headers=headers,
-            rows=rows,
+            rows=processed_rows,
             archivos=archivos_unicos,
             archivo_actual=archivo,
             procesos=procesos_unicos,
-            proceso_actual=proceso
+            proceso_actual=proceso,
+            fecha_inicio_validacion_actual=fecha_inicio_validacion,
+            fecha_fin_validacion_actual=fecha_fin_validacion,
+            fecha_datos_inicio_actual=fecha_inicio_datos, # ✅ Pasar al template con el nuevo nombre
+            fecha_datos_fin_actual=fecha_fin_datos        # ✅ Pasar al template con el nuevo nombre
         )
 
     except Exception as e:
@@ -691,8 +744,10 @@ def ver_resultados():
         return redirect(url_for('filtro_informe'))
 
     finally:
-        cursor.close()
-        conn.close()
+        if cursor:
+            cursor.close()
+        if conn:
+            conn.close()
 
 
 # Ruta para cargar y guardar JSON

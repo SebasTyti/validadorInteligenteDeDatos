@@ -121,7 +121,7 @@ def obtener_id_usuario_por_correo(correo):
         if conn:
             conn.close()
 
-def subir_json(json_path, idProcesoAdmin):
+def subir_json(json_path, idProcesoAdmin, usuario):
     """Función mejorada para subir JSON con manejo seguro de archivos"""
     try:
         # Lectura segura del archivo
@@ -177,7 +177,7 @@ def subir_json(json_path, idProcesoAdmin):
                 json_path,
                 fecha_actual,
                 fecha_actual,
-                "hectord.godoy@urosario.edu.co",
+                usuario,
                 "Activo",
                 idProcesoAdmin
             )

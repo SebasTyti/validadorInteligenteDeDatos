@@ -1,0 +1,45 @@
+{
+  "nombre_excel": "Reporte_Cicloparqueaderos (1).xlsx",
+  "nombre_hoja": "Entradas Únicas",
+  "contenido_excel": [
+    {
+      "Nombre": "Unnamed: 0",
+      "Type": "integer",
+      "Required": "obligatorio",
+      "Regex": "FormatoNumeroEntero"
+    },
+    {
+      "Nombre": "Unnamed: 1",
+      "Type": "string",
+      "Required": "obligatorio",
+      "Regex": "FormatoTexto"
+    },
+    {
+      "Nombre": "Unnamed: 2",
+      "Type": "string",
+      "Required": "obligatorio",
+      "Regex": "FormatoTexto"
+    },
+    {
+      "Nombre": "Unnamed: 3",
+      "Type": "email",
+      "Required": "obligatorio",
+      "Regex": "FormatoCorreoElectronico"
+    },
+    {
+      "Nombre": "Unnamed: 4",
+      "Type": "integer",
+      "Required": "obligatorio",
+      "Regex": "FormatoNumeroEntero"
+    },
+    {
+      "Nombre": "Unnamed: 5",
+      "Type": "integer",
+      "Required": "obligatorio",
+      "Regex": "FormatoNumeroEntero"
+    }
+  ],
+  "fecha_creacion": "2025-03-12",
+  "usuario": "juanse.barrios@urosario.edu.co",
+  "proceso_admin": 1
+}
