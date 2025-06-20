@@ -8075,3 +8075,329 @@
 2025-06-20 12:33:48,996 - INFO - Conexión a la base de datos exitosa.
 2025-06-20 12:33:51,473 - INFO - Conexión a la base de datos exitosa.
 2025-06-20 12:33:51,782 - INFO - 10.39.90.177 - - [20/Jun/2025 12:33:51] "POST /api/validar HTTP/1.1" 200 -
+2025-06-20 14:40:31,474 - INFO -  * Detected change in 'c:\\wamp64\\www\\validadorInteligenteDeDatos\\app\\routeDIv.py', reloading
+2025-06-20 14:40:32,685 - INFO -  * Restarting with stat
+2025-06-20 14:40:34,959 - WARNING -  * Debugger is active!
+2025-06-20 14:40:34,981 - INFO -  * Debugger PIN: 284-765-739
+2025-06-20 14:41:24,598 - INFO -  * Detected change in 'c:\\wamp64\\www\\validadorInteligenteDeDatos\\app\\routeDIv.py', reloading
+2025-06-20 14:41:24,886 - INFO -  * Restarting with stat
+2025-06-20 14:41:26,447 - WARNING -  * Debugger is active!
+2025-06-20 14:41:26,457 - INFO -  * Debugger PIN: 284-765-739
+2025-06-20 14:41:27,767 - INFO -  * Detected change in 'c:\\wamp64\\www\\validadorInteligenteDeDatos\\app\\routeDIv.py', reloading
+2025-06-20 14:41:27,945 - INFO -  * Restarting with stat
+2025-06-20 14:41:29,754 - WARNING -  * Debugger is active!
+2025-06-20 14:41:29,767 - INFO -  * Debugger PIN: 284-765-739
+2025-06-20 14:41:33,337 - INFO -  * Detected change in 'c:\\wamp64\\www\\validadorInteligenteDeDatos\\app\\routeDIv.py', reloading
+2025-06-20 14:41:33,517 - INFO -  * Restarting with stat
+2025-06-20 14:41:35,141 - WARNING -  * Debugger is active!
+2025-06-20 14:41:35,155 - INFO -  * Debugger PIN: 284-765-739
+2025-06-20 14:41:36,495 - INFO -  * Detected change in 'c:\\wamp64\\www\\validadorInteligenteDeDatos\\app\\routeDIv.py', reloading
+2025-06-20 14:41:36,736 - INFO -  * Restarting with stat
+2025-06-20 14:41:38,191 - WARNING -  * Debugger is active!
+2025-06-20 14:41:38,209 - INFO -  * Debugger PIN: 284-765-739
+2025-06-20 14:42:00,423 - INFO -  * Detected change in 'c:\\wamp64\\www\\validadorInteligenteDeDatos\\app\\routeDIv.py', reloading
+2025-06-20 14:42:00,610 - INFO -  * Restarting with stat
+2025-06-20 14:42:01,995 - WARNING -  * Debugger is active!
+2025-06-20 14:42:02,017 - INFO -  * Debugger PIN: 284-765-739
+2025-06-20 14:45:14,407 - INFO -  * Detected change in 'c:\\wamp64\\www\\validadorInteligenteDeDatos\\app\\routeDIv.py', reloading
+2025-06-20 14:45:14,586 - INFO -  * Restarting with stat
+2025-06-20 14:45:16,061 - WARNING -  * Debugger is active!
+2025-06-20 14:45:16,073 - INFO -  * Debugger PIN: 284-765-739
+2025-06-20 14:45:18,490 - INFO -  * Detected change in 'c:\\wamp64\\www\\validadorInteligenteDeDatos\\app\\routeDIv.py', reloading
+2025-06-20 14:45:18,679 - INFO -  * Restarting with stat
+2025-06-20 14:45:20,010 - WARNING -  * Debugger is active!
+2025-06-20 14:45:20,028 - INFO -  * Debugger PIN: 284-765-739
+2025-06-20 14:48:45,692 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://10.39.90.177:8000
+2025-06-20 14:48:45,692 - INFO - [33mPress CTRL+C to quit[0m
+2025-06-20 14:48:45,692 - INFO -  * Restarting with stat
+2025-06-20 14:48:47,115 - WARNING -  * Debugger is active!
+2025-06-20 14:48:47,115 - INFO -  * Debugger PIN: 284-765-739
+2025-06-20 14:48:49,985 - INFO - 127.0.0.1 - - [20/Jun/2025 14:48:49] "GET / HTTP/1.1" 200 -
+2025-06-20 14:48:50,384 - INFO - 127.0.0.1 - - [20/Jun/2025 14:48:50] "GET /static/logoBlanco.png HTTP/1.1" 200 -
+2025-06-20 14:48:50,607 - INFO - 127.0.0.1 - - [20/Jun/2025 14:48:50] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-06-20 14:49:54,419 - INFO -  * Detected change in 'c:\\wamp64\\www\\validadorInteligenteDeDatos\\route_run.py', reloading
+2025-06-20 14:49:54,570 - INFO -  * Restarting with stat
+2025-06-20 14:50:45,259 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://10.39.90.177:8000
+2025-06-20 14:50:45,259 - INFO - [33mPress CTRL+C to quit[0m
+2025-06-20 14:50:45,262 - INFO -  * Restarting with stat
+2025-06-20 14:50:46,586 - WARNING -  * Debugger is active!
+2025-06-20 14:50:46,602 - INFO -  * Debugger PIN: 284-765-739
+2025-06-20 14:50:47,020 - INFO - 127.0.0.1 - - [20/Jun/2025 14:50:47] "GET / HTTP/1.1" 200 -
+2025-06-20 14:50:47,232 - INFO - 127.0.0.1 - - [20/Jun/2025 14:50:47] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-20 14:51:11,426 - INFO - Conexión a la base de datos exitosa.
+2025-06-20 14:51:12,262 - INFO - Conexión a la base de datos exitosa.
+2025-06-20 14:51:12,575 - INFO - 127.0.0.1 - - [20/Jun/2025 14:51:12] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-06-20 14:51:12,623 - INFO - 127.0.0.1 - - [20/Jun/2025 14:51:12] "GET /paginaInicial HTTP/1.1" 200 -
+2025-06-20 14:51:12,676 - INFO - 127.0.0.1 - - [20/Jun/2025 14:51:12] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-20 14:52:18,792 - INFO - 127.0.0.1 - - [20/Jun/2025 14:52:18] "GET /historicos HTTP/1.1" 200 -
+2025-06-20 14:52:23,146 - INFO - 127.0.0.1 - - [20/Jun/2025 14:52:23] "GET /crear_plantilla HTTP/1.1" 200 -
+2025-06-20 14:52:23,189 - INFO - 127.0.0.1 - - [20/Jun/2025 14:52:23] "GET /static/CrearPlantilla.css HTTP/1.1" 200 -
+2025-06-20 14:52:23,201 - INFO - 127.0.0.1 - - [20/Jun/2025 14:52:23] "GET /static/CrearPlantilla.js HTTP/1.1" 200 -
+2025-06-20 14:52:23,201 - INFO - 127.0.0.1 - - [20/Jun/2025 14:52:23] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-20 14:53:39,871 - INFO - 127.0.0.1 - - [20/Jun/2025 14:53:39] "[32mPOST /upload_excel HTTP/1.1[0m" 302 -
+2025-06-20 14:53:40,255 - INFO - 127.0.0.1 - - [20/Jun/2025 14:53:40] "GET /mostrar_tabla HTTP/1.1" 200 -
+2025-06-20 14:53:40,286 - INFO - 127.0.0.1 - - [20/Jun/2025 14:53:40] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-20 14:53:44,463 - INFO - Conexión a la base de datos exitosa.
+2025-06-20 14:53:44,728 - INFO - 127.0.0.1 - - [20/Jun/2025 14:53:44] "GET /mostrar_tabla?hoja=Hoja1 HTTP/1.1" 200 -
+2025-06-20 14:53:44,794 - INFO - 127.0.0.1 - - [20/Jun/2025 14:53:44] "GET /static/EditarPlantilla.css HTTP/1.1" 200 -
+2025-06-20 14:53:44,794 - INFO - 127.0.0.1 - - [20/Jun/2025 14:53:44] "GET /static/EditarPlantilla.js HTTP/1.1" 200 -
+2025-06-20 14:53:44,796 - INFO - 127.0.0.1 - - [20/Jun/2025 14:53:44] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-20 14:53:57,464 - INFO - Conexión a la base de datos exitosa.
+2025-06-20 14:53:57,922 - INFO - 127.0.0.1 - - [20/Jun/2025 14:53:57] "POST /guardar_plantilla HTTP/1.1" 200 -
+2025-06-20 14:54:00,131 - INFO - Conexión a la base de datos exitosa.
+2025-06-20 14:54:00,462 - INFO - 127.0.0.1 - - [20/Jun/2025 14:54:00] "GET /descargar_archivo/RRHH_PRUEBA_texto2_Hoja1_1.json HTTP/1.1" 200 -
+2025-06-20 14:54:15,722 - INFO - 127.0.0.1 - - [20/Jun/2025 14:54:15] "GET /mostrar_tabla HTTP/1.1" 200 -
+2025-06-20 14:54:15,759 - INFO - 127.0.0.1 - - [20/Jun/2025 14:54:15] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-20 14:54:16,739 - INFO - 127.0.0.1 - - [20/Jun/2025 14:54:16] "GET /crear_plantilla HTTP/1.1" 200 -
+2025-06-20 14:54:16,769 - INFO - 127.0.0.1 - - [20/Jun/2025 14:54:16] "[36mGET /static/CrearPlantilla.css HTTP/1.1[0m" 304 -
+2025-06-20 14:54:16,778 - INFO - 127.0.0.1 - - [20/Jun/2025 14:54:16] "[36mGET /static/CrearPlantilla.js HTTP/1.1[0m" 304 -
+2025-06-20 14:54:16,779 - INFO - 127.0.0.1 - - [20/Jun/2025 14:54:16] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-20 14:54:18,053 - INFO - 127.0.0.1 - - [20/Jun/2025 14:54:18] "GET /paginaInicial HTTP/1.1" 200 -
+2025-06-20 14:54:18,083 - INFO - 127.0.0.1 - - [20/Jun/2025 14:54:18] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-20 14:54:18,930 - INFO - Conexión a la base de datos exitosa.
+2025-06-20 14:54:19,271 - INFO - 127.0.0.1 - - [20/Jun/2025 14:54:19] "GET /validador HTTP/1.1" 200 -
+2025-06-20 14:54:19,319 - INFO - 127.0.0.1 - - [20/Jun/2025 14:54:19] "GET /static/validador.css HTTP/1.1" 200 -
+2025-06-20 14:54:19,320 - INFO - 127.0.0.1 - - [20/Jun/2025 14:54:19] "GET /static/validador.js HTTP/1.1" 200 -
+2025-06-20 14:54:19,322 - INFO - 127.0.0.1 - - [20/Jun/2025 14:54:19] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-20 14:54:24,896 - INFO - Conexión a la base de datos exitosa.
+2025-06-20 14:54:25,228 - INFO - 127.0.0.1 - - [20/Jun/2025 14:54:25] "GET /api/json_files?proceso_id=1 HTTP/1.1" 200 -
+2025-06-20 14:54:27,329 - INFO - Conexión a la base de datos exitosa.
+2025-06-20 14:54:27,661 - INFO - 127.0.0.1 - - [20/Jun/2025 14:54:27] "GET /obtener_fechas_json?nombre_plantilla=RRHH_PRUEBA_texto2_Hoja1_1.json HTTP/1.1" 200 -
+2025-06-20 14:54:27,767 - INFO - Conexión a la base de datos exitosa.
+2025-06-20 14:54:28,092 - INFO - 127.0.0.1 - - [20/Jun/2025 14:54:28] "GET /obtener_fechas_json?nombre_plantilla=RRHH_PRUEBA_texto2_Hoja1_1.json HTTP/1.1" 200 -
+2025-06-20 14:54:47,845 - INFO - Conexión a la base de datos exitosa.
+2025-06-20 14:54:48,266 - INFO - Conexión a la base de datos exitosa.
+2025-06-20 14:54:48,685 - INFO - Conexión a la base de datos exitosa.
+2025-06-20 14:54:52,464 - INFO - Conexión a la base de datos exitosa.
+2025-06-20 14:54:52,824 - INFO - 127.0.0.1 - - [20/Jun/2025 14:54:52] "POST /api/validar HTTP/1.1" 200 -
+2025-06-20 14:55:45,498 - INFO - Conexión a la base de datos exitosa.
+2025-06-20 14:55:45,831 - INFO - 127.0.0.1 - - [20/Jun/2025 14:55:45] "GET /validador HTTP/1.1" 200 -
+2025-06-20 14:55:45,873 - INFO - 127.0.0.1 - - [20/Jun/2025 14:55:45] "[36mGET /static/validador.css HTTP/1.1[0m" 304 -
+2025-06-20 14:55:45,876 - INFO - 127.0.0.1 - - [20/Jun/2025 14:55:45] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-20 14:55:45,877 - INFO - 127.0.0.1 - - [20/Jun/2025 14:55:45] "[36mGET /static/validador.js HTTP/1.1[0m" 304 -
+2025-06-20 14:55:55,756 - INFO - Conexión a la base de datos exitosa.
+2025-06-20 14:55:56,070 - INFO - 127.0.0.1 - - [20/Jun/2025 14:55:56] "GET /api/json_files?proceso_id=1 HTTP/1.1" 200 -
+2025-06-20 14:55:57,899 - INFO - Conexión a la base de datos exitosa.
+2025-06-20 14:55:58,226 - INFO - 127.0.0.1 - - [20/Jun/2025 14:55:58] "GET /obtener_fechas_json?nombre_plantilla=RRHH_PRUEBA_texto2_Hoja1_1.json HTTP/1.1" 200 -
+2025-06-20 14:55:58,317 - INFO - Conexión a la base de datos exitosa.
+2025-06-20 14:55:58,643 - INFO - 127.0.0.1 - - [20/Jun/2025 14:55:58] "GET /obtener_fechas_json?nombre_plantilla=RRHH_PRUEBA_texto2_Hoja1_1.json HTTP/1.1" 200 -
+2025-06-20 14:56:10,350 - INFO - Conexión a la base de datos exitosa.
+2025-06-20 14:56:10,758 - INFO - Conexión a la base de datos exitosa.
+2025-06-20 14:56:11,170 - INFO - Conexión a la base de datos exitosa.
+2025-06-20 14:56:13,531 - INFO - Conexión a la base de datos exitosa.
+2025-06-20 14:56:13,871 - INFO - 127.0.0.1 - - [20/Jun/2025 14:56:13] "POST /api/validar HTTP/1.1" 200 -
+2025-06-20 14:57:39,308 - INFO - 127.0.0.1 - - [20/Jun/2025 14:57:39] "GET /crear_plantilla HTTP/1.1" 200 -
+2025-06-20 14:57:39,343 - INFO - 127.0.0.1 - - [20/Jun/2025 14:57:39] "[36mGET /static/CrearPlantilla.css HTTP/1.1[0m" 304 -
+2025-06-20 14:57:39,353 - INFO - 127.0.0.1 - - [20/Jun/2025 14:57:39] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-20 14:57:39,354 - INFO - 127.0.0.1 - - [20/Jun/2025 14:57:39] "[36mGET /static/CrearPlantilla.js HTTP/1.1[0m" 304 -
+2025-06-20 14:57:50,401 - INFO - 127.0.0.1 - - [20/Jun/2025 14:57:50] "[32mPOST /upload_excel HTTP/1.1[0m" 302 -
+2025-06-20 14:57:50,517 - INFO - 127.0.0.1 - - [20/Jun/2025 14:57:50] "GET /mostrar_tabla HTTP/1.1" 200 -
+2025-06-20 14:57:50,558 - INFO - 127.0.0.1 - - [20/Jun/2025 14:57:50] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-20 14:57:54,449 - INFO - Conexión a la base de datos exitosa.
+2025-06-20 14:57:54,695 - INFO - 127.0.0.1 - - [20/Jun/2025 14:57:54] "GET /mostrar_tabla?hoja=Hoja1 HTTP/1.1" 200 -
+2025-06-20 14:57:54,748 - INFO - 127.0.0.1 - - [20/Jun/2025 14:57:54] "[36mGET /static/EditarPlantilla.css HTTP/1.1[0m" 304 -
+2025-06-20 14:57:54,748 - INFO - 127.0.0.1 - - [20/Jun/2025 14:57:54] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-20 14:57:54,750 - INFO - 127.0.0.1 - - [20/Jun/2025 14:57:54] "[36mGET /static/EditarPlantilla.js HTTP/1.1[0m" 304 -
+2025-06-20 14:58:05,754 - INFO - Conexión a la base de datos exitosa.
+2025-06-20 14:58:06,158 - INFO - 127.0.0.1 - - [20/Jun/2025 14:58:06] "POST /guardar_plantilla HTTP/1.1" 200 -
+2025-06-20 14:58:07,266 - INFO - Conexión a la base de datos exitosa.
+2025-06-20 14:58:07,592 - INFO - 127.0.0.1 - - [20/Jun/2025 14:58:07] "GET /descargar_archivo/DITIC_PRUEBA_texto2_Hoja1_1.json HTTP/1.1" 200 -
+2025-06-20 14:58:09,607 - INFO - 127.0.0.1 - - [20/Jun/2025 14:58:09] "GET /mostrar_tabla HTTP/1.1" 200 -
+2025-06-20 14:58:09,640 - INFO - 127.0.0.1 - - [20/Jun/2025 14:58:09] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-20 14:58:10,538 - INFO - 127.0.0.1 - - [20/Jun/2025 14:58:10] "GET /crear_plantilla HTTP/1.1" 200 -
+2025-06-20 14:58:10,573 - INFO - 127.0.0.1 - - [20/Jun/2025 14:58:10] "[36mGET /static/CrearPlantilla.js HTTP/1.1[0m" 304 -
+2025-06-20 14:58:10,575 - INFO - 127.0.0.1 - - [20/Jun/2025 14:58:10] "[36mGET /static/CrearPlantilla.css HTTP/1.1[0m" 304 -
+2025-06-20 14:58:10,576 - INFO - 127.0.0.1 - - [20/Jun/2025 14:58:10] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-20 14:58:11,658 - INFO - 127.0.0.1 - - [20/Jun/2025 14:58:11] "GET /paginaInicial HTTP/1.1" 200 -
+2025-06-20 14:58:11,707 - INFO - 127.0.0.1 - - [20/Jun/2025 14:58:11] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-20 14:58:12,400 - INFO - Conexión a la base de datos exitosa.
+2025-06-20 14:58:12,716 - INFO - 127.0.0.1 - - [20/Jun/2025 14:58:12] "GET /validador HTTP/1.1" 200 -
+2025-06-20 14:58:12,775 - INFO - 127.0.0.1 - - [20/Jun/2025 14:58:12] "[36mGET /static/validador.css HTTP/1.1[0m" 304 -
+2025-06-20 14:58:12,780 - INFO - 127.0.0.1 - - [20/Jun/2025 14:58:12] "[36mGET /static/validador.js HTTP/1.1[0m" 304 -
+2025-06-20 14:58:12,781 - INFO - 127.0.0.1 - - [20/Jun/2025 14:58:12] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-20 14:58:18,423 - INFO - Conexión a la base de datos exitosa.
+2025-06-20 14:58:18,730 - INFO - 127.0.0.1 - - [20/Jun/2025 14:58:18] "GET /api/json_files?proceso_id=1 HTTP/1.1" 200 -
+2025-06-20 14:58:20,431 - INFO - Conexión a la base de datos exitosa.
+2025-06-20 14:58:20,739 - INFO - 127.0.0.1 - - [20/Jun/2025 14:58:20] "GET /obtener_fechas_json?nombre_plantilla=RRHH_PRUEBA_texto2_Hoja1_1.json HTTP/1.1" 200 -
+2025-06-20 14:58:20,822 - INFO - Conexión a la base de datos exitosa.
+2025-06-20 14:58:21,129 - INFO - 127.0.0.1 - - [20/Jun/2025 14:58:21] "GET /obtener_fechas_json?nombre_plantilla=RRHH_PRUEBA_texto2_Hoja1_1.json HTTP/1.1" 200 -
+2025-06-20 14:58:47,719 - INFO - Conexión a la base de datos exitosa.
+2025-06-20 14:58:48,094 - INFO - Conexión a la base de datos exitosa.
+2025-06-20 14:58:48,498 - INFO - Conexión a la base de datos exitosa.
+2025-06-20 14:58:51,210 - INFO - Conexión a la base de datos exitosa.
+2025-06-20 14:58:51,514 - INFO - 127.0.0.1 - - [20/Jun/2025 14:58:51] "POST /api/validar HTTP/1.1" 200 -
+2025-06-20 15:01:56,779 - INFO - 127.0.0.1 - - [20/Jun/2025 15:01:56] "GET /crear_plantilla HTTP/1.1" 200 -
+2025-06-20 15:01:56,829 - INFO - 127.0.0.1 - - [20/Jun/2025 15:01:56] "[36mGET /static/CrearPlantilla.css HTTP/1.1[0m" 304 -
+2025-06-20 15:01:56,834 - INFO - 127.0.0.1 - - [20/Jun/2025 15:01:56] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-20 15:01:56,842 - INFO - 127.0.0.1 - - [20/Jun/2025 15:01:56] "[36mGET /static/CrearPlantilla.js HTTP/1.1[0m" 304 -
+2025-06-20 15:02:01,201 - INFO - 127.0.0.1 - - [20/Jun/2025 15:02:01] "[32mPOST /upload_excel HTTP/1.1[0m" 302 -
+2025-06-20 15:02:01,317 - INFO - 127.0.0.1 - - [20/Jun/2025 15:02:01] "GET /mostrar_tabla HTTP/1.1" 200 -
+2025-06-20 15:02:01,369 - INFO - 127.0.0.1 - - [20/Jun/2025 15:02:01] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-20 15:02:04,751 - INFO - Conexión a la base de datos exitosa.
+2025-06-20 15:02:05,000 - INFO - 127.0.0.1 - - [20/Jun/2025 15:02:05] "GET /mostrar_tabla?hoja=Hoja1 HTTP/1.1" 200 -
+2025-06-20 15:02:05,051 - INFO - 127.0.0.1 - - [20/Jun/2025 15:02:05] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-20 15:02:05,055 - INFO - 127.0.0.1 - - [20/Jun/2025 15:02:05] "[36mGET /static/EditarPlantilla.css HTTP/1.1[0m" 304 -
+2025-06-20 15:02:05,063 - INFO - 127.0.0.1 - - [20/Jun/2025 15:02:05] "[36mGET /static/EditarPlantilla.js HTTP/1.1[0m" 304 -
+2025-06-20 15:02:12,105 - INFO - Conexión a la base de datos exitosa.
+2025-06-20 15:02:12,499 - INFO - 127.0.0.1 - - [20/Jun/2025 15:02:12] "POST /guardar_plantilla HTTP/1.1" 200 -
+2025-06-20 15:02:13,587 - INFO - Conexión a la base de datos exitosa.
+2025-06-20 15:02:13,883 - INFO - 127.0.0.1 - - [20/Jun/2025 15:02:13] "GET /descargar_archivo/RRHH_PRUEBA_texto2_Hoja1_2.json HTTP/1.1" 200 -
+2025-06-20 15:02:28,150 - INFO - Conexión a la base de datos exitosa.
+2025-06-20 15:02:28,543 - INFO - 127.0.0.1 - - [20/Jun/2025 15:02:28] "POST /guardar_plantilla HTTP/1.1" 200 -
+2025-06-20 15:02:29,622 - INFO - Conexión a la base de datos exitosa.
+2025-06-20 15:02:29,934 - INFO - 127.0.0.1 - - [20/Jun/2025 15:02:29] "GET /descargar_archivo/RRHH_PRUEBA_texto2_Hoja1_3.json HTTP/1.1" 200 -
+2025-06-20 15:02:39,608 - INFO - 127.0.0.1 - - [20/Jun/2025 15:02:39] "GET /mostrar_tabla HTTP/1.1" 200 -
+2025-06-20 15:02:39,643 - INFO - 127.0.0.1 - - [20/Jun/2025 15:02:39] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-20 15:02:40,401 - INFO - 127.0.0.1 - - [20/Jun/2025 15:02:40] "GET /crear_plantilla HTTP/1.1" 200 -
+2025-06-20 15:02:40,434 - INFO - 127.0.0.1 - - [20/Jun/2025 15:02:40] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-20 15:02:40,434 - INFO - 127.0.0.1 - - [20/Jun/2025 15:02:40] "[36mGET /static/CrearPlantilla.css HTTP/1.1[0m" 304 -
+2025-06-20 15:02:40,437 - INFO - 127.0.0.1 - - [20/Jun/2025 15:02:40] "[36mGET /static/CrearPlantilla.js HTTP/1.1[0m" 304 -
+2025-06-20 15:02:41,663 - INFO - 127.0.0.1 - - [20/Jun/2025 15:02:41] "GET /paginaInicial HTTP/1.1" 200 -
+2025-06-20 15:02:41,705 - INFO - 127.0.0.1 - - [20/Jun/2025 15:02:41] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-20 15:02:42,816 - INFO - Conexión a la base de datos exitosa.
+2025-06-20 15:02:43,119 - INFO - 127.0.0.1 - - [20/Jun/2025 15:02:43] "GET /validador HTTP/1.1" 200 -
+2025-06-20 15:02:43,169 - INFO - 127.0.0.1 - - [20/Jun/2025 15:02:43] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-20 15:02:43,175 - INFO - 127.0.0.1 - - [20/Jun/2025 15:02:43] "[36mGET /static/validador.css HTTP/1.1[0m" 304 -
+2025-06-20 15:02:43,182 - INFO - 127.0.0.1 - - [20/Jun/2025 15:02:43] "[36mGET /static/validador.js HTTP/1.1[0m" 304 -
+2025-06-20 15:02:48,244 - INFO - Conexión a la base de datos exitosa.
+2025-06-20 15:02:48,534 - INFO - 127.0.0.1 - - [20/Jun/2025 15:02:48] "GET /api/json_files?proceso_id=1 HTTP/1.1" 200 -
+2025-06-20 15:02:50,343 - INFO - Conexión a la base de datos exitosa.
+2025-06-20 15:02:50,644 - INFO - 127.0.0.1 - - [20/Jun/2025 15:02:50] "GET /obtener_fechas_json?nombre_plantilla=RRHH_PRUEBA_texto2_Hoja1_3.json HTTP/1.1" 200 -
+2025-06-20 15:02:50,732 - INFO - Conexión a la base de datos exitosa.
+2025-06-20 15:02:51,033 - INFO - 127.0.0.1 - - [20/Jun/2025 15:02:51] "GET /obtener_fechas_json?nombre_plantilla=RRHH_PRUEBA_texto2_Hoja1_3.json HTTP/1.1" 200 -
+2025-06-20 15:03:07,213 - INFO - Conexión a la base de datos exitosa.
+2025-06-20 15:03:07,598 - INFO - Conexión a la base de datos exitosa.
+2025-06-20 15:03:07,981 - INFO - Conexión a la base de datos exitosa.
+2025-06-20 15:03:10,665 - INFO - Conexión a la base de datos exitosa.
+2025-06-20 15:03:10,966 - INFO - 127.0.0.1 - - [20/Jun/2025 15:03:10] "POST /api/validar HTTP/1.1" 200 -
+2025-06-20 15:14:17,026 - INFO -  * Detected change in 'c:\\wamp64\\www\\validadorInteligenteDeDatos\\app\\routeDIv.py', reloading
+2025-06-20 15:14:17,394 - INFO -  * Restarting with stat
+2025-06-20 15:17:18,944 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://10.39.90.177:8000
+2025-06-20 15:17:18,944 - INFO - [33mPress CTRL+C to quit[0m
+2025-06-20 15:17:18,959 - INFO -  * Restarting with stat
+2025-06-20 15:17:20,243 - WARNING -  * Debugger is active!
+2025-06-20 15:17:20,256 - INFO -  * Debugger PIN: 284-765-739
+2025-06-20 15:17:38,053 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://10.39.90.177:8000
+2025-06-20 15:17:38,053 - INFO - [33mPress CTRL+C to quit[0m
+2025-06-20 15:17:38,053 - INFO -  * Restarting with stat
+2025-06-20 15:17:39,328 - WARNING -  * Debugger is active!
+2025-06-20 15:17:39,328 - INFO -  * Debugger PIN: 284-765-739
+2025-06-20 15:17:40,905 - INFO - 127.0.0.1 - - [20/Jun/2025 15:17:40] "GET / HTTP/1.1" 200 -
+2025-06-20 15:17:41,154 - INFO - 127.0.0.1 - - [20/Jun/2025 15:17:41] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-20 15:17:48,233 - INFO - 127.0.0.1 - - [20/Jun/2025 15:17:48] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-06-20 15:17:57,729 - INFO - 127.0.0.1 - - [20/Jun/2025 15:17:57] "GET / HTTP/1.1" 200 -
+2025-06-20 15:17:57,750 - INFO - 127.0.0.1 - - [20/Jun/2025 15:17:57] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-20 15:18:13,028 - INFO - Conexión a la base de datos exitosa.
+2025-06-20 15:18:13,827 - INFO - Conexión a la base de datos exitosa.
+2025-06-20 15:18:14,129 - INFO - 127.0.0.1 - - [20/Jun/2025 15:18:14] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-06-20 15:18:14,182 - INFO - 127.0.0.1 - - [20/Jun/2025 15:18:14] "GET /paginaInicial HTTP/1.1" 200 -
+2025-06-20 15:18:14,228 - INFO - 127.0.0.1 - - [20/Jun/2025 15:18:14] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-20 15:18:16,821 - INFO - 127.0.0.1 - - [20/Jun/2025 15:18:16] "GET /crear_plantilla HTTP/1.1" 200 -
+2025-06-20 15:18:16,874 - INFO - 127.0.0.1 - - [20/Jun/2025 15:18:16] "[36mGET /static/CrearPlantilla.css HTTP/1.1[0m" 304 -
+2025-06-20 15:18:16,875 - INFO - 127.0.0.1 - - [20/Jun/2025 15:18:16] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-20 15:18:16,879 - INFO - 127.0.0.1 - - [20/Jun/2025 15:18:16] "[36mGET /static/CrearPlantilla.js HTTP/1.1[0m" 304 -
+2025-06-20 15:18:22,294 - INFO - 127.0.0.1 - - [20/Jun/2025 15:18:22] "[32mPOST /upload_excel HTTP/1.1[0m" 302 -
+2025-06-20 15:18:23,215 - INFO - 127.0.0.1 - - [20/Jun/2025 15:18:23] "GET /mostrar_tabla HTTP/1.1" 200 -
+2025-06-20 15:18:23,238 - INFO - 127.0.0.1 - - [20/Jun/2025 15:18:23] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-20 15:18:24,311 - INFO - Conexión a la base de datos exitosa.
+2025-06-20 15:18:24,594 - INFO - 127.0.0.1 - - [20/Jun/2025 15:18:24] "GET /mostrar_tabla?hoja=Hoja1 HTTP/1.1" 200 -
+2025-06-20 15:18:24,632 - INFO - 127.0.0.1 - - [20/Jun/2025 15:18:24] "[36mGET /static/EditarPlantilla.css HTTP/1.1[0m" 304 -
+2025-06-20 15:18:24,637 - INFO - 127.0.0.1 - - [20/Jun/2025 15:18:24] "[36mGET /static/EditarPlantilla.js HTTP/1.1[0m" 304 -
+2025-06-20 15:18:24,638 - INFO - 127.0.0.1 - - [20/Jun/2025 15:18:24] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-20 15:18:34,694 - INFO - Conexión a la base de datos exitosa.
+2025-06-20 15:18:35,125 - INFO - 127.0.0.1 - - [20/Jun/2025 15:18:35] "POST /guardar_plantilla HTTP/1.1" 200 -
+2025-06-20 15:18:36,240 - INFO - Conexión a la base de datos exitosa.
+2025-06-20 15:18:36,527 - INFO - 127.0.0.1 - - [20/Jun/2025 15:18:36] "GET /descargar_archivo/RRHH_PRUEBA_texto2_Hoja1_4.json HTTP/1.1" 200 -
+2025-06-20 15:18:38,379 - INFO - 127.0.0.1 - - [20/Jun/2025 15:18:38] "GET /mostrar_tabla HTTP/1.1" 200 -
+2025-06-20 15:18:38,413 - INFO - 127.0.0.1 - - [20/Jun/2025 15:18:38] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-20 15:18:40,002 - INFO - 127.0.0.1 - - [20/Jun/2025 15:18:40] "GET /crear_plantilla HTTP/1.1" 200 -
+2025-06-20 15:18:40,035 - INFO - 127.0.0.1 - - [20/Jun/2025 15:18:40] "[36mGET /static/CrearPlantilla.css HTTP/1.1[0m" 304 -
+2025-06-20 15:18:40,036 - INFO - 127.0.0.1 - - [20/Jun/2025 15:18:40] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-20 15:18:40,038 - INFO - 127.0.0.1 - - [20/Jun/2025 15:18:40] "[36mGET /static/CrearPlantilla.js HTTP/1.1[0m" 304 -
+2025-06-20 15:18:40,827 - INFO - 127.0.0.1 - - [20/Jun/2025 15:18:40] "GET /paginaInicial HTTP/1.1" 200 -
+2025-06-20 15:18:40,861 - INFO - 127.0.0.1 - - [20/Jun/2025 15:18:40] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-20 15:18:41,761 - INFO - Conexión a la base de datos exitosa.
+2025-06-20 15:18:42,080 - INFO - 127.0.0.1 - - [20/Jun/2025 15:18:42] "GET /validador HTTP/1.1" 200 -
+2025-06-20 15:18:42,120 - INFO - 127.0.0.1 - - [20/Jun/2025 15:18:42] "[36mGET /static/validador.css HTTP/1.1[0m" 304 -
+2025-06-20 15:18:42,122 - INFO - 127.0.0.1 - - [20/Jun/2025 15:18:42] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-20 15:18:42,122 - INFO - 127.0.0.1 - - [20/Jun/2025 15:18:42] "[36mGET /static/validador.js HTTP/1.1[0m" 304 -
+2025-06-20 15:18:47,627 - INFO - Conexión a la base de datos exitosa.
+2025-06-20 15:18:47,927 - INFO - 127.0.0.1 - - [20/Jun/2025 15:18:47] "GET /api/json_files?proceso_id=1 HTTP/1.1" 200 -
+2025-06-20 15:18:49,788 - INFO - Conexión a la base de datos exitosa.
+2025-06-20 15:18:50,087 - INFO - 127.0.0.1 - - [20/Jun/2025 15:18:50] "GET /obtener_fechas_json?nombre_plantilla=RRHH_PRUEBA_texto2_Hoja1_4.json HTTP/1.1" 200 -
+2025-06-20 15:18:50,176 - INFO - Conexión a la base de datos exitosa.
+2025-06-20 15:18:50,474 - INFO - 127.0.0.1 - - [20/Jun/2025 15:18:50] "GET /obtener_fechas_json?nombre_plantilla=RRHH_PRUEBA_texto2_Hoja1_4.json HTTP/1.1" 200 -
+2025-06-20 15:18:59,547 - INFO - Conexión a la base de datos exitosa.
+2025-06-20 15:18:59,919 - INFO - Conexión a la base de datos exitosa.
+2025-06-20 15:19:00,310 - INFO - Conexión a la base de datos exitosa.
+2025-06-20 15:19:02,864 - INFO - Conexión a la base de datos exitosa.
+2025-06-20 15:19:03,185 - INFO - 127.0.0.1 - - [20/Jun/2025 15:19:03] "POST /api/validar HTTP/1.1" 200 -
+2025-06-20 15:23:46,799 - INFO -  * Detected change in 'c:\\wamp64\\www\\validadorInteligenteDeDatos\\app\\routeDIv.py', reloading
+2025-06-20 15:23:46,996 - INFO -  * Restarting with stat
+2025-06-20 15:30:54,735 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://10.39.90.177:8000
+2025-06-20 15:30:54,735 - INFO - [33mPress CTRL+C to quit[0m
+2025-06-20 15:30:54,738 - INFO -  * Restarting with stat
+2025-06-20 15:30:56,312 - WARNING -  * Debugger is active!
+2025-06-20 15:30:56,325 - INFO -  * Debugger PIN: 284-765-739
+2025-06-20 15:31:16,954 - INFO - 127.0.0.1 - - [20/Jun/2025 15:31:16] "GET / HTTP/1.1" 200 -
+2025-06-20 15:31:17,147 - INFO - 127.0.0.1 - - [20/Jun/2025 15:31:17] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-20 15:31:45,907 - INFO - Conexión a la base de datos exitosa.
+2025-06-20 15:31:46,690 - INFO - Conexión a la base de datos exitosa.
+2025-06-20 15:31:46,995 - INFO - 127.0.0.1 - - [20/Jun/2025 15:31:46] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-06-20 15:31:47,018 - INFO - 127.0.0.1 - - [20/Jun/2025 15:31:47] "GET /paginaInicial HTTP/1.1" 200 -
+2025-06-20 15:31:47,056 - INFO - 127.0.0.1 - - [20/Jun/2025 15:31:47] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-20 15:31:49,299 - INFO - 127.0.0.1 - - [20/Jun/2025 15:31:49] "GET /crear_plantilla HTTP/1.1" 200 -
+2025-06-20 15:31:49,344 - INFO - 127.0.0.1 - - [20/Jun/2025 15:31:49] "[36mGET /static/CrearPlantilla.css HTTP/1.1[0m" 304 -
+2025-06-20 15:31:49,358 - INFO - 127.0.0.1 - - [20/Jun/2025 15:31:49] "[36mGET /static/CrearPlantilla.js HTTP/1.1[0m" 304 -
+2025-06-20 15:31:49,365 - INFO - 127.0.0.1 - - [20/Jun/2025 15:31:49] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-20 15:31:54,545 - INFO - 127.0.0.1 - - [20/Jun/2025 15:31:54] "[32mPOST /upload_excel HTTP/1.1[0m" 302 -
+2025-06-20 15:31:54,889 - INFO - 127.0.0.1 - - [20/Jun/2025 15:31:54] "GET /mostrar_tabla HTTP/1.1" 200 -
+2025-06-20 15:31:54,916 - INFO - 127.0.0.1 - - [20/Jun/2025 15:31:54] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-20 15:31:56,496 - INFO - Conexión a la base de datos exitosa.
+2025-06-20 15:31:56,728 - INFO - 127.0.0.1 - - [20/Jun/2025 15:31:56] "GET /mostrar_tabla?hoja=Hoja1 HTTP/1.1" 200 -
+2025-06-20 15:31:56,767 - INFO - 127.0.0.1 - - [20/Jun/2025 15:31:56] "[36mGET /static/EditarPlantilla.css HTTP/1.1[0m" 304 -
+2025-06-20 15:31:56,774 - INFO - 127.0.0.1 - - [20/Jun/2025 15:31:56] "[36mGET /static/EditarPlantilla.js HTTP/1.1[0m" 304 -
+2025-06-20 15:31:56,774 - INFO - 127.0.0.1 - - [20/Jun/2025 15:31:56] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-20 15:32:09,913 - INFO - Conexión a la base de datos exitosa.
+2025-06-20 15:32:10,325 - INFO - 127.0.0.1 - - [20/Jun/2025 15:32:10] "POST /guardar_plantilla HTTP/1.1" 200 -
+2025-06-20 15:32:11,395 - INFO - Conexión a la base de datos exitosa.
+2025-06-20 15:32:11,715 - INFO - 127.0.0.1 - - [20/Jun/2025 15:32:11] "GET /descargar_archivo/RRHH_PRUEBA_texto2_Hoja1_5.json HTTP/1.1" 200 -
+2025-06-20 15:32:13,506 - INFO - 127.0.0.1 - - [20/Jun/2025 15:32:13] "GET /mostrar_tabla HTTP/1.1" 200 -
+2025-06-20 15:32:13,534 - INFO - 127.0.0.1 - - [20/Jun/2025 15:32:13] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-20 15:32:14,778 - INFO - 127.0.0.1 - - [20/Jun/2025 15:32:14] "GET /crear_plantilla HTTP/1.1" 200 -
+2025-06-20 15:32:14,801 - INFO - 127.0.0.1 - - [20/Jun/2025 15:32:14] "[36mGET /static/CrearPlantilla.css HTTP/1.1[0m" 304 -
+2025-06-20 15:32:14,807 - INFO - 127.0.0.1 - - [20/Jun/2025 15:32:14] "[36mGET /static/CrearPlantilla.js HTTP/1.1[0m" 304 -
+2025-06-20 15:32:14,808 - INFO - 127.0.0.1 - - [20/Jun/2025 15:32:14] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-20 15:32:15,428 - INFO - 127.0.0.1 - - [20/Jun/2025 15:32:15] "GET /paginaInicial HTTP/1.1" 200 -
+2025-06-20 15:32:15,460 - INFO - 127.0.0.1 - - [20/Jun/2025 15:32:15] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-20 15:32:24,612 - INFO - Conexión a la base de datos exitosa.
+2025-06-20 15:32:24,935 - INFO - 127.0.0.1 - - [20/Jun/2025 15:32:24] "GET /validador HTTP/1.1" 200 -
+2025-06-20 15:32:24,982 - INFO - 127.0.0.1 - - [20/Jun/2025 15:32:24] "[36mGET /static/validador.css HTTP/1.1[0m" 304 -
+2025-06-20 15:32:24,987 - INFO - 127.0.0.1 - - [20/Jun/2025 15:32:24] "[36mGET /static/validador.js HTTP/1.1[0m" 304 -
+2025-06-20 15:32:24,988 - INFO - 127.0.0.1 - - [20/Jun/2025 15:32:24] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-20 15:32:31,056 - INFO - Conexión a la base de datos exitosa.
+2025-06-20 15:32:31,359 - INFO - 127.0.0.1 - - [20/Jun/2025 15:32:31] "GET /api/json_files?proceso_id=1 HTTP/1.1" 200 -
+2025-06-20 15:32:33,145 - INFO - Conexión a la base de datos exitosa.
+2025-06-20 15:32:33,467 - INFO - 127.0.0.1 - - [20/Jun/2025 15:32:33] "GET /obtener_fechas_json?nombre_plantilla=RRHH_PRUEBA_texto2_Hoja1_5.json HTTP/1.1" 200 -
+2025-06-20 15:32:33,559 - INFO - Conexión a la base de datos exitosa.
+2025-06-20 15:32:33,868 - INFO - 127.0.0.1 - - [20/Jun/2025 15:32:33] "GET /obtener_fechas_json?nombre_plantilla=RRHH_PRUEBA_texto2_Hoja1_5.json HTTP/1.1" 200 -
+2025-06-20 15:32:41,729 - INFO - Conexión a la base de datos exitosa.
+2025-06-20 15:32:42,116 - INFO - Conexión a la base de datos exitosa.
+2025-06-20 15:32:42,508 - INFO - Conexión a la base de datos exitosa.
+2025-06-20 15:32:45,214 - INFO - Conexión a la base de datos exitosa.
+2025-06-20 15:32:45,535 - INFO - 127.0.0.1 - - [20/Jun/2025 15:32:45] "POST /api/validar HTTP/1.1" 200 -

@@ -17,7 +17,7 @@ import traceback
 from app.Python.json_routes import json_routes  # Cambiado a importación absoluta
 from app import routeDIv  #  Importa routeDIv.py
 import json
-
+import glob
 from flask_sqlalchemy import SQLAlchemy
 
 
@@ -310,9 +310,23 @@ def validador():
         return redirect(url_for('inicio_sesion'))
 
     # Guardar archivo Excel temporalmente
-    excel_path = os.path.join(app.config['UPLOAD_FOLDER'], file_excel.filename)
+    excel_path = os.path.join(app.config['VALIDATED_FOLDER'], file_excel.filename)
+    if os.path.exists(excel_path):
+        historico_dir = os.path.join(BASE_DIR, "Plantillas", "historicos", "Excel")
+        os.makedirs(historico_dir, exist_ok=True)
+        nombre, ext = os.path.splitext(file_excel.filename)
+        # Busca copias existentes
+        patron = os.path.join(historico_dir, f"{nombre}_*{ext}")
+        existentes = glob.glob(patron)
+        # Calcula el siguiente sufijo
+        siguiente = 1
+        while True:
+            nuevo_nombre = f"{nombre}_{siguiente}{ext}"
+            if not os.path.exists(os.path.join(historico_dir, nuevo_nombre)):
+                break
+            siguiente += 1
+        shutil.move(excel_path, os.path.join(historico_dir, nuevo_nombre))
     file_excel.save(excel_path)
-
     
     # Obtener plantillaF
     conn = conectar_db()
@@ -1111,7 +1125,7 @@ def guardar_plantilla():
         ruta_archivo = os.path.join(OUTPUT_FOLDER, nombre_archivo)
 
 
-        # Guardar JSON en archivo con el encoder personalizado
+        # Guardar JSON en archivo
         with open(ruta_archivo, "w", encoding="utf-8") as f:
             json.dump(plantilla_final, f, cls=DateTimeEncoder, ensure_ascii=False, indent=2)
 
@@ -1272,34 +1286,56 @@ def parse_fecha_datetime_local(fecha_str):
             pass
     return None
 
-import re
 
 def limpiar_validados_y_mover_a_historicos():
     """
-    Deja solo el archivo más reciente (por fecha de modificación) de cada base de nombre en Validados,
-    y mueve los demás a la carpeta historicos.
+    Deja solo el archivo más reciente (por fecha de modificación) de cada base de nombre y mes/año en Validados (Excel)
+    y Salida (JSON), y mueve los demás a la carpeta historicos/Excel o historicos/Json.
     """
+    # --- EXCEL ---
     validados_dir = os.path.join(BASE_DIR, "Plantillas", "Validados")
-    historicos_dir = os.path.join(BASE_DIR, "Plantillas", "historicos")
-    os.makedirs(historicos_dir, exist_ok=True)
+    historicos_excel_dir = os.path.join(BASE_DIR, "Plantillas", "historicos", "Excel")
+    os.makedirs(historicos_excel_dir, exist_ok=True)
 
-    archivos = [f for f in os.listdir(validados_dir) if f.endswith(".json")]
-    # Agrupar por base de nombre (sin el número final)
-    grupos = {}
-    patron = re.compile(r"^(.*?)(?:_(\d+))?\.json$", re.IGNORECASE)
-    for archivo in archivos:
-        match = patron.match(archivo)
+    archivos_excel = [f for f in os.listdir(validados_dir) if f.lower().endswith(".xlsx") or f.lower().endswith(".xls")]
+    grupos_excel = {}
+    patron_excel = re.compile(r"^(.*?)(?:_(\d+))?\.(xlsx|xls)$", re.IGNORECASE)
+    for archivo in archivos_excel:
+        match = patron_excel.match(archivo)
         if match:
             base = match.group(1)
-            grupos.setdefault(base, []).append(archivo)
+            ruta = os.path.join(validados_dir, archivo)
+            fecha_mod = datetime.fromtimestamp(os.path.getmtime(ruta))
+            clave = (base, fecha_mod.year, fecha_mod.month)
+            grupos_excel.setdefault(clave, []).append((archivo, fecha_mod))
 
-    for base, archivos_base in grupos.items():
-        # Ordenar por fecha de modificación (de más antiguo a más reciente)
-        archivos_base.sort(key=lambda x: os.path.getmtime(os.path.join(validados_dir, x)))
-        # Mantener solo el más reciente
-        for antiguo in archivos_base[:-1]:
+    for clave, archivos_base in grupos_excel.items():
+        archivos_base.sort(key=lambda x: x[1])
+        for antiguo, _ in archivos_base[:-1]:
             origen = os.path.join(validados_dir, antiguo)
-            destino = os.path.join(historicos_dir, antiguo)
+            destino = os.path.join(historicos_excel_dir, antiguo)
             shutil.move(origen, destino)
 
-limpiar_validados_y_mover_a_historicos()
+    # --- JSON ---
+    salida_dir = os.path.join(BASE_DIR, "Plantillas", "Salida")
+    historicos_json_dir = os.path.join(BASE_DIR, "Plantillas", "historicos", "Json")
+    os.makedirs(historicos_json_dir, exist_ok=True)
+
+    archivos_json = [f for f in os.listdir(salida_dir) if f.lower().endswith(".json")]
+    grupos_json = {}
+    patron_json = re.compile(r"^(.*?)(?:_(\d+))?\.json$", re.IGNORECASE)
+    for archivo in archivos_json:
+        match = patron_json.match(archivo)
+        if match:
+            base = match.group(1)
+            ruta = os.path.join(salida_dir, archivo)
+            fecha_mod = datetime.fromtimestamp(os.path.getmtime(ruta))
+            clave = (base, fecha_mod.year, fecha_mod.month)
+            grupos_json.setdefault(clave, []).append((archivo, fecha_mod))
+
+    for clave, archivos_base in grupos_json.items():
+        archivos_base.sort(key=lambda x: x[1])
+        for antiguo, _ in archivos_base[:-1]:
+            origen = os.path.join(salida_dir, antiguo)
+            destino = os.path.join(historicos_json_dir, antiguo)
+            shutil.move(origen, destino)

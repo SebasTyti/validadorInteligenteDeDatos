@@ -1,27 +1,27 @@
 {
-  "nombre_excel": "PRUEBA_texto.xlsx",
+  "nombre_excel": "PRUEBA_texto2.xlsx",
   "nombre_hoja": "Hoja1",
   "contenido_excel": [
     {
       "Nombre": "Nombre",
       "Type": "string",
-      "Required": "obligatorio",
+      "Required": "opcional",
       "Regex": "FormatoTexto"
     },
     {
-      "Nombre": "Apellido",
+      "Nombre": "Objeto",
       "Type": "string",
       "Required": "obligatorio",
       "Regex": "FormatoTexto"
     },
     {
-      "Nombre": "Ciudad",
-      "Type": "string",
+      "Nombre": "Edad",
+      "Type": "integer",
       "Required": "obligatorio",
-      "Regex": "FormatoTexto"
+      "Regex": "FormatoNumeroEntero"
     }
   ],
   "fecha_creacion": "2025-03-12",
-  "usuario": "juanse.barrios@urosario.edu.co",
+  "usuario": "luise.olaya@urosario.edu.co",
   "proceso_admin": 1
 }
