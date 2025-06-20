@@ -55,7 +55,10 @@ def mover_a_historicos(nombre_plantilla, ruta_actual, max_reintentos=5, delay=1)
     """
     Versión mejorada con manejo robusto de archivos bloqueados en Windows
     """
-    uploads_dir = os.path.join("uploads", "historicos")
+    # Ruta absoluta correcta a la carpeta historicos dentro de Plantillas
+    uploads_dir = os.path.abspath(
+        os.path.join(os.path.dirname(__file__), '..', 'Plantillas', 'historicos')
+    )
     nueva_ruta = os.path.join(uploads_dir, os.path.basename(ruta_actual))
     
     if not os.path.exists(ruta_actual):

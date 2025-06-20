@@ -196,7 +196,10 @@ def inicio_sesion():
 
 @app.route("/historicos")
 def ver_historicos():
-    historico_folder = os.path.join("uploads", "historicos")
+    historico_folder = os.path.abspath(
+        os.path.join(os.path.dirname(__file__), "Plantillas", "historicos")
+    )
+    os.makedirs(historico_folder, exist_ok=True)  # Asegura que la carpeta exista
     archivos = [f for f in os.listdir(historico_folder) if f.endswith(".json")]
     return render_template("historicos.html", archivos=archivos)
 
@@ -356,6 +359,7 @@ def validador():
         </div>
         """
         shutil.copy(excel_path, validated_excel_path)
+        limpiar_validados_y_mover_a_historicos()  # <-- AGREGA ESTA LÍNEA AQUÍ
 
         enviar_reporte_errores(
             errores=[{
@@ -421,12 +425,12 @@ def validador():
 def api_validar():
     file_excel = request.files.get("file_excel")
     json_select = request.form.get("jsonSelect")
-    file_date_from_form = request.form.get("file_date") # Fecha de la validación, del formulario
+    file_date_from_form = request.form.get("file_date")
     process_id = request.form.get("processSelect")
 
-    # ✅ NUEVO: Capturar las fechas de datos del formulario (si el usuario las ingresó)
-    fecha_inicio_datos_form = request.form.get('fecha_inicio_datos')
-    fecha_fin_datos_form = request.form.get('fecha_fin_datos')
+    # Cambiado para coincidir con el HTML
+    fecha_inicio_datos_form = request.form.get('fecha_inicio')
+    fecha_fin_datos_form = request.form.get('fecha_fin')
 
     if not all([file_excel, json_select, file_date_from_form, process_id]):
         return jsonify({"status": "error", "message": "Faltan campos requeridos.", "errores": []})
@@ -468,9 +472,16 @@ def api_validar():
     fecha_inicio_datos_excel = resultado_validacion.get('fecha_inicio_datos')
     fecha_fin_datos_excel = resultado_validacion.get('fecha_fin_datos')
 
-    # ✅ Lógica para priorizar: si el usuario ingresó fechas en el formulario, úsalas; si no, usa las extraídas.
-    final_fecha_inicio_datos = fecha_inicio_datos_form if fecha_inicio_datos_form else (fecha_inicio_datos_excel.strftime('%Y-%m-%d') if fecha_inicio_datos_excel else None)
-    final_fecha_fin_datos = fecha_fin_datos_form if fecha_fin_datos_form else (fecha_fin_datos_excel.strftime('%Y-%m-%d') if fecha_fin_datos_excel else None)
+    final_fecha_inicio_datos = (
+    parse_fecha_datetime_local(fecha_inicio_datos_form)
+    if fecha_inicio_datos_form
+    else (fecha_inicio_datos_excel if fecha_inicio_datos_excel else None)
+)
+    final_fecha_fin_datos = (
+        parse_fecha_datetime_local(fecha_fin_datos_form)
+        if fecha_fin_datos_form
+        else (fecha_fin_datos_excel if fecha_fin_datos_excel else None)
+    )
 
     estadoValidacion = 2  # Por defecto error
     reporte = ""
@@ -481,6 +492,7 @@ def api_validar():
         estadoValidacion = 1
         reporte = f"Validación exitosa. Archivo procesado: {file_excel.filename}"
         shutil.copy(excel_path, validated_excel_path)
+        limpiar_validados_y_mover_a_historicos()
         enviar_reporte_errores(
             errores=[{
                 "hoja": "N/A",
@@ -1238,6 +1250,8 @@ def admin_gestion_plantillas():
         FROM dbo.usuariosValidador u
         JOIN dbo.Validaciones v ON u.idUsuario = v.idUsuario
         JOIN dbo.PlantillasValidacion p ON v.idPlantillasValidacion = p.idPlantillasValidacion
+        JOIN dbo.ProcesosAdministrativos pa ON v.idProcesoAdmin = pa.idProcesoAdmin
+        JOIN dbo.estadoValidacion ev ON v.idEstado = ev.idEstado
         ORDER BY v.FechaValidacion DESC
     """)
     validaciones = cursor.fetchall()
@@ -1245,3 +1259,47 @@ def admin_gestion_plantillas():
     conn.close()
 
     return render_template('admin_gestion_plantillas.html', plantillas=plantillas, validaciones=validaciones)
+
+def parse_fecha_datetime_local(fecha_str):
+    if fecha_str:
+        try:
+            return datetime.strptime(fecha_str, "%Y-%m-%dT%H:%M")
+        except ValueError:
+            pass
+        try:
+            return datetime.strptime(fecha_str, "%Y-%m-%d")
+        except ValueError:
+            pass
+    return None
+
+import re
+
+def limpiar_validados_y_mover_a_historicos():
+    """
+    Deja solo el archivo más reciente (por fecha de modificación) de cada base de nombre en Validados,
+    y mueve los demás a la carpeta historicos.
+    """
+    validados_dir = os.path.join(BASE_DIR, "Plantillas", "Validados")
+    historicos_dir = os.path.join(BASE_DIR, "Plantillas", "historicos")
+    os.makedirs(historicos_dir, exist_ok=True)
+
+    archivos = [f for f in os.listdir(validados_dir) if f.endswith(".json")]
+    # Agrupar por base de nombre (sin el número final)
+    grupos = {}
+    patron = re.compile(r"^(.*?)(?:_(\d+))?\.json$", re.IGNORECASE)
+    for archivo in archivos:
+        match = patron.match(archivo)
+        if match:
+            base = match.group(1)
+            grupos.setdefault(base, []).append(archivo)
+
+    for base, archivos_base in grupos.items():
+        # Ordenar por fecha de modificación (de más antiguo a más reciente)
+        archivos_base.sort(key=lambda x: os.path.getmtime(os.path.join(validados_dir, x)))
+        # Mantener solo el más reciente
+        for antiguo in archivos_base[:-1]:
+            origen = os.path.join(validados_dir, antiguo)
+            destino = os.path.join(historicos_dir, antiguo)
+            shutil.move(origen, destino)
+
+limpiar_validados_y_mover_a_historicos()
