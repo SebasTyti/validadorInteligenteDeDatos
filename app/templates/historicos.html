@@ -8,6 +8,13 @@
 <body class="bg-light">
 <div class="container py-4">
     <h2>Plantillas en Históricos</h2>
+    <form method="get" action="{{ url_for('ver_historicos') }}" class="mb-4">
+        <label for="tipo_archivo" class="form-label">Selecciona el tipo de archivo:</label>
+        <select name="tipo_archivo" id="tipo_archivo" class="form-select" onchange="this.form.submit()">
+            <option value="excel" {% if tipo_archivo == 'excel' %}selected{% endif %}>Excel</option>
+            <option value="json" {% if tipo_archivo == 'json' %}selected{% endif %}>JSON</option>
+        </select>
+    </form>
     <table class="table table-bordered">
         <thead>
             <tr>
@@ -19,9 +26,15 @@
             {% for archivo in archivos %}
             <tr>
                 <td>{{ archivo }}</td>
-                <td>
+                <td class="d-flex gap-2">
+                    {% if tipo_archivo == 'json' %}
+                        <button type="button" class="btn btn-info" onclick="verJson('{{ archivo }}')">Ver</button>
+                    {% else %}
+                        <a href="{{ url_for('ver_archivo_historico', tipo_archivo=tipo_archivo, archivo=archivo) }}" class="btn btn-info" target="_blank">Ver</a>
+                    {% endif %}
                     <form method="post" action="{{ url_for('restaurar_historico') }}">
                         <input type="hidden" name="archivo" value="{{ archivo }}">
+                        <input type="hidden" name="tipo_archivo" value="{{ tipo_archivo }}">
                         <button type="submit" class="btn btn-success">Restaurar</button>
                     </form>
                 </td>
@@ -30,5 +43,38 @@
         </tbody>
     </table>
 </div>
+
+<!-- Modal para mostrar JSON -->
+<div class="modal fade" id="jsonModal" tabindex="-1" aria-labelledby="jsonModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="jsonModalLabel">Vista previa JSON</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <pre id="jsonContent" style="white-space: pre-wrap; word-break: break-all; background:#f8f9fa; color:#1e3a8a;"></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+function verJson(nombreArchivo) {
+    fetch(`/ver_json_historico/${encodeURIComponent(nombreArchivo)}`)
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('jsonContent').textContent = JSON.stringify(data, null, 2);
+            var modal = new bootstrap.Modal(document.getElementById('jsonModal'));
+            modal.show();
+        })
+        .catch(error => {
+            document.getElementById('jsonContent').textContent = "Error al cargar el archivo.";
+            var modal = new bootstrap.Modal(document.getElementById('jsonModal'));
+            modal.show();
+        });
+}
+</script>
 </body>
 </html>

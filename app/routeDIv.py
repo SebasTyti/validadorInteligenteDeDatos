@@ -194,43 +194,33 @@ def inicio_sesion():
     # Si por alguna razón no se ejecuta ninguno de los bloques anteriores
     return redirect(url_for('inicio_sesion'))
 
-@app.route("/historicos")
+@app.route("/historicos", methods=["GET"])
 def ver_historicos():
-    historico_folder = os.path.abspath(
-        os.path.join(os.path.dirname(__file__), "Plantillas", "historicos")
-    )
-    os.makedirs(historico_folder, exist_ok=True)  # Asegura que la carpeta exista
-    archivos = [f for f in os.listdir(historico_folder) if f.endswith(".json")]
-    return render_template("historicos.html", archivos=archivos)
+    tipo_archivo = request.args.get("tipo_archivo", "excel").lower()
+    base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "Plantillas", "historicos"))
+    if tipo_archivo == "excel":
+        carpeta = os.path.join(base_dir, "Excel")
+        extensiones = (".xlsx", ".xls")
+    else:
+        carpeta = os.path.join(base_dir, "Json")
+        extensiones = (".json",)
+    os.makedirs(carpeta, exist_ok=True)
+    archivos = [f for f in os.listdir(carpeta) if f.lower().endswith(extensiones)]
+    return render_template("historicos.html", archivos=archivos, tipo_archivo=tipo_archivo)
 
 
 @app.route("/restaurar_historico", methods=["POST"])
 def restaurar_historico():
     archivo = request.form.get("archivo")
-    if not archivo:
-        return "No se proporcionó archivo", 400
-
-    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-    origen = os.path.join(BASE_DIR, "uploads", "historicos", archivo)
-    destino = os.path.join(BASE_DIR, "Plantillas", "Salidas", archivo)
-
-    print("Ruta origen:", origen)
-    print("Ruta destino:", destino)
-
-    try:
-        if not os.path.exists(origen):
-            return f"No se encontró el archivo: {origen}", 404
-
-        os.makedirs(os.path.dirname(destino), exist_ok=True)
-        shutil.move(origen, destino)
-
-        return redirect(url_for("ver_historicos"))
-    except Exception as e:
-        return f"Error al restaurar: {str(e)}", 500
-
-
-
-
+    tipo_archivo = request.form.get("tipo_archivo", "excel").lower()
+    base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "Plantillas", "historicos"))
+    if tipo_archivo == "excel":
+        origen = os.path.join(base_dir, "Excel", archivo)
+        destino = os.path.join(BASE_DIR, "Plantillas", "Validados", archivo)
+    else:
+        origen = os.path.join(base_dir, "Json", archivo)
+        destino = os.path.join(BASE_DIR, "Plantillas", "Salida", archivo)
+    # ... resto del código para mover el archivo ...
 
 @app.route('/cerrar_sesion')
 def cerrar_sesion():
@@ -1339,3 +1329,34 @@ def limpiar_validados_y_mover_a_historicos():
             origen = os.path.join(salida_dir, antiguo)
             destino = os.path.join(historicos_json_dir, antiguo)
             shutil.move(origen, destino)
+
+@app.route('/ver_archivo_historico/<tipo_archivo>/<archivo>')
+def ver_archivo_historico(tipo_archivo, archivo):
+    """
+    Muestra o descarga el archivo histórico seleccionado.
+    """
+    base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "Plantillas", "historicos"))
+    if tipo_archivo == "excel":
+        carpeta = os.path.join(base_dir, "Excel")
+    else:
+        carpeta = os.path.join(base_dir, "Json")
+    # Seguridad: evita rutas relativas peligrosas
+    archivo = os.path.basename(archivo)
+    try:
+        return send_from_directory(carpeta, archivo, as_attachment=True)
+    except Exception as e:
+        flash(f"No se pudo acceder al archivo: {str(e)}", "danger")
+        return redirect(url_for('ver_historicos', tipo_archivo=tipo_archivo))
+
+@app.route('/ver_json_historico/<archivo>')
+def ver_json_historico(archivo):
+    import json
+    base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "Plantillas", "historicos", "Json"))
+    archivo = os.path.basename(archivo)
+    ruta = os.path.join(base_dir, archivo)
+    try:
+        with open(ruta, encoding="utf-8") as f:
+            contenido = json.load(f)
+        return jsonify(contenido)
+    except Exception as e:
+        return jsonify({"error": str(e)}), 404

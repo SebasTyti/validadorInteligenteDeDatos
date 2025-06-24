@@ -8401,3 +8401,301 @@
 2025-06-20 15:32:42,508 - INFO - Conexión a la base de datos exitosa.
 2025-06-20 15:32:45,214 - INFO - Conexión a la base de datos exitosa.
 2025-06-20 15:32:45,535 - INFO - 127.0.0.1 - - [20/Jun/2025 15:32:45] "POST /api/validar HTTP/1.1" 200 -
+2025-06-24 08:23:21,867 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://10.39.90.233:8000
+2025-06-24 08:23:21,868 - INFO - [33mPress CTRL+C to quit[0m
+2025-06-24 08:23:21,872 - INFO -  * Restarting with stat
+2025-06-24 08:23:23,321 - WARNING -  * Debugger is active!
+2025-06-24 08:23:23,331 - INFO -  * Debugger PIN: 284-765-739
+2025-06-24 08:23:27,574 - INFO - 127.0.0.1 - - [24/Jun/2025 08:23:27] "GET / HTTP/1.1" 200 -
+2025-06-24 08:23:27,808 - INFO - 127.0.0.1 - - [24/Jun/2025 08:23:27] "GET / HTTP/1.1" 200 -
+2025-06-24 08:23:28,695 - INFO - 127.0.0.1 - - [24/Jun/2025 08:23:28] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-24 08:23:28,769 - INFO - 127.0.0.1 - - [24/Jun/2025 08:23:28] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-24 08:23:28,864 - INFO - 127.0.0.1 - - [24/Jun/2025 08:23:28] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-06-24 08:24:00,355 - ERROR - Error al conectar a la base de datos: ('08001', '[08001] [Microsoft][ODBC Driver 18 for SQL Server]TCP Provider: Timeout error [258].  (258) (SQLDriverConnect); [08001] [Microsoft][ODBC Driver 18 for SQL Server]Login timeout expired (0); [08001] [Microsoft][ODBC Driver 18 for SQL Server]Unable to complete login process due to delay in login response (258)')
+2025-06-24 08:24:00,355 - INFO - 127.0.0.1 - - [24/Jun/2025 08:24:00] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-06-24 08:24:00,406 - INFO - 127.0.0.1 - - [24/Jun/2025 08:24:00] "GET / HTTP/1.1" 200 -
+2025-06-24 08:24:00,451 - INFO - 127.0.0.1 - - [24/Jun/2025 08:24:00] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-24 08:24:54,721 - INFO - Conexión a la base de datos exitosa.
+2025-06-24 08:24:55,585 - INFO - Conexión a la base de datos exitosa.
+2025-06-24 08:24:55,932 - INFO - 127.0.0.1 - - [24/Jun/2025 08:24:55] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-06-24 08:24:55,968 - INFO - 127.0.0.1 - - [24/Jun/2025 08:24:55] "GET /paginaInicial HTTP/1.1" 200 -
+2025-06-24 08:24:56,057 - INFO - 127.0.0.1 - - [24/Jun/2025 08:24:56] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-24 10:09:35,925 - INFO - 127.0.0.1 - - [24/Jun/2025 10:09:35] "GET / HTTP/1.1" 200 -
+2025-06-24 10:09:36,643 - INFO - 127.0.0.1 - - [24/Jun/2025 10:09:36] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-24 10:09:45,669 - INFO - 127.0.0.1 - - [24/Jun/2025 10:09:45] "GET / HTTP/1.1" 200 -
+2025-06-24 10:09:45,717 - INFO - 127.0.0.1 - - [24/Jun/2025 10:09:45] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-24 10:10:03,601 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://10.39.90.233:8000
+2025-06-24 10:10:03,601 - INFO - [33mPress CTRL+C to quit[0m
+2025-06-24 10:10:03,601 - INFO -  * Restarting with stat
+2025-06-24 10:10:05,153 - WARNING -  * Debugger is active!
+2025-06-24 10:10:05,153 - INFO -  * Debugger PIN: 284-765-739
+2025-06-24 10:10:10,899 - INFO - 127.0.0.1 - - [24/Jun/2025 10:10:10] "GET / HTTP/1.1" 200 -
+2025-06-24 10:10:11,129 - INFO - 127.0.0.1 - - [24/Jun/2025 10:10:11] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-24 10:10:40,516 - INFO - Conexión a la base de datos exitosa.
+2025-06-24 10:10:41,373 - INFO - Conexión a la base de datos exitosa.
+2025-06-24 10:10:41,682 - INFO - 127.0.0.1 - - [24/Jun/2025 10:10:41] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-06-24 10:10:41,711 - INFO - 127.0.0.1 - - [24/Jun/2025 10:10:41] "GET /paginaInicial HTTP/1.1" 200 -
+2025-06-24 10:10:41,779 - INFO - 127.0.0.1 - - [24/Jun/2025 10:10:41] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-24 10:11:34,728 - INFO - 127.0.0.1 - - [24/Jun/2025 10:11:34] "[32mGET /cerrar_sesion HTTP/1.1[0m" 302 -
+2025-06-24 10:11:34,754 - INFO - 127.0.0.1 - - [24/Jun/2025 10:11:34] "GET / HTTP/1.1" 200 -
+2025-06-24 10:11:34,949 - INFO - 127.0.0.1 - - [24/Jun/2025 10:11:34] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-24 10:11:50,855 - INFO - Conexión a la base de datos exitosa.
+2025-06-24 10:11:51,608 - INFO - Conexión a la base de datos exitosa.
+2025-06-24 10:11:51,913 - INFO - 127.0.0.1 - - [24/Jun/2025 10:11:51] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-06-24 10:11:51,921 - INFO - 127.0.0.1 - - [24/Jun/2025 10:11:51] "GET /paginaInicial HTTP/1.1" 200 -
+2025-06-24 10:11:51,977 - INFO - 127.0.0.1 - - [24/Jun/2025 10:11:51] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-24 10:12:36,352 - INFO - 127.0.0.1 - - [24/Jun/2025 10:12:36] "[32mGET /cerrar_sesion HTTP/1.1[0m" 302 -
+2025-06-24 10:12:36,369 - INFO - 127.0.0.1 - - [24/Jun/2025 10:12:36] "GET / HTTP/1.1" 200 -
+2025-06-24 10:12:36,426 - INFO - 127.0.0.1 - - [24/Jun/2025 10:12:36] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-24 10:18:20,362 - INFO - 127.0.0.1 - - [24/Jun/2025 10:18:20] "GET / HTTP/1.1" 200 -
+2025-06-24 10:18:20,402 - INFO - 127.0.0.1 - - [24/Jun/2025 10:18:20] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-24 10:19:07,248 - INFO - Conexión a la base de datos exitosa.
+2025-06-24 10:19:08,053 - INFO - Conexión a la base de datos exitosa.
+2025-06-24 10:19:08,360 - INFO - 127.0.0.1 - - [24/Jun/2025 10:19:08] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-06-24 10:19:08,391 - INFO - 127.0.0.1 - - [24/Jun/2025 10:19:08] "GET /paginaInicial HTTP/1.1" 200 -
+2025-06-24 10:19:08,449 - INFO - 127.0.0.1 - - [24/Jun/2025 10:19:08] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-24 10:21:13,460 - INFO - 127.0.0.1 - - [24/Jun/2025 10:21:13] "[32mGET /cerrar_sesion HTTP/1.1[0m" 302 -
+2025-06-24 10:21:13,492 - INFO - 127.0.0.1 - - [24/Jun/2025 10:21:13] "GET / HTTP/1.1" 200 -
+2025-06-24 10:21:13,700 - INFO - 127.0.0.1 - - [24/Jun/2025 10:21:13] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-24 10:29:03,790 - INFO - 127.0.0.1 - - [24/Jun/2025 10:29:03] "GET / HTTP/1.1" 200 -
+2025-06-24 10:29:03,834 - INFO - 127.0.0.1 - - [24/Jun/2025 10:29:03] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-24 10:29:03,854 - INFO - 127.0.0.1 - - [24/Jun/2025 10:29:03] "[33mGET /static/FONDOU HTTP/1.1[0m" 404 -
+2025-06-24 10:29:10,265 - INFO - 127.0.0.1 - - [24/Jun/2025 10:29:10] "GET / HTTP/1.1" 200 -
+2025-06-24 10:29:10,301 - INFO - 127.0.0.1 - - [24/Jun/2025 10:29:10] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-24 10:29:10,304 - INFO - 127.0.0.1 - - [24/Jun/2025 10:29:10] "[33mGET /static/FONDOU HTTP/1.1[0m" 404 -
+2025-06-24 10:29:11,118 - INFO - 127.0.0.1 - - [24/Jun/2025 10:29:11] "GET / HTTP/1.1" 200 -
+2025-06-24 10:29:11,157 - INFO - 127.0.0.1 - - [24/Jun/2025 10:29:11] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-24 10:29:11,166 - INFO - 127.0.0.1 - - [24/Jun/2025 10:29:11] "[33mGET /static/FONDOU HTTP/1.1[0m" 404 -
+2025-06-24 10:31:16,053 - INFO - 127.0.0.1 - - [24/Jun/2025 10:31:16] "GET / HTTP/1.1" 200 -
+2025-06-24 10:31:16,091 - INFO - 127.0.0.1 - - [24/Jun/2025 10:31:16] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-24 10:31:16,108 - INFO - 127.0.0.1 - - [24/Jun/2025 10:31:16] "[33mGET /static/FONDOU HTTP/1.1[0m" 404 -
+2025-06-24 10:31:16,774 - INFO - 127.0.0.1 - - [24/Jun/2025 10:31:16] "GET / HTTP/1.1" 200 -
+2025-06-24 10:31:16,805 - INFO - 127.0.0.1 - - [24/Jun/2025 10:31:16] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-24 10:31:16,812 - INFO - 127.0.0.1 - - [24/Jun/2025 10:31:16] "[33mGET /static/FONDOU HTTP/1.1[0m" 404 -
+2025-06-24 10:31:16,915 - INFO - 127.0.0.1 - - [24/Jun/2025 10:31:16] "GET / HTTP/1.1" 200 -
+2025-06-24 10:31:16,956 - INFO - 127.0.0.1 - - [24/Jun/2025 10:31:16] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-24 10:31:16,962 - INFO - 127.0.0.1 - - [24/Jun/2025 10:31:16] "[33mGET /static/FONDOU HTTP/1.1[0m" 404 -
+2025-06-24 10:31:22,628 - INFO - 127.0.0.1 - - [24/Jun/2025 10:31:22] "GET / HTTP/1.1" 200 -
+2025-06-24 10:31:22,657 - INFO - 127.0.0.1 - - [24/Jun/2025 10:31:22] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-24 10:31:22,664 - INFO - 127.0.0.1 - - [24/Jun/2025 10:31:22] "[33mGET /static/FONDOU HTTP/1.1[0m" 404 -
+2025-06-24 10:31:22,751 - INFO - 127.0.0.1 - - [24/Jun/2025 10:31:22] "GET / HTTP/1.1" 200 -
+2025-06-24 10:31:22,788 - INFO - 127.0.0.1 - - [24/Jun/2025 10:31:22] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-24 10:31:22,793 - INFO - 127.0.0.1 - - [24/Jun/2025 10:31:22] "[33mGET /static/FONDOU HTTP/1.1[0m" 404 -
+2025-06-24 10:31:22,915 - INFO - 127.0.0.1 - - [24/Jun/2025 10:31:22] "GET / HTTP/1.1" 200 -
+2025-06-24 10:31:22,945 - INFO - 127.0.0.1 - - [24/Jun/2025 10:31:22] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-24 10:31:22,950 - INFO - 127.0.0.1 - - [24/Jun/2025 10:31:22] "[33mGET /static/FONDOU HTTP/1.1[0m" 404 -
+2025-06-24 10:31:23,098 - INFO - 127.0.0.1 - - [24/Jun/2025 10:31:23] "GET / HTTP/1.1" 200 -
+2025-06-24 10:31:23,129 - INFO - 127.0.0.1 - - [24/Jun/2025 10:31:23] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-24 10:31:23,135 - INFO - 127.0.0.1 - - [24/Jun/2025 10:31:23] "[33mGET /static/FONDOU HTTP/1.1[0m" 404 -
+2025-06-24 10:31:23,280 - INFO - 127.0.0.1 - - [24/Jun/2025 10:31:23] "GET / HTTP/1.1" 200 -
+2025-06-24 10:31:23,305 - INFO - 127.0.0.1 - - [24/Jun/2025 10:31:23] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-24 10:31:23,313 - INFO - 127.0.0.1 - - [24/Jun/2025 10:31:23] "[33mGET /static/FONDOU HTTP/1.1[0m" 404 -
+2025-06-24 10:31:23,463 - INFO - 127.0.0.1 - - [24/Jun/2025 10:31:23] "GET / HTTP/1.1" 200 -
+2025-06-24 10:31:23,491 - INFO - 127.0.0.1 - - [24/Jun/2025 10:31:23] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-24 10:31:23,496 - INFO - 127.0.0.1 - - [24/Jun/2025 10:31:23] "[33mGET /static/FONDOU HTTP/1.1[0m" 404 -
+2025-06-24 10:31:23,665 - INFO - 127.0.0.1 - - [24/Jun/2025 10:31:23] "GET / HTTP/1.1" 200 -
+2025-06-24 10:31:23,703 - INFO - 127.0.0.1 - - [24/Jun/2025 10:31:23] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-24 10:31:23,709 - INFO - 127.0.0.1 - - [24/Jun/2025 10:31:23] "[33mGET /static/FONDOU HTTP/1.1[0m" 404 -
+2025-06-24 10:31:58,374 - INFO - 127.0.0.1 - - [24/Jun/2025 10:31:58] "GET / HTTP/1.1" 200 -
+2025-06-24 10:31:58,418 - INFO - 127.0.0.1 - - [24/Jun/2025 10:31:58] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-24 10:31:58,428 - INFO - 127.0.0.1 - - [24/Jun/2025 10:31:58] "GET /static/FONDOU.jpg HTTP/1.1" 200 -
+2025-06-24 10:32:17,006 - INFO - 127.0.0.1 - - [24/Jun/2025 10:32:17] "GET / HTTP/1.1" 200 -
+2025-06-24 10:32:17,031 - INFO - 127.0.0.1 - - [24/Jun/2025 10:32:17] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-24 10:32:17,037 - INFO - 127.0.0.1 - - [24/Jun/2025 10:32:17] "[33mGET /static/FONDOU HTTP/1.1[0m" 404 -
+2025-06-24 10:32:17,835 - INFO - 127.0.0.1 - - [24/Jun/2025 10:32:17] "GET / HTTP/1.1" 200 -
+2025-06-24 10:32:17,859 - INFO - 127.0.0.1 - - [24/Jun/2025 10:32:17] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-24 10:32:17,869 - INFO - 127.0.0.1 - - [24/Jun/2025 10:32:17] "[33mGET /static/FONDOU HTTP/1.1[0m" 404 -
+2025-06-24 10:32:41,556 - INFO - 127.0.0.1 - - [24/Jun/2025 10:32:41] "GET / HTTP/1.1" 200 -
+2025-06-24 10:32:41,592 - INFO - 127.0.0.1 - - [24/Jun/2025 10:32:41] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-24 10:32:41,598 - INFO - 127.0.0.1 - - [24/Jun/2025 10:32:41] "[36mGET /static/FONDOU.jpg HTTP/1.1[0m" 304 -
+2025-06-24 10:35:32,646 - INFO - 127.0.0.1 - - [24/Jun/2025 10:35:32] "GET / HTTP/1.1" 200 -
+2025-06-24 10:35:32,684 - INFO - 127.0.0.1 - - [24/Jun/2025 10:35:32] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-24 10:35:32,699 - INFO - 127.0.0.1 - - [24/Jun/2025 10:35:32] "[36mGET /static/FONDOU.jpg HTTP/1.1[0m" 304 -
+2025-06-24 10:37:51,191 - INFO - 127.0.0.1 - - [24/Jun/2025 10:37:51] "GET / HTTP/1.1" 200 -
+2025-06-24 10:37:51,225 - INFO - 127.0.0.1 - - [24/Jun/2025 10:37:51] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-24 10:37:51,244 - INFO - 127.0.0.1 - - [24/Jun/2025 10:37:51] "[36mGET /static/FONDOU.jpg HTTP/1.1[0m" 304 -
+2025-06-24 10:39:51,872 - INFO - 127.0.0.1 - - [24/Jun/2025 10:39:51] "GET / HTTP/1.1" 200 -
+2025-06-24 10:39:51,916 - INFO - 127.0.0.1 - - [24/Jun/2025 10:39:51] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-24 10:39:51,930 - INFO - 127.0.0.1 - - [24/Jun/2025 10:39:51] "[36mGET /static/FONDOU.jpg HTTP/1.1[0m" 304 -
+2025-06-24 10:41:03,332 - INFO - 127.0.0.1 - - [24/Jun/2025 10:41:03] "GET / HTTP/1.1" 200 -
+2025-06-24 10:41:03,361 - INFO - 127.0.0.1 - - [24/Jun/2025 10:41:03] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-24 10:41:03,368 - INFO - 127.0.0.1 - - [24/Jun/2025 10:41:03] "[36mGET /static/FONDOU.jpg HTTP/1.1[0m" 304 -
+2025-06-24 10:41:13,377 - INFO - 127.0.0.1 - - [24/Jun/2025 10:41:13] "GET / HTTP/1.1" 200 -
+2025-06-24 10:41:13,408 - INFO - 127.0.0.1 - - [24/Jun/2025 10:41:13] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-24 10:41:13,415 - INFO - 127.0.0.1 - - [24/Jun/2025 10:41:13] "[36mGET /static/FONDOU.jpg HTTP/1.1[0m" 304 -
+2025-06-24 10:45:40,487 - INFO - 127.0.0.1 - - [24/Jun/2025 10:45:40] "GET / HTTP/1.1" 200 -
+2025-06-24 10:45:40,520 - INFO - 127.0.0.1 - - [24/Jun/2025 10:45:40] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-24 10:45:40,534 - INFO - 127.0.0.1 - - [24/Jun/2025 10:45:40] "[36mGET /static/FONDOU.jpg HTTP/1.1[0m" 304 -
+2025-06-24 10:48:42,450 - INFO - 127.0.0.1 - - [24/Jun/2025 10:48:42] "GET / HTTP/1.1" 200 -
+2025-06-24 10:48:42,496 - INFO - 127.0.0.1 - - [24/Jun/2025 10:48:42] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-24 10:48:42,506 - INFO - 127.0.0.1 - - [24/Jun/2025 10:48:42] "[36mGET /static/FONDOU.jpg HTTP/1.1[0m" 304 -
+2025-06-24 10:51:34,652 - INFO - 127.0.0.1 - - [24/Jun/2025 10:51:34] "GET / HTTP/1.1" 200 -
+2025-06-24 10:51:34,696 - INFO - 127.0.0.1 - - [24/Jun/2025 10:51:34] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-24 10:51:34,698 - INFO - 127.0.0.1 - - [24/Jun/2025 10:51:34] "[36mGET /static/FONDOU.jpg HTTP/1.1[0m" 304 -
+2025-06-24 10:58:16,456 - INFO - 127.0.0.1 - - [24/Jun/2025 10:58:16] "GET / HTTP/1.1" 200 -
+2025-06-24 10:58:16,492 - INFO - 127.0.0.1 - - [24/Jun/2025 10:58:16] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-24 10:58:16,506 - INFO - 127.0.0.1 - - [24/Jun/2025 10:58:16] "[36mGET /static/FONDOU.jpg HTTP/1.1[0m" 304 -
+2025-06-24 10:59:06,263 - INFO - 127.0.0.1 - - [24/Jun/2025 10:59:06] "GET / HTTP/1.1" 200 -
+2025-06-24 10:59:06,290 - INFO - 127.0.0.1 - - [24/Jun/2025 10:59:06] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-24 11:02:44,657 - INFO - 127.0.0.1 - - [24/Jun/2025 11:02:44] "GET / HTTP/1.1" 200 -
+2025-06-24 11:02:44,702 - INFO - 127.0.0.1 - - [24/Jun/2025 11:02:44] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-24 11:07:42,658 - INFO - 127.0.0.1 - - [24/Jun/2025 11:07:42] "GET / HTTP/1.1" 200 -
+2025-06-24 11:07:42,682 - INFO - 127.0.0.1 - - [24/Jun/2025 11:07:42] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-24 11:07:42,703 - INFO - 127.0.0.1 - - [24/Jun/2025 11:07:42] "[33mGET /static/FONDOU.png HTTP/1.1[0m" 404 -
+2025-06-24 11:07:55,792 - INFO - 127.0.0.1 - - [24/Jun/2025 11:07:55] "GET / HTTP/1.1" 200 -
+2025-06-24 11:07:55,822 - INFO - 127.0.0.1 - - [24/Jun/2025 11:07:55] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-24 11:24:32,893 - INFO - Conexión a la base de datos exitosa.
+2025-06-24 11:24:34,115 - INFO - Conexión a la base de datos exitosa.
+2025-06-24 11:24:34,430 - INFO - 127.0.0.1 - - [24/Jun/2025 11:24:34] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-06-24 11:24:34,489 - INFO - 127.0.0.1 - - [24/Jun/2025 11:24:34] "GET /paginaInicial HTTP/1.1" 200 -
+2025-06-24 11:24:34,547 - INFO - 127.0.0.1 - - [24/Jun/2025 11:24:34] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-24 11:25:16,529 - INFO - 127.0.0.1 - - [24/Jun/2025 11:25:16] "GET /historicos HTTP/1.1" 200 -
+2025-06-24 11:25:57,218 - INFO - 127.0.0.1 - - [24/Jun/2025 11:25:57] "GET /historicos HTTP/1.1" 200 -
+2025-06-24 11:35:21,408 - INFO - 127.0.0.1 - - [24/Jun/2025 11:35:21] "[35m[1mGET /historicos HTTP/1.1[0m" 500 -
+2025-06-24 11:35:21,553 - INFO - 127.0.0.1 - - [24/Jun/2025 11:35:21] "GET /historicos?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-06-24 11:35:21,557 - INFO - 127.0.0.1 - - [24/Jun/2025 11:35:21] "GET /historicos?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-06-24 11:35:21,629 - INFO - 127.0.0.1 - - [24/Jun/2025 11:35:21] "GET /historicos?__debugger__=yes&cmd=resource&f=console.png&s=B9XNbuabqjUFX4renLNC HTTP/1.1" 200 -
+2025-06-24 11:35:21,769 - INFO - 127.0.0.1 - - [24/Jun/2025 11:35:21] "GET /historicos?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-06-24 11:38:28,477 - INFO - 127.0.0.1 - - [24/Jun/2025 11:38:28] "GET /historicos HTTP/1.1" 200 -
+2025-06-24 11:39:32,233 - INFO - 127.0.0.1 - - [24/Jun/2025 11:39:32] "GET /historicos?tipo_archivo=json HTTP/1.1" 200 -
+2025-06-24 11:39:33,841 - INFO - 127.0.0.1 - - [24/Jun/2025 11:39:33] "GET /historicos?tipo_archivo=json HTTP/1.1" 200 -
+2025-06-24 11:39:34,846 - INFO - 127.0.0.1 - - [24/Jun/2025 11:39:34] "GET /historicos?tipo_archivo=json HTTP/1.1" 200 -
+2025-06-24 11:39:35,638 - INFO - 127.0.0.1 - - [24/Jun/2025 11:39:35] "GET /historicos?tipo_archivo=json HTTP/1.1" 200 -
+2025-06-24 11:39:38,147 - INFO - 127.0.0.1 - - [24/Jun/2025 11:39:38] "GET /historicos?tipo_archivo=json HTTP/1.1" 200 -
+2025-06-24 11:42:19,982 - INFO -  * Detected change in 'c:\\wamp64\\www\\validadorInteligenteDeDatos\\app\\routeDIv.py', reloading
+2025-06-24 11:42:20,749 - INFO -  * Restarting with stat
+2025-06-24 11:42:23,886 - WARNING -  * Debugger is active!
+2025-06-24 11:42:23,910 - INFO -  * Debugger PIN: 284-765-739
+2025-06-24 11:42:56,100 - INFO -  * Detected change in 'c:\\wamp64\\www\\validadorInteligenteDeDatos\\app\\routeDIv.py', reloading
+2025-06-24 11:42:56,381 - INFO -  * Restarting with stat
+2025-06-24 11:42:58,354 - WARNING -  * Debugger is active!
+2025-06-24 11:42:58,367 - INFO -  * Debugger PIN: 284-765-739
+2025-06-24 11:43:07,567 - INFO -  * Detected change in 'c:\\wamp64\\www\\validadorInteligenteDeDatos\\app\\routeDIv.py', reloading
+2025-06-24 11:43:07,750 - INFO -  * Restarting with stat
+2025-06-24 11:43:09,132 - WARNING -  * Debugger is active!
+2025-06-24 11:43:09,142 - INFO -  * Debugger PIN: 284-765-739
+2025-06-24 11:43:28,466 - INFO - 127.0.0.1 - - [24/Jun/2025 11:43:28] "[35m[1mGET /historicos?tipo_archivo=json HTTP/1.1[0m" 500 -
+2025-06-24 11:43:28,962 - INFO - 127.0.0.1 - - [24/Jun/2025 11:43:28] "[36mGET /historicos?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-06-24 11:43:28,981 - INFO - 127.0.0.1 - - [24/Jun/2025 11:43:28] "[36mGET /historicos?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-06-24 11:43:29,103 - INFO - 127.0.0.1 - - [24/Jun/2025 11:43:29] "GET /historicos?__debugger__=yes&cmd=resource&f=console.png&s=ufIAtDMYXJnJHRZHmU9B HTTP/1.1" 200 -
+2025-06-24 11:43:29,360 - INFO - 127.0.0.1 - - [24/Jun/2025 11:43:29] "[36mGET /historicos?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-06-24 11:49:59,535 - INFO -  * Detected change in 'c:\\wamp64\\www\\validadorInteligenteDeDatos\\app\\routeDIv.py', reloading
+2025-06-24 11:49:59,729 - INFO -  * Restarting with stat
+2025-06-24 11:50:01,377 - WARNING -  * Debugger is active!
+2025-06-24 11:50:01,387 - INFO -  * Debugger PIN: 284-765-739
+2025-06-24 11:50:33,589 - INFO -  * Detected change in 'c:\\wamp64\\www\\validadorInteligenteDeDatos\\app\\routeDIv.py', reloading
+2025-06-24 11:50:33,769 - INFO -  * Restarting with stat
+2025-06-24 11:50:35,213 - WARNING -  * Debugger is active!
+2025-06-24 11:50:35,223 - INFO -  * Debugger PIN: 284-765-739
+2025-06-24 11:50:59,190 - INFO - 127.0.0.1 - - [24/Jun/2025 11:50:59] "GET /historicos?tipo_archivo=json HTTP/1.1" 200 -
+2025-06-24 11:51:02,619 - INFO - 127.0.0.1 - - [24/Jun/2025 11:51:02] "GET /historicos?tipo_archivo=excel HTTP/1.1" 200 -
+2025-06-24 11:51:03,666 - INFO - 127.0.0.1 - - [24/Jun/2025 11:51:03] "GET /historicos?tipo_archivo=json HTTP/1.1" 200 -
+2025-06-24 11:51:15,618 - INFO - 127.0.0.1 - - [24/Jun/2025 11:51:15] "GET /ver_archivo_historico/json/RRHH_PRUEBA_texto2_Hoja1_2.json HTTP/1.1" 200 -
+2025-06-24 11:58:50,479 - INFO -  * Detected change in 'c:\\wamp64\\www\\validadorInteligenteDeDatos\\app\\routeDIv.py', reloading
+2025-06-24 11:58:50,689 - INFO -  * Restarting with stat
+2025-06-24 11:58:52,855 - WARNING -  * Debugger is active!
+2025-06-24 11:58:52,855 - INFO -  * Debugger PIN: 284-765-739
+2025-06-24 11:58:58,004 - INFO - 127.0.0.1 - - [24/Jun/2025 11:58:58] "[35m[1mGET /historicos?tipo_archivo=json HTTP/1.1[0m" 500 -
+2025-06-24 11:58:58,446 - INFO - 127.0.0.1 - - [24/Jun/2025 11:58:58] "[36mGET /historicos?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-06-24 11:58:58,446 - INFO - 127.0.0.1 - - [24/Jun/2025 11:58:58] "[36mGET /historicos?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-06-24 11:58:58,500 - INFO - 127.0.0.1 - - [24/Jun/2025 11:58:58] "GET /historicos?__debugger__=yes&cmd=resource&f=console.png&s=yBRuguPOaLG0zpyxEzt9 HTTP/1.1" 200 -
+2025-06-24 11:58:58,662 - INFO - 127.0.0.1 - - [24/Jun/2025 11:58:58] "[36mGET /historicos?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-06-24 12:01:22,160 - INFO -  * Detected change in 'c:\\wamp64\\www\\validadorInteligenteDeDatos\\app\\routeDIv.py', reloading
+2025-06-24 12:01:22,524 - INFO -  * Restarting with stat
+2025-06-24 12:01:24,951 - WARNING -  * Debugger is active!
+2025-06-24 12:01:24,961 - INFO -  * Debugger PIN: 284-765-739
+2025-06-24 12:01:27,599 - INFO -  * Detected change in 'c:\\wamp64\\www\\validadorInteligenteDeDatos\\app\\routeDIv.py', reloading
+2025-06-24 12:01:27,814 - INFO -  * Restarting with stat
+2025-06-24 12:01:29,816 - WARNING -  * Debugger is active!
+2025-06-24 12:01:29,827 - INFO -  * Debugger PIN: 284-765-739
+2025-06-24 12:01:33,560 - INFO -  * Detected change in 'c:\\wamp64\\www\\validadorInteligenteDeDatos\\app\\routeDIv.py', reloading
+2025-06-24 12:01:33,727 - INFO -  * Restarting with stat
+2025-06-24 12:01:35,739 - WARNING -  * Debugger is active!
+2025-06-24 12:01:35,754 - INFO -  * Debugger PIN: 284-765-739
+2025-06-24 12:01:36,075 - INFO - 127.0.0.1 - - [24/Jun/2025 12:01:36] "[35m[1mGET /historicos?tipo_archivo=json HTTP/1.1[0m" 500 -
+2025-06-24 12:01:36,456 - INFO - 127.0.0.1 - - [24/Jun/2025 12:01:36] "[36mGET /historicos?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-06-24 12:01:36,471 - INFO - 127.0.0.1 - - [24/Jun/2025 12:01:36] "[36mGET /historicos?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-06-24 12:01:36,500 - INFO - 127.0.0.1 - - [24/Jun/2025 12:01:36] "GET /historicos?__debugger__=yes&cmd=resource&f=console.png&s=zyA9KrxODpa3ktSq9fQ4 HTTP/1.1" 200 -
+2025-06-24 12:01:36,634 - INFO - 127.0.0.1 - - [24/Jun/2025 12:01:36] "[36mGET /historicos?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-06-24 12:01:56,505 - INFO - 127.0.0.1 - - [24/Jun/2025 12:01:56] "[35m[1mGET /historicos?tipo_archivo=excel HTTP/1.1[0m" 500 -
+2025-06-24 12:01:56,558 - INFO - 127.0.0.1 - - [24/Jun/2025 12:01:56] "[36mGET /historicos?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-06-24 12:01:56,558 - INFO - 127.0.0.1 - - [24/Jun/2025 12:01:56] "[36mGET /historicos?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-06-24 12:01:56,585 - INFO - 127.0.0.1 - - [24/Jun/2025 12:01:56] "[36mGET /historicos?__debugger__=yes&cmd=resource&f=console.png&s=zyA9KrxODpa3ktSq9fQ4 HTTP/1.1[0m" 304 -
+2025-06-24 12:01:56,670 - INFO - 127.0.0.1 - - [24/Jun/2025 12:01:56] "[35m[1mGET /historicos?tipo_archivo=excel HTTP/1.1[0m" 500 -
+2025-06-24 12:01:56,715 - INFO - 127.0.0.1 - - [24/Jun/2025 12:01:56] "[36mGET /historicos?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-06-24 12:01:56,717 - INFO - 127.0.0.1 - - [24/Jun/2025 12:01:56] "[36mGET /historicos?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-06-24 12:01:56,742 - INFO - 127.0.0.1 - - [24/Jun/2025 12:01:56] "[36mGET /historicos?__debugger__=yes&cmd=resource&f=console.png&s=zyA9KrxODpa3ktSq9fQ4 HTTP/1.1[0m" 304 -
+2025-06-24 12:01:56,786 - INFO - 127.0.0.1 - - [24/Jun/2025 12:01:56] "[36mGET /historicos?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-06-24 12:01:56,841 - INFO - 127.0.0.1 - - [24/Jun/2025 12:01:56] "[35m[1mGET /historicos?tipo_archivo=excel HTTP/1.1[0m" 500 -
+2025-06-24 12:01:56,871 - INFO - 127.0.0.1 - - [24/Jun/2025 12:01:56] "[36mGET /historicos?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-06-24 12:01:56,871 - INFO - 127.0.0.1 - - [24/Jun/2025 12:01:56] "[36mGET /historicos?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-06-24 12:01:56,897 - INFO - 127.0.0.1 - - [24/Jun/2025 12:01:56] "[36mGET /historicos?__debugger__=yes&cmd=resource&f=console.png&s=zyA9KrxODpa3ktSq9fQ4 HTTP/1.1[0m" 304 -
+2025-06-24 12:01:56,953 - INFO - 127.0.0.1 - - [24/Jun/2025 12:01:56] "[36mGET /historicos?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-06-24 12:02:01,871 - INFO - 127.0.0.1 - - [24/Jun/2025 12:02:01] "GET /paginaInicial HTTP/1.1" 200 -
+2025-06-24 12:02:01,944 - INFO - 127.0.0.1 - - [24/Jun/2025 12:02:01] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-24 12:02:02,046 - INFO - 127.0.0.1 - - [24/Jun/2025 12:02:02] "GET /paginaInicial HTTP/1.1" 200 -
+2025-06-24 12:02:02,079 - INFO - 127.0.0.1 - - [24/Jun/2025 12:02:02] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-24 12:02:02,194 - INFO - 127.0.0.1 - - [24/Jun/2025 12:02:02] "GET /paginaInicial HTTP/1.1" 200 -
+2025-06-24 12:02:02,230 - INFO - 127.0.0.1 - - [24/Jun/2025 12:02:02] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-24 12:02:03,108 - INFO - 127.0.0.1 - - [24/Jun/2025 12:02:03] "[35m[1mGET /historicos HTTP/1.1[0m" 500 -
+2025-06-24 12:02:03,166 - INFO - 127.0.0.1 - - [24/Jun/2025 12:02:03] "[36mGET /historicos?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-06-24 12:02:03,166 - INFO - 127.0.0.1 - - [24/Jun/2025 12:02:03] "[36mGET /historicos?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-06-24 12:02:03,184 - INFO - 127.0.0.1 - - [24/Jun/2025 12:02:03] "[36mGET /historicos?__debugger__=yes&cmd=resource&f=console.png&s=zyA9KrxODpa3ktSq9fQ4 HTTP/1.1[0m" 304 -
+2025-06-24 12:04:42,563 - INFO - 127.0.0.1 - - [24/Jun/2025 12:04:42] "GET /historicos HTTP/1.1" 200 -
+2025-06-24 12:04:44,515 - INFO - 127.0.0.1 - - [24/Jun/2025 12:04:44] "GET /historicos?tipo_archivo=json HTTP/1.1" 200 -
+2025-06-24 12:04:45,722 - INFO - 127.0.0.1 - - [24/Jun/2025 12:04:45] "GET /ver_json_historico/RRHH_PRUEBA_texto2_Hoja1_1.json HTTP/1.1" 200 -
+2025-06-24 12:04:47,788 - INFO - 127.0.0.1 - - [24/Jun/2025 12:04:47] "GET /ver_json_historico/RRHH_PRUEBA_texto2_Hoja1_1.json HTTP/1.1" 200 -
+2025-06-24 12:04:48,205 - INFO - 127.0.0.1 - - [24/Jun/2025 12:04:48] "GET /ver_json_historico/RRHH_PRUEBA_texto2_Hoja1_1.json HTTP/1.1" 200 -
+2025-06-24 12:04:48,406 - INFO - 127.0.0.1 - - [24/Jun/2025 12:04:48] "GET /ver_json_historico/RRHH_PRUEBA_texto2_Hoja1_1.json HTTP/1.1" 200 -
+2025-06-24 12:04:48,539 - INFO - 127.0.0.1 - - [24/Jun/2025 12:04:48] "GET /ver_json_historico/RRHH_PRUEBA_texto2_Hoja1_1.json HTTP/1.1" 200 -
+2025-06-24 12:04:48,988 - INFO - 127.0.0.1 - - [24/Jun/2025 12:04:48] "[35m[1mPOST /restaurar_historico HTTP/1.1[0m" 500 -
+2025-06-24 12:04:49,206 - INFO - 127.0.0.1 - - [24/Jun/2025 12:04:49] "[35m[1mPOST /restaurar_historico HTTP/1.1[0m" 500 -
+2025-06-24 12:04:49,260 - INFO - 127.0.0.1 - - [24/Jun/2025 12:04:49] "GET /restaurar_historico?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-06-24 12:04:49,270 - INFO - 127.0.0.1 - - [24/Jun/2025 12:04:49] "GET /restaurar_historico?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-06-24 12:04:49,314 - INFO - 127.0.0.1 - - [24/Jun/2025 12:04:49] "GET /restaurar_historico?__debugger__=yes&cmd=resource&f=console.png&s=zyA9KrxODpa3ktSq9fQ4 HTTP/1.1" 200 -
+2025-06-24 12:04:49,396 - INFO - 127.0.0.1 - - [24/Jun/2025 12:04:49] "GET /restaurar_historico?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-06-24 12:04:52,705 - INFO - 127.0.0.1 - - [24/Jun/2025 12:04:52] "GET /ver_json_historico/RRHH_PRUEBA_texto2_Hoja1_1.json HTTP/1.1" 200 -
+2025-06-24 12:04:52,855 - INFO - 127.0.0.1 - - [24/Jun/2025 12:04:52] "GET /ver_json_historico/RRHH_PRUEBA_texto2_Hoja1_1.json HTTP/1.1" 200 -
+2025-06-24 12:04:53,005 - INFO - 127.0.0.1 - - [24/Jun/2025 12:04:53] "GET /ver_json_historico/RRHH_PRUEBA_texto2_Hoja1_1.json HTTP/1.1" 200 -
+2025-06-24 12:04:53,289 - INFO - 127.0.0.1 - - [24/Jun/2025 12:04:53] "GET /ver_json_historico/RRHH_PRUEBA_texto2_Hoja1_1.json HTTP/1.1" 200 -
+2025-06-24 12:04:53,621 - INFO - 127.0.0.1 - - [24/Jun/2025 12:04:53] "GET /ver_json_historico/RRHH_PRUEBA_texto2_Hoja1_2.json HTTP/1.1" 200 -
+2025-06-24 12:04:53,788 - INFO - 127.0.0.1 - - [24/Jun/2025 12:04:53] "GET /ver_json_historico/RRHH_PRUEBA_texto2_Hoja1_2.json HTTP/1.1" 200 -
+2025-06-24 12:04:54,273 - INFO - 127.0.0.1 - - [24/Jun/2025 12:04:54] "GET /ver_json_historico/RRHH_PRUEBA_texto2_Hoja1_3.json HTTP/1.1" 200 -
+2025-06-24 12:04:54,705 - INFO - 127.0.0.1 - - [24/Jun/2025 12:04:54] "GET /ver_json_historico/RRHH_PRUEBA_texto2_Hoja1_4.json HTTP/1.1" 200 -
+2025-06-24 12:04:55,305 - INFO - 127.0.0.1 - - [24/Jun/2025 12:04:55] "GET /ver_json_historico/RRHH_PRUEBA_texto2_Hoja1_3.json HTTP/1.1" 200 -
+2025-06-24 12:04:55,772 - INFO - 127.0.0.1 - - [24/Jun/2025 12:04:55] "GET /ver_json_historico/RRHH_PRUEBA_texto2_Hoja1_2.json HTTP/1.1" 200 -
+2025-06-24 12:04:55,921 - INFO - 127.0.0.1 - - [24/Jun/2025 12:04:55] "GET /ver_json_historico/RRHH_PRUEBA_texto2_Hoja1_2.json HTTP/1.1" 200 -
+2025-06-24 12:04:56,089 - INFO - 127.0.0.1 - - [24/Jun/2025 12:04:56] "GET /ver_json_historico/RRHH_PRUEBA_texto2_Hoja1_2.json HTTP/1.1" 200 -
+2025-06-24 12:04:56,806 - INFO - 127.0.0.1 - - [24/Jun/2025 12:04:56] "GET /ver_json_historico/RRHH_PRUEBA_texto2_Hoja1_1.json HTTP/1.1" 200 -
+2025-06-24 12:04:57,006 - INFO - 127.0.0.1 - - [24/Jun/2025 12:04:57] "GET /ver_json_historico/RRHH_PRUEBA_texto2_Hoja1_1.json HTTP/1.1" 200 -
+2025-06-24 12:04:57,188 - INFO - 127.0.0.1 - - [24/Jun/2025 12:04:57] "GET /ver_json_historico/RRHH_PRUEBA_texto2_Hoja1_1.json HTTP/1.1" 200 -
+2025-06-24 12:04:57,355 - INFO - 127.0.0.1 - - [24/Jun/2025 12:04:57] "GET /ver_json_historico/RRHH_PRUEBA_texto2_Hoja1_1.json HTTP/1.1" 200 -
+2025-06-24 12:04:57,574 - INFO - 127.0.0.1 - - [24/Jun/2025 12:04:57] "GET /ver_json_historico/RRHH_PRUEBA_texto2_Hoja1_1.json HTTP/1.1" 200 -
+2025-06-24 12:04:57,807 - INFO - 127.0.0.1 - - [24/Jun/2025 12:04:57] "GET /ver_json_historico/RRHH_PRUEBA_texto2_Hoja1_1.json HTTP/1.1" 200 -
+2025-06-24 12:04:58,422 - INFO - 127.0.0.1 - - [24/Jun/2025 12:04:58] "GET /ver_json_historico/RRHH_PRUEBA_texto2_Hoja1_2.json HTTP/1.1" 200 -
+2025-06-24 12:07:46,051 - INFO - 127.0.0.1 - - [24/Jun/2025 12:07:46] "GET /historicos?tipo_archivo=json HTTP/1.1" 200 -
+2025-06-24 12:07:46,186 - INFO - 127.0.0.1 - - [24/Jun/2025 12:07:46] "GET /historicos?tipo_archivo=json HTTP/1.1" 200 -
+2025-06-24 12:07:46,338 - INFO - 127.0.0.1 - - [24/Jun/2025 12:07:46] "GET /historicos?tipo_archivo=json HTTP/1.1" 200 -
+2025-06-24 12:07:47,147 - INFO - 127.0.0.1 - - [24/Jun/2025 12:07:47] "GET /ver_json_historico/RRHH_PRUEBA_texto2_Hoja1_1.json HTTP/1.1" 200 -
+2025-06-24 12:09:54,881 - INFO - 127.0.0.1 - - [24/Jun/2025 12:09:54] "GET /ver_json_historico/RRHH_PRUEBA_texto2_Hoja1_3.json HTTP/1.1" 200 -
+2025-06-24 12:10:00,444 - INFO - 127.0.0.1 - - [24/Jun/2025 12:10:00] "GET /ver_json_historico/RRHH_PRUEBA_texto2_Hoja1_4.json HTTP/1.1" 200 -
+2025-06-24 12:10:08,445 - INFO - 127.0.0.1 - - [24/Jun/2025 12:10:08] "GET /ver_json_historico/RRHH_PRUEBA_texto2_Hoja1_3.json HTTP/1.1" 200 -
+2025-06-24 12:10:11,028 - INFO - 127.0.0.1 - - [24/Jun/2025 12:10:11] "GET /ver_json_historico/RRHH_PRUEBA_texto2_Hoja1_1.json HTTP/1.1" 200 -
+2025-06-24 12:10:15,948 - INFO - 127.0.0.1 - - [24/Jun/2025 12:10:15] "GET /ver_json_historico/RRHH_PRUEBA_texto2_Hoja1_4.json HTTP/1.1" 200 -
+2025-06-24 12:10:19,243 - INFO - 127.0.0.1 - - [24/Jun/2025 12:10:19] "GET /ver_json_historico/RRHH_PRUEBA_texto2_Hoja1_1.json HTTP/1.1" 200 -
+2025-06-24 12:10:21,413 - INFO - 127.0.0.1 - - [24/Jun/2025 12:10:21] "GET /ver_json_historico/RRHH_PRUEBA_texto2_Hoja1_2.json HTTP/1.1" 200 -
+2025-06-24 12:10:23,845 - INFO - 127.0.0.1 - - [24/Jun/2025 12:10:23] "GET /ver_json_historico/RRHH_PRUEBA_texto2_Hoja1_3.json HTTP/1.1" 200 -
+2025-06-24 12:10:29,645 - INFO - 127.0.0.1 - - [24/Jun/2025 12:10:29] "GET /ver_json_historico/RRHH_PRUEBA_texto2_Hoja1_1.json HTTP/1.1" 200 -
+2025-06-24 12:10:33,382 - INFO - 127.0.0.1 - - [24/Jun/2025 12:10:33] "GET /ver_json_historico/RRHH_PRUEBA_texto2_Hoja1_3.json HTTP/1.1" 200 -
+2025-06-24 12:10:37,413 - INFO - 127.0.0.1 - - [24/Jun/2025 12:10:37] "GET /ver_json_historico/RRHH_PRUEBA_texto2_Hoja1_4.json HTTP/1.1" 200 -
+2025-06-24 12:14:54,848 - INFO - 127.0.0.1 - - [24/Jun/2025 12:14:54] "GET /historicos?tipo_archivo=excel HTTP/1.1" 200 -
+2025-06-24 12:15:29,682 - INFO - 127.0.0.1 - - [24/Jun/2025 12:15:29] "GET /paginaInicial HTTP/1.1" 200 -
+2025-06-24 12:15:29,728 - INFO - 127.0.0.1 - - [24/Jun/2025 12:15:29] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-24 12:15:29,825 - INFO - 127.0.0.1 - - [24/Jun/2025 12:15:29] "GET /paginaInicial HTTP/1.1" 200 -
+2025-06-24 12:15:29,850 - INFO - 127.0.0.1 - - [24/Jun/2025 12:15:29] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
