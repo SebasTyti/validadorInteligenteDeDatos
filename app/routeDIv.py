@@ -631,12 +631,10 @@ def ver_resultados():
         return redirect(url_for('inicio_sesion'))
 
     usuario = request.args.get('usuario')
-    fecha_inicio_validacion = request.args.get('fecha_inicio') # Fecha de validación desde el formulario
-    fecha_fin_validacion = request.args.get('fecha_fin')       # Fecha de validación desde el formulario
+    fecha_inicio_validacion = request.args.get('fecha_inicio')
+    fecha_fin_validacion = request.args.get('fecha_fin')
     archivo = request.args.get('archivo')
     proceso = request.args.get('proceso')
-
-    # ✅ CORREGIDO: Nuevos filtros de fecha para los datos del Excel, ahora coinciden con HTML
     fecha_inicio_datos = request.args.get('fecha_datos_inicio')
     fecha_fin_datos = request.args.get('fecha_datos_fin')
 
@@ -647,6 +645,7 @@ def ver_resultados():
         conn = conectar_db()
         cursor = conn.cursor()
 
+        # 1. Consulta para la tabla filtrada
         query = """
         SELECT
             v.idValidaciones,
@@ -660,35 +659,26 @@ def ver_resultados():
             v.FechaInicioDeDatos,
             v.FechaFinDeDatos
         FROM dbo.Validaciones v
-        -- Puedes reincorporar los JOINs si necesitas mostrar los nombres en lugar de los IDs
-        -- JOIN dbo.usuariosValidador u ON v.idUsuario = u.idUsuario
-        -- JOIN dbo.PlantillasValidacion p ON v.idPlantillasValidacion = p.idPlantillasValidacion
-        -- JOIN dbo.ProcesosAdministrativos pa ON v.idProcesoAdmin = pa.idProcesoAdmin
-        -- JOIN dbo.estadoValidacion ev ON v.idEstado = ev.idEstado
+        JOIN dbo.usuariosValidador u ON v.idUsuario = u.idUsuario
         WHERE 1=1
         """
 
         params = []
         if usuario:
-            # Si 'usuario' en la URL es el nombre de usuario, necesitas un JOIN o una subconsulta.
-            # Asumiendo que 'usuario' es el idUsuario para simplificar de momento:
-            query += " AND v.idUsuario = ?" # O u.nombreUsuario si el JOIN está activo
-            params.append(usuario) # Convertir a int si es un ID
-        if fecha_inicio_validacion: # Aplicar filtro para FechaValidacion
+            query += " AND u.nombreUsuario = ?"
+            params.append(usuario)
+        if fecha_inicio_validacion:
             query += " AND v.FechaValidacion >= ?"
             params.append(fecha_inicio_validacion)
-        if fecha_fin_validacion: # Aplicar filtro para FechaValidacion
+        if fecha_fin_validacion:
             query += " AND v.FechaValidacion <= ?"
             params.append(fecha_fin_validacion)
         if archivo:
             query += " AND v.nombreArchivo LIKE ?"
             params.append(f"%{archivo}%")
         if proceso:
-            # Asumiendo que 'proceso' es el idProcesoAdmin para simplificar de momento:
-            query += " AND v.idProcesoAdmin = ?" # O pa.nombreProcesoAdmin si el JOIN está activo
-            params.append(proceso) # Convertir a int si es un ID
-        
-        # ✅ Filtros para FechaInicioDeDatos y FechaFinDeDatos con los nombres del HTML
+            query += " AND v.idProcesoAdmin = ?"
+            params.append(proceso)
         if fecha_inicio_datos:
             query += " AND v.FechaInicioDeDatos >= ?"
             params.append(fecha_inicio_datos)
@@ -705,40 +695,33 @@ def ver_resultados():
         processed_rows = []
         for row in rows:
             new_row = list(row)
-            try:
-                idx_fecha_validacion = headers.index('FechaValidacion')
-                idx_fecha_inicio_datos = headers.index('FechaInicioDeDatos')
-                idx_fecha_fin_datos = headers.index('FechaFinDeDatos')
-
-                if new_row[idx_fecha_validacion] is not None:
-                    new_row[idx_fecha_validacion] = new_row[idx_fecha_validacion].strftime('%Y-%m-%d %H:%M:%S')
-
-                if new_row[idx_fecha_inicio_datos] is not None:
-                    new_row[idx_fecha_inicio_datos] = new_row[idx_fecha_inicio_datos].strftime('%Y-%m-%d %H:%M:%S')
-                else:
-                    new_row[idx_fecha_inicio_datos] = 'NULL'
-
-                if new_row[idx_fecha_fin_datos] is not None:
-                    new_row[idx_fecha_fin_datos] = new_row[idx_fecha_fin_datos].strftime('%Y-%m-%d %H:%M:%S')
-                else:
-                    new_row[idx_fecha_fin_datos] = 'NULL'
-            except ValueError:
-                pass # Esto maneja casos donde las columnas no se encuentren
-
+            for i, value in enumerate(new_row):
+                if isinstance(value, datetime):
+                    new_row[i] = value.strftime('%Y-%m-%d')
             processed_rows.append(new_row)
 
-        archivos_unicos = sorted(set([row[headers.index('nombreArchivo')] for row in rows]))
-        procesos_unicos = sorted(set([row[headers.index('idProcesoAdmin')] for row in rows]))
+        # 2. Consulta SIN FILTROS para llenar los selects
+        cursor.execute("""
+            SELECT DISTINCT nombreArchivo FROM dbo.Validaciones
+            WHERE nombreArchivo IS NOT NULL AND nombreArchivo <> ''
+        """)
+        archivos_unicos = sorted([row[0] for row in cursor.fetchall()])
 
-        # ✅ Guardar filtros activos para Excel (actualizar con nuevos filtros)
+        cursor.execute("""
+            SELECT DISTINCT idProcesoAdmin FROM dbo.Validaciones
+            WHERE idProcesoAdmin IS NOT NULL
+        """)
+        procesos_unicos = sorted([row[0] for row in cursor.fetchall()])
+
+        # Guardar filtros activos para Excel (actualizar con nuevos filtros)
         session['informe_filtros'] = {
             'usuario': usuario,
             'fecha_inicio': fecha_inicio_validacion,
             'fecha_fin': fecha_fin_validacion,
             'archivo': archivo,
             'proceso': proceso,
-            'fecha_datos_inicio': fecha_inicio_datos, # ✅ Usar el nuevo nombre del parámetro
-            'fecha_datos_fin': fecha_fin_datos       # ✅ Usar el nuevo nombre del parámetro
+            'fecha_datos_inicio': fecha_inicio_datos,
+            'fecha_datos_fin': fecha_fin_datos
         }
 
         return render_template(
@@ -751,11 +734,14 @@ def ver_resultados():
             proceso_actual=proceso,
             fecha_inicio_validacion_actual=fecha_inicio_validacion,
             fecha_fin_validacion_actual=fecha_fin_validacion,
-            fecha_datos_inicio_actual=fecha_inicio_datos, # ✅ Pasar al template con el nuevo nombre
-            fecha_datos_fin_actual=fecha_fin_datos        # ✅ Pasar al template con el nuevo nombre
+            fecha_datos_inicio_actual=fecha_inicio_datos,
+            fecha_datos_fin_actual=fecha_fin_datos
         )
 
     except Exception as e:
+        import traceback
+        print("ERROR EN ver_resultados:", str(e))
+        traceback.print_exc()
         flash(f"Error al obtener resultados: {str(e)}", "error")
         return redirect(url_for('filtro_informe'))
 

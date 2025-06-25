@@ -8873,3 +8873,475 @@
 2025-06-25 08:32:07,449 - INFO -  * Restarting with stat
 2025-06-25 08:32:10,054 - WARNING -  * Debugger is active!
 2025-06-25 08:32:10,062 - INFO -  * Debugger PIN: 846-591-789
+2025-06-25 09:24:19,319 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://10.39.90.233:8000
+2025-06-25 09:24:19,319 - INFO - [33mPress CTRL+C to quit[0m
+2025-06-25 09:24:19,336 - INFO -  * Restarting with stat
+2025-06-25 09:24:20,599 - WARNING -  * Debugger is active!
+2025-06-25 09:24:20,638 - INFO -  * Debugger PIN: 284-765-739
+2025-06-25 09:25:03,336 - INFO - 127.0.0.1 - - [25/Jun/2025 09:25:03] "GET / HTTP/1.1" 200 -
+2025-06-25 09:25:04,044 - INFO - 127.0.0.1 - - [25/Jun/2025 09:25:04] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-25 09:25:04,182 - INFO - 127.0.0.1 - - [25/Jun/2025 09:25:04] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-06-25 09:26:02,961 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 09:26:03,754 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 09:26:04,113 - INFO - 127.0.0.1 - - [25/Jun/2025 09:26:04] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-06-25 09:26:04,155 - INFO - 127.0.0.1 - - [25/Jun/2025 09:26:04] "GET /paginaInicial HTTP/1.1" 200 -
+2025-06-25 09:26:04,235 - INFO - 127.0.0.1 - - [25/Jun/2025 09:26:04] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-25 09:26:10,433 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 09:26:10,735 - INFO - 127.0.0.1 - - [25/Jun/2025 09:26:10] "[35m[1mGET /filtro_informe HTTP/1.1[0m" 500 -
+2025-06-25 09:26:10,853 - INFO - 127.0.0.1 - - [25/Jun/2025 09:26:10] "[36mGET /filtro_informe?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-06-25 09:26:10,854 - INFO - 127.0.0.1 - - [25/Jun/2025 09:26:10] "[36mGET /filtro_informe?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-06-25 09:26:10,951 - INFO - 127.0.0.1 - - [25/Jun/2025 09:26:10] "GET /filtro_informe?__debugger__=yes&cmd=resource&f=console.png&s=w2xMlqjfOjIgqQludddA HTTP/1.1" 200 -
+2025-06-25 09:29:59,283 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 09:29:59,538 - INFO - 127.0.0.1 - - [25/Jun/2025 09:29:59] "GET /filtro_informe HTTP/1.1" 200 -
+2025-06-25 09:30:35,939 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 09:30:36,055 - INFO - 127.0.0.1 - - [25/Jun/2025 09:30:36] "[32mGET /ver_resultados?usuario=Luís+Eduardo+Olaya&fecha_inicio=2025-06-01&fecha_fin=2025-06-25 HTTP/1.1[0m" 302 -
+2025-06-25 09:30:36,188 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 09:30:36,423 - INFO - 127.0.0.1 - - [25/Jun/2025 09:30:36] "GET /filtro_informe HTTP/1.1" 200 -
+2025-06-25 09:30:37,630 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 09:30:37,872 - INFO - 127.0.0.1 - - [25/Jun/2025 09:30:37] "[32mGET /ver_resultados?usuario=&fecha_inicio=&fecha_fin= HTTP/1.1[0m" 302 -
+2025-06-25 09:30:39,305 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 09:30:39,554 - INFO - 127.0.0.1 - - [25/Jun/2025 09:30:39] "[32mGET /ver_resultados?usuario=&fecha_inicio=&fecha_fin= HTTP/1.1[0m" 302 -
+2025-06-25 09:30:39,834 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 09:30:40,004 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 09:30:40,073 - INFO - 127.0.0.1 - - [25/Jun/2025 09:30:40] "[32mGET /ver_resultados?usuario=&fecha_inicio=&fecha_fin= HTTP/1.1[0m" 302 -
+2025-06-25 09:30:40,239 - INFO - 127.0.0.1 - - [25/Jun/2025 09:30:40] "[32mGET /ver_resultados?usuario=&fecha_inicio=&fecha_fin= HTTP/1.1[0m" 302 -
+2025-06-25 09:30:40,339 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 09:30:40,573 - INFO - 127.0.0.1 - - [25/Jun/2025 09:30:40] "GET /filtro_informe HTTP/1.1" 200 -
+2025-06-25 09:34:42,651 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 09:34:42,724 - INFO - 127.0.0.1 - - [25/Jun/2025 09:34:42] "[32mGET /ver_resultados?usuario=Luís+Eduardo+Olaya&fecha_inicio=2025-06-01&fecha_fin=2025-06-25 HTTP/1.1[0m" 302 -
+2025-06-25 09:34:42,827 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 09:34:43,057 - INFO - 127.0.0.1 - - [25/Jun/2025 09:34:43] "GET /filtro_informe HTTP/1.1" 200 -
+2025-06-25 09:34:46,807 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 09:34:47,040 - INFO - 127.0.0.1 - - [25/Jun/2025 09:34:47] "[32mGET /ver_resultados?usuario=&fecha_inicio=&fecha_fin= HTTP/1.1[0m" 302 -
+2025-06-25 09:34:47,141 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 09:34:47,375 - INFO - 127.0.0.1 - - [25/Jun/2025 09:34:47] "GET /filtro_informe HTTP/1.1" 200 -
+2025-06-25 09:34:48,508 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 09:34:48,740 - INFO - 127.0.0.1 - - [25/Jun/2025 09:34:48] "[32mGET /ver_resultados?usuario=&fecha_inicio=&fecha_fin= HTTP/1.1[0m" 302 -
+2025-06-25 09:34:48,841 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 09:34:49,075 - INFO - 127.0.0.1 - - [25/Jun/2025 09:34:49] "GET /filtro_informe HTTP/1.1" 200 -
+2025-06-25 09:34:49,858 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 09:34:50,111 - INFO - 127.0.0.1 - - [25/Jun/2025 09:34:50] "[32mGET /ver_resultados?usuario=&fecha_inicio=&fecha_fin= HTTP/1.1[0m" 302 -
+2025-06-25 09:34:50,214 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 09:34:50,449 - INFO - 127.0.0.1 - - [25/Jun/2025 09:34:50] "GET /filtro_informe HTTP/1.1" 200 -
+2025-06-25 09:35:04,090 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 09:35:04,175 - INFO - 127.0.0.1 - - [25/Jun/2025 09:35:04] "[32mGET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-06-30&fecha_fin=2025-06-01 HTTP/1.1[0m" 302 -
+2025-06-25 09:35:04,292 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 09:35:04,525 - INFO - 127.0.0.1 - - [25/Jun/2025 09:35:04] "GET /filtro_informe HTTP/1.1" 200 -
+2025-06-25 09:35:05,760 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 09:35:06,062 - INFO - 127.0.0.1 - - [25/Jun/2025 09:35:06] "[32mGET /generar_informe?usuario=&fecha_inicio=&fecha_fin= HTTP/1.1[0m" 302 -
+2025-06-25 09:35:06,179 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 09:35:06,414 - INFO - 127.0.0.1 - - [25/Jun/2025 09:35:06] "GET /filtro_informe HTTP/1.1" 200 -
+2025-06-25 09:37:22,931 - INFO -  * Detected change in 'c:\\wamp64\\www\\validadorInteligenteDeDatos\\app\\routeDIv.py', reloading
+2025-06-25 09:37:23,378 - INFO -  * Restarting with stat
+2025-06-25 09:37:26,155 - WARNING -  * Debugger is active!
+2025-06-25 09:37:26,155 - INFO -  * Debugger PIN: 284-765-739
+2025-06-25 09:38:01,784 - INFO -  * Detected change in 'c:\\wamp64\\www\\validadorInteligenteDeDatos\\app\\routeDIv.py', reloading
+2025-06-25 09:38:02,059 - INFO -  * Restarting with stat
+2025-06-25 09:38:03,820 - WARNING -  * Debugger is active!
+2025-06-25 09:38:03,820 - INFO -  * Debugger PIN: 284-765-739
+2025-06-25 09:38:05,225 - INFO -  * Detected change in 'c:\\wamp64\\www\\validadorInteligenteDeDatos\\app\\routeDIv.py', reloading
+2025-06-25 09:38:05,412 - INFO -  * Restarting with stat
+2025-06-25 09:38:06,908 - WARNING -  * Debugger is active!
+2025-06-25 09:38:06,924 - INFO -  * Debugger PIN: 284-765-739
+2025-06-25 09:38:55,239 - INFO -  * Detected change in 'c:\\wamp64\\www\\validadorInteligenteDeDatos\\app\\routeDIv.py', reloading
+2025-06-25 09:38:55,444 - INFO -  * Restarting with stat
+2025-06-25 09:38:57,085 - WARNING -  * Debugger is active!
+2025-06-25 09:38:57,096 - INFO -  * Debugger PIN: 284-765-739
+2025-06-25 09:39:00,719 - INFO -  * Detected change in 'c:\\wamp64\\www\\validadorInteligenteDeDatos\\app\\routeDIv.py', reloading
+2025-06-25 09:39:00,956 - INFO -  * Restarting with stat
+2025-06-25 09:39:02,927 - WARNING -  * Debugger is active!
+2025-06-25 09:39:02,935 - INFO -  * Debugger PIN: 284-765-739
+2025-06-25 09:39:07,054 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 09:39:07,294 - INFO - 127.0.0.1 - - [25/Jun/2025 09:39:07] "GET /filtro_informe HTTP/1.1" 200 -
+2025-06-25 09:39:16,545 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 09:39:16,864 - INFO - 127.0.0.1 - - [25/Jun/2025 09:39:16] "[32mGET /generar_informe?usuario=juan%20sebastian%20barrios&fecha_inicio=2025-06-01&fecha_fin=2025-06-25 HTTP/1.1[0m" 302 -
+2025-06-25 09:39:16,971 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 09:39:17,200 - INFO - 127.0.0.1 - - [25/Jun/2025 09:39:17] "GET /filtro_informe HTTP/1.1" 200 -
+2025-06-25 09:39:20,212 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 09:39:20,429 - INFO - 127.0.0.1 - - [25/Jun/2025 09:39:20] "[32mGET /generar_informe?usuario=&fecha_inicio=&fecha_fin= HTTP/1.1[0m" 302 -
+2025-06-25 09:39:20,529 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 09:39:20,770 - INFO - 127.0.0.1 - - [25/Jun/2025 09:39:20] "GET /filtro_informe HTTP/1.1" 200 -
+2025-06-25 09:39:34,513 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 09:39:34,596 - INFO - 127.0.0.1 - - [25/Jun/2025 09:39:34] "[32mGET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-06-01&fecha_fin=2025-06-25 HTTP/1.1[0m" 302 -
+2025-06-25 09:39:34,679 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 09:39:34,913 - INFO - 127.0.0.1 - - [25/Jun/2025 09:39:34] "GET /filtro_informe HTTP/1.1" 200 -
+2025-06-25 09:39:36,246 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 09:39:36,479 - INFO - 127.0.0.1 - - [25/Jun/2025 09:39:36] "[32mGET /generar_informe?usuario=&fecha_inicio=&fecha_fin= HTTP/1.1[0m" 302 -
+2025-06-25 09:39:36,581 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 09:39:36,799 - INFO - 127.0.0.1 - - [25/Jun/2025 09:39:36] "GET /filtro_informe HTTP/1.1" 200 -
+2025-06-25 09:42:34,646 - INFO -  * Detected change in 'c:\\wamp64\\www\\validadorInteligenteDeDatos\\app\\routeDIv.py', reloading
+2025-06-25 09:42:35,127 - INFO -  * Restarting with stat
+2025-06-25 09:42:37,773 - WARNING -  * Debugger is active!
+2025-06-25 09:42:37,789 - INFO -  * Debugger PIN: 284-765-739
+2025-06-25 09:42:50,183 - INFO -  * Detected change in 'c:\\wamp64\\www\\validadorInteligenteDeDatos\\app\\routeDIv.py', reloading
+2025-06-25 09:42:50,361 - INFO -  * Restarting with stat
+2025-06-25 09:42:51,836 - WARNING -  * Debugger is active!
+2025-06-25 09:42:51,847 - INFO -  * Debugger PIN: 284-765-739
+2025-06-25 09:43:28,620 - INFO -  * Detected change in 'c:\\wamp64\\www\\validadorInteligenteDeDatos\\app\\routeDIv.py', reloading
+2025-06-25 09:43:28,888 - INFO -  * Restarting with stat
+2025-06-25 09:43:30,724 - WARNING -  * Debugger is active!
+2025-06-25 09:43:30,744 - INFO -  * Debugger PIN: 284-765-739
+2025-06-25 09:43:54,209 - INFO -  * Detected change in 'c:\\wamp64\\www\\validadorInteligenteDeDatos\\app\\routeDIv.py', reloading
+2025-06-25 09:43:54,445 - INFO -  * Restarting with stat
+2025-06-25 09:43:56,128 - WARNING -  * Debugger is active!
+2025-06-25 09:43:56,131 - INFO -  * Debugger PIN: 284-765-739
+2025-06-25 09:43:59,592 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 09:43:59,836 - INFO - 127.0.0.1 - - [25/Jun/2025 09:43:59] "GET /filtro_informe HTTP/1.1" 200 -
+2025-06-25 09:44:15,165 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 09:44:15,484 - INFO - 127.0.0.1 - - [25/Jun/2025 09:44:15] "[32mGET /generar_informe?usuario=juan%20sebastian%20barrios&fecha_inicio=2025-06-01&fecha_fin=2025-06-25 HTTP/1.1[0m" 302 -
+2025-06-25 09:44:15,565 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 09:44:15,798 - INFO - 127.0.0.1 - - [25/Jun/2025 09:44:15] "GET /filtro_informe HTTP/1.1" 200 -
+2025-06-25 09:45:30,615 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 09:45:30,935 - INFO - 127.0.0.1 - - [25/Jun/2025 09:45:30] "[32mGET /generar_informe?usuario=juan%20sebastian%20barrios&fecha_inicio=2025-06-01&fecha_fin=2025-06-25 HTTP/1.1[0m" 302 -
+2025-06-25 09:45:31,032 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 09:45:31,266 - INFO - 127.0.0.1 - - [25/Jun/2025 09:45:31] "GET /filtro_informe HTTP/1.1" 200 -
+2025-06-25 09:46:58,788 - INFO -  * Detected change in 'c:\\wamp64\\www\\validadorInteligenteDeDatos\\app\\routeDIv.py', reloading
+2025-06-25 09:46:58,994 - INFO -  * Restarting with stat
+2025-06-25 09:47:00,496 - WARNING -  * Debugger is active!
+2025-06-25 09:47:00,505 - INFO -  * Debugger PIN: 284-765-739
+2025-06-25 09:47:06,932 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 09:47:07,199 - INFO - 127.0.0.1 - - [25/Jun/2025 09:47:07] "GET /filtro_informe HTTP/1.1" 200 -
+2025-06-25 10:20:05,821 - INFO -  * Detected change in 'c:\\wamp64\\www\\validadorInteligenteDeDatos\\app\\routeDIv.py', reloading
+2025-06-25 10:20:07,418 - INFO -  * Restarting with stat
+2025-06-25 10:20:10,279 - WARNING -  * Debugger is active!
+2025-06-25 10:20:10,293 - INFO -  * Debugger PIN: 284-765-739
+2025-06-25 10:20:14,988 - INFO -  * Detected change in 'c:\\wamp64\\www\\validadorInteligenteDeDatos\\app\\routeDIv.py', reloading
+2025-06-25 10:20:15,171 - INFO -  * Restarting with stat
+2025-06-25 10:20:16,731 - WARNING -  * Debugger is active!
+2025-06-25 10:20:16,740 - INFO -  * Debugger PIN: 284-765-739
+2025-06-25 10:21:07,509 - INFO -  * Detected change in 'c:\\wamp64\\www\\validadorInteligenteDeDatos\\app\\routeDIv.py', reloading
+2025-06-25 10:21:07,831 - INFO -  * Restarting with stat
+2025-06-25 10:21:10,068 - WARNING -  * Debugger is active!
+2025-06-25 10:21:10,077 - INFO -  * Debugger PIN: 284-765-739
+2025-06-25 10:21:33,483 - INFO -  * Detected change in 'c:\\wamp64\\www\\validadorInteligenteDeDatos\\app\\routeDIv.py', reloading
+2025-06-25 10:21:33,653 - INFO -  * Restarting with stat
+2025-06-25 10:21:35,087 - WARNING -  * Debugger is active!
+2025-06-25 10:21:35,088 - INFO -  * Debugger PIN: 284-765-739
+2025-06-25 10:21:36,403 - INFO -  * Detected change in 'c:\\wamp64\\www\\validadorInteligenteDeDatos\\app\\routeDIv.py', reloading
+2025-06-25 10:21:36,566 - INFO -  * Restarting with stat
+2025-06-25 10:21:38,154 - WARNING -  * Debugger is active!
+2025-06-25 10:21:38,163 - INFO -  * Debugger PIN: 284-765-739
+2025-06-25 10:21:41,447 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 10:21:41,688 - INFO - 127.0.0.1 - - [25/Jun/2025 10:21:41] "GET /filtro_informe HTTP/1.1" 200 -
+2025-06-25 10:21:49,538 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 10:21:49,855 - INFO - 127.0.0.1 - - [25/Jun/2025 10:21:49] "[32mGET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-06-01&fecha_fin=2025-06-25 HTTP/1.1[0m" 302 -
+2025-06-25 10:21:49,990 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 10:21:50,237 - INFO - 127.0.0.1 - - [25/Jun/2025 10:21:50] "GET /filtro_informe HTTP/1.1" 200 -
+2025-06-25 10:32:32,166 - INFO -  * Detected change in 'c:\\wamp64\\www\\validadorInteligenteDeDatos\\app\\routeDIv.py', reloading
+2025-06-25 10:32:32,458 - INFO -  * Restarting with stat
+2025-06-25 10:32:34,935 - WARNING -  * Debugger is active!
+2025-06-25 10:32:34,945 - INFO -  * Debugger PIN: 284-765-739
+2025-06-25 10:35:35,233 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 10:35:35,569 - INFO - 127.0.0.1 - - [25/Jun/2025 10:35:35] "[32mGET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-06-01&fecha_fin=2025-06-25 HTTP/1.1[0m" 302 -
+2025-06-25 10:35:35,769 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 10:35:36,017 - INFO - 127.0.0.1 - - [25/Jun/2025 10:35:36] "GET /filtro_informe HTTP/1.1" 200 -
+2025-06-25 10:36:25,499 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 10:36:25,817 - INFO - 127.0.0.1 - - [25/Jun/2025 10:36:25] "[32mGET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-06-01&fecha_fin=2025-06-25 HTTP/1.1[0m" 302 -
+2025-06-25 10:36:25,936 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 10:36:26,178 - INFO - 127.0.0.1 - - [25/Jun/2025 10:36:26] "GET /filtro_informe HTTP/1.1" 200 -
+2025-06-25 10:44:38,807 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://10.39.90.233:8000
+2025-06-25 10:44:38,808 - INFO - [33mPress CTRL+C to quit[0m
+2025-06-25 10:44:38,808 - INFO -  * Restarting with stat
+2025-06-25 10:44:40,192 - WARNING -  * Debugger is active!
+2025-06-25 10:44:40,199 - INFO -  * Debugger PIN: 284-765-739
+2025-06-25 10:44:43,775 - INFO - 127.0.0.1 - - [25/Jun/2025 10:44:43] "GET / HTTP/1.1" 200 -
+2025-06-25 10:44:44,005 - INFO - 127.0.0.1 - - [25/Jun/2025 10:44:44] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-25 10:45:06,257 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 10:45:07,067 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 10:45:07,377 - INFO - 127.0.0.1 - - [25/Jun/2025 10:45:07] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-06-25 10:45:07,400 - INFO - 127.0.0.1 - - [25/Jun/2025 10:45:07] "GET /paginaInicial HTTP/1.1" 200 -
+2025-06-25 10:45:07,459 - INFO - 127.0.0.1 - - [25/Jun/2025 10:45:07] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-25 10:45:23,278 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 10:45:23,511 - INFO - 127.0.0.1 - - [25/Jun/2025 10:45:23] "GET /filtro_informe HTTP/1.1" 200 -
+2025-06-25 10:45:30,691 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 10:45:31,006 - INFO - 127.0.0.1 - - [25/Jun/2025 10:45:31] "[32mGET /ver_resultados?usuario=Luís+Eduardo+Olaya&fecha_inicio=2025-06-01&fecha_fin=2025-06-25 HTTP/1.1[0m" 302 -
+2025-06-25 10:45:31,123 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 10:45:31,394 - INFO - 127.0.0.1 - - [25/Jun/2025 10:45:31] "GET /filtro_informe HTTP/1.1" 200 -
+2025-06-25 10:45:37,216 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 10:45:37,452 - INFO - 127.0.0.1 - - [25/Jun/2025 10:45:37] "[32mGET /ver_resultados?usuario=&fecha_inicio=&fecha_fin= HTTP/1.1[0m" 302 -
+2025-06-25 10:45:37,569 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 10:45:37,797 - INFO - 127.0.0.1 - - [25/Jun/2025 10:45:37] "GET /filtro_informe HTTP/1.1" 200 -
+2025-06-25 10:45:40,106 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 10:45:40,350 - INFO - 127.0.0.1 - - [25/Jun/2025 10:45:40] "[32mGET /ver_resultados?usuario=&fecha_inicio=&fecha_fin= HTTP/1.1[0m" 302 -
+2025-06-25 10:45:40,438 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 10:45:40,668 - INFO - 127.0.0.1 - - [25/Jun/2025 10:45:40] "GET /filtro_informe HTTP/1.1" 200 -
+2025-06-25 10:50:25,100 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 10:50:25,418 - INFO - 127.0.0.1 - - [25/Jun/2025 10:50:25] "[32mGET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-06-01&fecha_fin=2025-06-25 HTTP/1.1[0m" 302 -
+2025-06-25 10:50:25,525 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 10:50:25,768 - INFO - 127.0.0.1 - - [25/Jun/2025 10:50:25] "GET /filtro_informe HTTP/1.1" 200 -
+2025-06-25 10:52:21,498 - INFO -  * Detected change in 'c:\\wamp64\\www\\validadorInteligenteDeDatos\\app\\routeDIv.py', reloading
+2025-06-25 10:52:21,914 - INFO -  * Restarting with stat
+2025-06-25 10:52:24,476 - WARNING -  * Debugger is active!
+2025-06-25 10:52:24,486 - INFO -  * Debugger PIN: 284-765-739
+2025-06-25 10:52:28,029 - INFO -  * Detected change in 'c:\\wamp64\\www\\validadorInteligenteDeDatos\\app\\routeDIv.py', reloading
+2025-06-25 10:52:28,234 - INFO -  * Restarting with stat
+2025-06-25 10:52:29,890 - WARNING -  * Debugger is active!
+2025-06-25 10:52:29,890 - INFO -  * Debugger PIN: 284-765-739
+2025-06-25 10:58:03,568 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 10:58:03,839 - INFO - 127.0.0.1 - - [25/Jun/2025 10:58:03] "GET /filtro_informe HTTP/1.1" 200 -
+2025-06-25 10:58:13,395 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 10:58:13,651 - INFO - 127.0.0.1 - - [25/Jun/2025 10:58:13] "GET /filtro_informe HTTP/1.1" 200 -
+2025-06-25 10:58:19,228 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 10:58:19,562 - INFO - 127.0.0.1 - - [25/Jun/2025 10:58:19] "GET /ver_resultados?usuario=Luís+Eduardo+Olaya&fecha_inicio=2025-06-01&fecha_fin=2025-06-25 HTTP/1.1" 200 -
+2025-06-25 11:00:00,743 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:00:01,080 - INFO - 127.0.0.1 - - [25/Jun/2025 11:00:01] "GET /ver_resultados?usuario=Luís+Eduardo+Olaya&fecha_inicio=2025-06-01&fecha_fin=2025-06-25&archivo=&proceso=1&fecha_datos_inicio=&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:00:09,832 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:00:10,147 - INFO - 127.0.0.1 - - [25/Jun/2025 11:00:10] "GET /ver_resultados?usuario=Luís+Eduardo+Olaya&fecha_inicio=2025-06-01&fecha_fin=2025-06-25&archivo=&proceso=1&fecha_datos_inicio=&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:00:17,994 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:00:18,230 - INFO - 127.0.0.1 - - [25/Jun/2025 11:00:18] "GET /filtro_informe HTTP/1.1" 200 -
+2025-06-25 11:00:31,313 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:00:31,643 - INFO - 127.0.0.1 - - [25/Jun/2025 11:00:31] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-06-01&fecha_fin=2025-06-25 HTTP/1.1" 200 -
+2025-06-25 11:00:45,546 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:00:45,872 - INFO - 127.0.0.1 - - [25/Jun/2025 11:00:45] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-06-01&fecha_fin=2025-06-25&archivo=Copia+de+PID_largo+2015+-+2025.xlsx&proceso=&fecha_datos_inicio=&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:00:57,996 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:00:58,314 - INFO - 127.0.0.1 - - [25/Jun/2025 11:00:58] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-06-01&fecha_fin=2025-06-25&archivo=Copia+de+PID_largo+2015+-+2025.xlsx&proceso=2&fecha_datos_inicio=&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:01:00,314 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:01:00,638 - INFO - 127.0.0.1 - - [25/Jun/2025 11:01:00] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-06-01&fecha_fin=2025-06-25&archivo=Copia+de+PID_largo+2015+-+2025.xlsx&proceso=2&fecha_datos_inicio=&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:01:06,979 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:01:07,294 - INFO - 127.0.0.1 - - [25/Jun/2025 11:01:07] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-06-01&fecha_fin=2025-06-25&archivo=Copia+de+PID_largo+2015+-+2025.xlsx&proceso=2&fecha_datos_inicio=&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:01:09,172 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:01:09,548 - INFO - 127.0.0.1 - - [25/Jun/2025 11:01:09] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-06-01&fecha_fin=2025-06-25&archivo=Copia+de+PID_largo+2015+-+2025.xlsx&proceso=2&fecha_datos_inicio=&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:01:30,062 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:01:30,409 - INFO - 127.0.0.1 - - [25/Jun/2025 11:01:30] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-06-01&fecha_fin=2025-06-25&archivo=Copia+de+PID_largo+2015+-+2025.xlsx&proceso=&fecha_datos_inicio=2025-06-01&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:01:39,131 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:01:39,458 - INFO - 127.0.0.1 - - [25/Jun/2025 11:01:39] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-06-01&fecha_fin=2025-06-25&archivo=&proceso=&fecha_datos_inicio=2025-06-01&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:01:40,681 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:01:40,996 - INFO - 127.0.0.1 - - [25/Jun/2025 11:01:40] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-06-01&fecha_fin=2025-06-25&archivo=&proceso=&fecha_datos_inicio=2025-06-01&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:01:41,648 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:01:41,964 - INFO - 127.0.0.1 - - [25/Jun/2025 11:01:41] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-06-01&fecha_fin=2025-06-25&archivo=&proceso=&fecha_datos_inicio=2025-06-01&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:01:51,781 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:01:52,099 - INFO - 127.0.0.1 - - [25/Jun/2025 11:01:52] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-06-01&fecha_fin=2025-06-25&archivo=&proceso=&fecha_datos_inicio=2025-06-01&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:01:56,066 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:01:56,382 - INFO - 127.0.0.1 - - [25/Jun/2025 11:01:56] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-06-01&fecha_fin=2025-06-25&archivo=&proceso=&fecha_datos_inicio=2025-06-25&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:01:57,431 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:01:57,745 - INFO - 127.0.0.1 - - [25/Jun/2025 11:01:57] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-06-01&fecha_fin=2025-06-25&archivo=&proceso=&fecha_datos_inicio=2025-06-25&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:01:58,898 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:01:59,221 - INFO - 127.0.0.1 - - [25/Jun/2025 11:01:59] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-06-01&fecha_fin=2025-06-25&archivo=&proceso=&fecha_datos_inicio=2025-06-25&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:02:04,279 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:02:04,600 - INFO - 127.0.0.1 - - [25/Jun/2025 11:02:04] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-06-01&fecha_fin=2025-06-25&archivo=&proceso=&fecha_datos_inicio=2025-04-08&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:02:04,965 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:02:05,279 - INFO - 127.0.0.1 - - [25/Jun/2025 11:02:05] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-06-01&fecha_fin=2025-06-25&archivo=&proceso=&fecha_datos_inicio=2025-04-08&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:02:06,798 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:02:07,132 - INFO - 127.0.0.1 - - [25/Jun/2025 11:02:07] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-06-01&fecha_fin=2025-06-25&archivo=&proceso=1&fecha_datos_inicio=2025-04-08&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:02:07,269 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:02:07,581 - INFO - 127.0.0.1 - - [25/Jun/2025 11:02:07] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-06-01&fecha_fin=2025-06-25&archivo=&proceso=1&fecha_datos_inicio=2025-04-08&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:02:23,218 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:02:23,541 - INFO - 127.0.0.1 - - [25/Jun/2025 11:02:23] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-06-01&fecha_fin=2025-06-25&archivo=&proceso=&fecha_datos_inicio=2025-04-08&fecha_datos_fin=2025-06-25 HTTP/1.1" 200 -
+2025-06-25 11:02:28,098 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:02:28,332 - INFO - 127.0.0.1 - - [25/Jun/2025 11:02:28] "GET /filtro_informe HTTP/1.1" 200 -
+2025-06-25 11:02:36,248 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:02:36,571 - INFO - 127.0.0.1 - - [25/Jun/2025 11:02:36] "GET /ver_resultados?usuario=Luís+Eduardo+Olaya&fecha_inicio=2025-04-28&fecha_fin=2025-06-25 HTTP/1.1" 200 -
+2025-06-25 11:02:56,870 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:02:57,192 - INFO - 127.0.0.1 - - [25/Jun/2025 11:02:57] "GET /ver_resultados?usuario=Luís+Eduardo+Olaya&fecha_inicio=2025-04-28&fecha_fin=2025-06-25&archivo=EDUCON_CERTIFICADOS2024_2025.xlsx&proceso=&fecha_datos_inicio=&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:03:08,150 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:03:08,463 - INFO - 127.0.0.1 - - [25/Jun/2025 11:03:08] "GET /ver_resultados?usuario=Luís+Eduardo+Olaya&fecha_inicio=2025-04-28&fecha_fin=2025-06-25&archivo=EDUCON_CERTIFICADOS2024_2025.xlsx&proceso=&fecha_datos_inicio=&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:03:09,366 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:03:09,682 - INFO - 127.0.0.1 - - [25/Jun/2025 11:03:09] "GET /ver_resultados?usuario=Luís+Eduardo+Olaya&fecha_inicio=2025-04-28&fecha_fin=2025-06-25&archivo=EDUCON_CERTIFICADOS2024_2025.xlsx&proceso=&fecha_datos_inicio=&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:03:10,249 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:03:10,565 - INFO - 127.0.0.1 - - [25/Jun/2025 11:03:10] "GET /ver_resultados?usuario=Luís+Eduardo+Olaya&fecha_inicio=2025-04-28&fecha_fin=2025-06-25&archivo=EDUCON_CERTIFICADOS2024_2025.xlsx&proceso=&fecha_datos_inicio=&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:03:11,065 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:03:11,381 - INFO - 127.0.0.1 - - [25/Jun/2025 11:03:11] "GET /ver_resultados?usuario=Luís+Eduardo+Olaya&fecha_inicio=2025-04-28&fecha_fin=2025-06-25&archivo=EDUCON_CERTIFICADOS2024_2025.xlsx&proceso=&fecha_datos_inicio=&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:03:12,032 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:03:12,347 - INFO - 127.0.0.1 - - [25/Jun/2025 11:03:12] "GET /ver_resultados?usuario=Luís+Eduardo+Olaya&fecha_inicio=2025-04-28&fecha_fin=2025-06-25&archivo=EDUCON_CERTIFICADOS2024_2025.xlsx&proceso=&fecha_datos_inicio=&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:03:12,587 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:03:12,902 - INFO - 127.0.0.1 - - [25/Jun/2025 11:03:12] "GET /ver_resultados?usuario=Luís+Eduardo+Olaya&fecha_inicio=2025-04-28&fecha_fin=2025-06-25&archivo=EDUCON_CERTIFICADOS2024_2025.xlsx&proceso=&fecha_datos_inicio=&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:03:13,991 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:03:14,023 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:03:14,312 - INFO - 127.0.0.1 - - [25/Jun/2025 11:03:14] "GET /ver_resultados?usuario=Luís+Eduardo+Olaya&fecha_inicio=2025-04-28&fecha_fin=2025-06-25&archivo=EDUCON_CERTIFICADOS2024_2025.xlsx&proceso=&fecha_datos_inicio=&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:03:14,338 - INFO - 127.0.0.1 - - [25/Jun/2025 11:03:14] "GET /ver_resultados?usuario=Luís+Eduardo+Olaya&fecha_inicio=2025-04-28&fecha_fin=2025-06-25&archivo=EDUCON_CERTIFICADOS2024_2025.xlsx&proceso=&fecha_datos_inicio=&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:03:15,033 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:03:15,349 - INFO - 127.0.0.1 - - [25/Jun/2025 11:03:15] "GET /ver_resultados?usuario=Luís+Eduardo+Olaya&fecha_inicio=2025-04-28&fecha_fin=2025-06-25&archivo=&proceso=&fecha_datos_inicio=&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:03:19,548 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:03:19,866 - INFO - 127.0.0.1 - - [25/Jun/2025 11:03:19] "GET /ver_resultados?usuario=Luís+Eduardo+Olaya&fecha_inicio=2025-04-28&fecha_fin=2025-06-25&archivo=PRUEBA_texto2.xlsx&proceso=&fecha_datos_inicio=&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:03:23,846 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:03:24,169 - INFO - 127.0.0.1 - - [25/Jun/2025 11:03:24] "GET /ver_resultados?usuario=Luís+Eduardo+Olaya&fecha_inicio=2025-04-28&fecha_fin=2025-06-25&archivo=PRUEBA_texto2.xlsx&proceso=1&fecha_datos_inicio=&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:03:31,165 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:03:31,495 - INFO - 127.0.0.1 - - [25/Jun/2025 11:03:31] "GET /ver_resultados?usuario=Luís+Eduardo+Olaya&fecha_inicio=2025-04-28&fecha_fin=2025-06-25&archivo=PRUEBA_texto2.xlsx&proceso=&fecha_datos_inicio=2025-06-18&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:03:39,339 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:03:39,650 - INFO - 127.0.0.1 - - [25/Jun/2025 11:03:39] "GET /ver_resultados?usuario=Luís+Eduardo+Olaya&fecha_inicio=2025-04-28&fecha_fin=2025-06-25&archivo=PRUEBA_texto2.xlsx&proceso=&fecha_datos_inicio=2025-06-18&fecha_datos_fin=2025-06-19 HTTP/1.1" 200 -
+2025-06-25 11:03:42,473 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:03:42,782 - INFO - 127.0.0.1 - - [25/Jun/2025 11:03:42] "GET /ver_resultados?usuario=Luís+Eduardo+Olaya&fecha_inicio=2025-04-28&fecha_fin=2025-06-25&archivo=&proceso=&fecha_datos_inicio=2025-06-18&fecha_datos_fin=2025-06-20 HTTP/1.1" 200 -
+2025-06-25 11:03:46,234 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:03:46,550 - INFO - 127.0.0.1 - - [25/Jun/2025 11:03:46] "GET /ver_resultados?usuario=Luís+Eduardo+Olaya&fecha_inicio=2025-04-28&fecha_fin=2025-06-25&archivo=&proceso=&fecha_datos_inicio=2025-06-18&fecha_datos_fin=2025-06-21 HTTP/1.1" 200 -
+2025-06-25 11:03:48,983 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:03:49,306 - INFO - 127.0.0.1 - - [25/Jun/2025 11:03:49] "GET /ver_resultados?usuario=Luís+Eduardo+Olaya&fecha_inicio=2025-04-28&fecha_fin=2025-06-25&archivo=&proceso=&fecha_datos_inicio=2025-06-18&fecha_datos_fin=2025-06-25 HTTP/1.1" 200 -
+2025-06-25 11:03:50,850 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:03:51,167 - INFO - 127.0.0.1 - - [25/Jun/2025 11:03:51] "GET /ver_resultados?usuario=Luís+Eduardo+Olaya&fecha_inicio=2025-04-28&fecha_fin=2025-06-25&archivo=&proceso=&fecha_datos_inicio=2025-06-18&fecha_datos_fin=2025-06-25 HTTP/1.1" 200 -
+2025-06-25 11:03:55,331 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:03:55,643 - INFO - 127.0.0.1 - - [25/Jun/2025 11:03:55] "GET /ver_resultados?usuario=Luís+Eduardo+Olaya&fecha_inicio=2025-04-28&fecha_fin=2025-06-25&archivo=&proceso=&fecha_datos_inicio=2025-06-02&fecha_datos_fin=2025-06-25 HTTP/1.1" 200 -
+2025-06-25 11:03:57,433 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:03:57,754 - INFO - 127.0.0.1 - - [25/Jun/2025 11:03:57] "GET /ver_resultados?usuario=Luís+Eduardo+Olaya&fecha_inicio=2025-04-28&fecha_fin=2025-06-25&archivo=EDUCON_CERTIFICADOS2024_2025.xlsx&proceso=&fecha_datos_inicio=2025-06-02&fecha_datos_fin=2025-06-25 HTTP/1.1" 200 -
+2025-06-25 11:04:07,998 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:04:08,230 - INFO - 127.0.0.1 - - [25/Jun/2025 11:04:08] "GET /filtro_informe HTTP/1.1" 200 -
+2025-06-25 11:04:18,403 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:04:18,718 - INFO - 127.0.0.1 - - [25/Jun/2025 11:04:18] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-06-01&fecha_fin=2025-06-25 HTTP/1.1" 200 -
+2025-06-25 11:05:42,700 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:05:43,034 - INFO - 127.0.0.1 - - [25/Jun/2025 11:05:43] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-06-01&fecha_fin=2025-06-25&archivo=PRUEBA_texto2.xlsx&proceso=&fecha_datos_inicio=&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:05:52,597 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:05:52,929 - INFO - 127.0.0.1 - - [25/Jun/2025 11:05:52] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-06-01&fecha_fin=2025-06-25&archivo=PRUEBA_texto2.xlsx&proceso=&fecha_datos_inicio=2025-06-01&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:06:14,572 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:06:14,890 - INFO - 127.0.0.1 - - [25/Jun/2025 11:06:14] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-06-01&fecha_fin=2025-06-25&archivo=PRUEBA_texto2.xlsx&proceso=&fecha_datos_inicio=2025-06-01&fecha_datos_fin=2025-06-10 HTTP/1.1" 200 -
+2025-06-25 11:06:26,850 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:06:27,168 - INFO - 127.0.0.1 - - [25/Jun/2025 11:06:27] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-06-01&fecha_fin=2025-06-25&archivo=&proceso=&fecha_datos_inicio=2025-06-01&fecha_datos_fin=2025-07-10 HTTP/1.1" 200 -
+2025-06-25 11:06:31,018 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:06:31,334 - INFO - 127.0.0.1 - - [25/Jun/2025 11:06:31] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-06-01&fecha_fin=2025-06-25&archivo=PRUEBA_texto2.xlsx&proceso=&fecha_datos_inicio=2025-06-01&fecha_datos_fin=2025-07-10 HTTP/1.1" 200 -
+2025-06-25 11:06:36,734 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:06:37,048 - INFO - 127.0.0.1 - - [25/Jun/2025 11:06:37] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-06-01&fecha_fin=2025-06-25&archivo=PRUEBA_texto2.xlsx&proceso=&fecha_datos_inicio=2025-06-01&fecha_datos_fin=2025-07-10 HTTP/1.1" 200 -
+2025-06-25 11:06:45,300 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:06:45,624 - INFO - 127.0.0.1 - - [25/Jun/2025 11:06:45] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-06-01&fecha_fin=2025-06-25&archivo=PRUEBA_texto2.xlsx&proceso=&fecha_datos_inicio=2025-06-01&fecha_datos_fin=2025-07-10 HTTP/1.1" 200 -
+2025-06-25 11:06:48,433 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:06:48,762 - INFO - 127.0.0.1 - - [25/Jun/2025 11:06:48] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-06-01&fecha_fin=2025-06-25&archivo=&proceso=&fecha_datos_inicio=2025-06-01&fecha_datos_fin=2025-07-10 HTTP/1.1" 200 -
+2025-06-25 11:07:02,571 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:07:02,887 - INFO - 127.0.0.1 - - [25/Jun/2025 11:07:02] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-06-01&fecha_fin=2025-06-25&archivo=PRUEBA_texto2.xlsx&proceso=&fecha_datos_inicio=2025-06-01&fecha_datos_fin=2025-07-10 HTTP/1.1" 200 -
+2025-06-25 11:07:04,069 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:07:04,390 - INFO - 127.0.0.1 - - [25/Jun/2025 11:07:04] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-06-01&fecha_fin=2025-06-25&archivo=PRUEBA_texto2.xlsx&proceso=1&fecha_datos_inicio=2025-06-01&fecha_datos_fin=2025-07-10 HTTP/1.1" 200 -
+2025-06-25 11:07:07,755 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:07:08,073 - INFO - 127.0.0.1 - - [25/Jun/2025 11:07:08] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-06-01&fecha_fin=2025-06-25&archivo=PRUEBA_texto2.xlsx&proceso=&fecha_datos_inicio=2025-06-01&fecha_datos_fin=2025-06-25 HTTP/1.1" 200 -
+2025-06-25 11:07:11,998 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:07:12,314 - INFO - 127.0.0.1 - - [25/Jun/2025 11:07:12] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-06-01&fecha_fin=2025-06-25&archivo=&proceso=&fecha_datos_inicio=2025-06-01&fecha_datos_fin=2025-10-03 HTTP/1.1" 200 -
+2025-06-25 11:10:25,718 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:10:25,957 - INFO - 127.0.0.1 - - [25/Jun/2025 11:10:25] "GET /filtro_informe HTTP/1.1" 200 -
+2025-06-25 11:14:38,287 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:14:38,520 - INFO - 127.0.0.1 - - [25/Jun/2025 11:14:38] "GET /filtro_informe HTTP/1.1" 200 -
+2025-06-25 11:15:18,988 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:15:19,305 - INFO - 127.0.0.1 - - [25/Jun/2025 11:15:19] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-04-07&fecha_fin=2025-08-15 HTTP/1.1" 200 -
+2025-06-25 11:15:45,936 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:15:46,250 - INFO - 127.0.0.1 - - [25/Jun/2025 11:15:46] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-04-07&fecha_fin=2025-08-15&archivo=&proceso=2&fecha_datos_inicio=&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:16:00,588 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:16:00,905 - INFO - 127.0.0.1 - - [25/Jun/2025 11:16:00] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-04-07&fecha_fin=2025-08-15&archivo=&proceso=2&fecha_datos_inicio=&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:16:06,171 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:16:06,470 - INFO - 127.0.0.1 - - [25/Jun/2025 11:16:06] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-04-07&fecha_fin=2025-08-15&archivo=&proceso=2&fecha_datos_inicio=&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:16:07,139 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:16:07,454 - INFO - 127.0.0.1 - - [25/Jun/2025 11:16:07] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-04-07&fecha_fin=2025-08-15&archivo=&proceso=2&fecha_datos_inicio=&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:16:17,047 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:16:17,356 - INFO - 127.0.0.1 - - [25/Jun/2025 11:16:17] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-04-07&fecha_fin=2025-08-15&archivo=&proceso=&fecha_datos_inicio=&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:16:28,626 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:16:28,942 - INFO - 127.0.0.1 - - [25/Jun/2025 11:16:28] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-04-07&fecha_fin=2025-08-15&archivo=&proceso=1&fecha_datos_inicio=&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:16:48,870 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:16:49,179 - INFO - 127.0.0.1 - - [25/Jun/2025 11:16:49] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-04-07&fecha_fin=2025-08-15&archivo=&proceso=1&fecha_datos_inicio=&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:16:50,289 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:16:50,605 - INFO - 127.0.0.1 - - [25/Jun/2025 11:16:50] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-04-07&fecha_fin=2025-08-15&archivo=&proceso=1&fecha_datos_inicio=&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:16:50,939 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:16:51,250 - INFO - 127.0.0.1 - - [25/Jun/2025 11:16:51] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-04-07&fecha_fin=2025-08-15&archivo=&proceso=1&fecha_datos_inicio=&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:16:54,344 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:16:54,661 - INFO - 127.0.0.1 - - [25/Jun/2025 11:16:54] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-04-07&fecha_fin=2025-08-15&archivo=&proceso=&fecha_datos_inicio=&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:17:03,690 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:17:04,056 - INFO - 127.0.0.1 - - [25/Jun/2025 11:17:04] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-04-07&fecha_fin=2025-08-15&archivo=&proceso=&fecha_datos_inicio=&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:22:02,616 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:22:02,931 - INFO - 127.0.0.1 - - [25/Jun/2025 11:22:02] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-04-07&fecha_fin=2025-08-15&archivo=&proceso=&fecha_datos_inicio=&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:22:43,809 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:22:44,266 - INFO - 127.0.0.1 - - [25/Jun/2025 11:22:44] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-04-07&fecha_fin=2025-08-15&archivo=AnalisisDeUnidades2025+-+copia.xlsx&proceso=&fecha_datos_inicio=&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:22:47,947 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:22:48,281 - INFO - 127.0.0.1 - - [25/Jun/2025 11:22:48] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-04-07&fecha_fin=2025-08-15&archivo=AnalisisDeUnidades2025+-+copia.xlsx&proceso=&fecha_datos_inicio=&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:22:50,214 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:22:50,514 - INFO - 127.0.0.1 - - [25/Jun/2025 11:22:50] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-04-07&fecha_fin=2025-08-15&archivo=AnalisisDeUnidades2025+-+copia.xlsx&proceso=&fecha_datos_inicio=&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:22:51,015 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:22:51,335 - INFO - 127.0.0.1 - - [25/Jun/2025 11:22:51] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-04-07&fecha_fin=2025-08-15&archivo=AnalisisDeUnidades2025+-+copia.xlsx&proceso=&fecha_datos_inicio=&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:22:51,516 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:22:51,816 - INFO - 127.0.0.1 - - [25/Jun/2025 11:22:51] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-04-07&fecha_fin=2025-08-15&archivo=AnalisisDeUnidades2025+-+copia.xlsx&proceso=&fecha_datos_inicio=&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:22:52,298 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:22:52,598 - INFO - 127.0.0.1 - - [25/Jun/2025 11:22:52] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-04-07&fecha_fin=2025-08-15&archivo=AnalisisDeUnidades2025+-+copia.xlsx&proceso=&fecha_datos_inicio=&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:22:52,723 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:22:52,797 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:22:52,848 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:22:52,984 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:22:53,048 - INFO - 127.0.0.1 - - [25/Jun/2025 11:22:53] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-04-07&fecha_fin=2025-08-15&archivo=AnalisisDeUnidades2025+-+copia.xlsx&proceso=&fecha_datos_inicio=&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:22:53,098 - INFO - 127.0.0.1 - - [25/Jun/2025 11:22:53] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-04-07&fecha_fin=2025-08-15&archivo=AnalisisDeUnidades2025+-+copia.xlsx&proceso=&fecha_datos_inicio=&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:22:53,147 - INFO - 127.0.0.1 - - [25/Jun/2025 11:22:53] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-04-07&fecha_fin=2025-08-15&archivo=AnalisisDeUnidades2025+-+copia.xlsx&proceso=&fecha_datos_inicio=&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:22:53,147 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:22:53,290 - INFO - 127.0.0.1 - - [25/Jun/2025 11:22:53] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-04-07&fecha_fin=2025-08-15&archivo=AnalisisDeUnidades2025+-+copia.xlsx&proceso=&fecha_datos_inicio=&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:22:53,297 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:22:53,482 - INFO - 127.0.0.1 - - [25/Jun/2025 11:22:53] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-04-07&fecha_fin=2025-08-15&archivo=AnalisisDeUnidades2025+-+copia.xlsx&proceso=&fecha_datos_inicio=&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:22:53,482 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:22:53,603 - INFO - 127.0.0.1 - - [25/Jun/2025 11:22:53] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-04-07&fecha_fin=2025-08-15&archivo=AnalisisDeUnidades2025+-+copia.xlsx&proceso=&fecha_datos_inicio=&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:22:53,614 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:22:53,765 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:22:53,780 - INFO - 127.0.0.1 - - [25/Jun/2025 11:22:53] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-04-07&fecha_fin=2025-08-15&archivo=AnalisisDeUnidades2025+-+copia.xlsx&proceso=&fecha_datos_inicio=&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:22:53,885 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:22:53,951 - INFO - 127.0.0.1 - - [25/Jun/2025 11:22:53] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-04-07&fecha_fin=2025-08-15&archivo=AnalisisDeUnidades2025+-+copia.xlsx&proceso=&fecha_datos_inicio=&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:22:54,065 - INFO - 127.0.0.1 - - [25/Jun/2025 11:22:54] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-04-07&fecha_fin=2025-08-15&archivo=AnalisisDeUnidades2025+-+copia.xlsx&proceso=&fecha_datos_inicio=&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:22:54,181 - INFO - 127.0.0.1 - - [25/Jun/2025 11:22:54] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-04-07&fecha_fin=2025-08-15&archivo=AnalisisDeUnidades2025+-+copia.xlsx&proceso=&fecha_datos_inicio=&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:22:55,172 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:22:55,423 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:22:55,514 - INFO - 127.0.0.1 - - [25/Jun/2025 11:22:55] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-04-07&fecha_fin=2025-08-15&archivo=&proceso=&fecha_datos_inicio=&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:22:55,753 - INFO - 127.0.0.1 - - [25/Jun/2025 11:22:55] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-04-07&fecha_fin=2025-08-15&archivo=AnalisisDeUnidades2025+-+copia.xlsx&proceso=&fecha_datos_inicio=&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:22:56,313 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:22:56,614 - INFO - 127.0.0.1 - - [25/Jun/2025 11:22:56] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-04-07&fecha_fin=2025-08-15&archivo=&proceso=&fecha_datos_inicio=&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:22:57,982 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:22:58,301 - INFO - 127.0.0.1 - - [25/Jun/2025 11:22:58] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-04-07&fecha_fin=2025-08-15&archivo=&proceso=2&fecha_datos_inicio=&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:23:01,117 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:23:01,415 - INFO - 127.0.0.1 - - [25/Jun/2025 11:23:01] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-04-07&fecha_fin=2025-08-15&archivo=&proceso=&fecha_datos_inicio=&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:24:05,898 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:24:06,211 - INFO - 127.0.0.1 - - [25/Jun/2025 11:24:06] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-04-07&fecha_fin=2025-08-15&archivo=AnalisisDeUnidades2025+-+copia.xlsx&proceso=&fecha_datos_inicio=&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:33:36,967 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:33:37,327 - INFO - 127.0.0.1 - - [25/Jun/2025 11:33:37] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-04-07&fecha_fin=2025-08-15&archivo=AnalisisDeUnidades2025+-+copia.xlsx&proceso=&fecha_datos_inicio=&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:34:37,036 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:34:37,360 - INFO - 127.0.0.1 - - [25/Jun/2025 11:34:37] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-04-07&fecha_fin=2025-08-15&archivo=AnalisisDeUnidades2025+-+copia.xlsx&proceso=&fecha_datos_inicio=&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:34:39,719 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:34:40,052 - INFO - 127.0.0.1 - - [25/Jun/2025 11:34:40] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-04-07&fecha_fin=2025-08-15&archivo=AnalisisDeUnidades2025+-+copia.xlsx&proceso=&fecha_datos_inicio=&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:38:55,100 - INFO -  * Detected change in 'c:\\wamp64\\www\\validadorInteligenteDeDatos\\app\\routeDIv.py', reloading
+2025-06-25 11:38:56,086 - INFO -  * Restarting with stat
+2025-06-25 11:38:59,430 - WARNING -  * Debugger is active!
+2025-06-25 11:38:59,430 - INFO -  * Debugger PIN: 284-765-739
+2025-06-25 11:39:23,737 - INFO -  * Detected change in 'c:\\wamp64\\www\\validadorInteligenteDeDatos\\app\\routeDIv.py', reloading
+2025-06-25 11:39:23,920 - INFO -  * Restarting with stat
+2025-06-25 11:39:25,477 - WARNING -  * Debugger is active!
+2025-06-25 11:39:25,477 - INFO -  * Debugger PIN: 284-765-739
+2025-06-25 11:39:37,473 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:39:37,942 - INFO - 127.0.0.1 - - [25/Jun/2025 11:39:37] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-04-07&fecha_fin=2025-08-15&archivo=AnalisisDeUnidades2025+-+copia.xlsx&proceso=&fecha_datos_inicio=&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:39:50,130 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:39:50,587 - INFO - 127.0.0.1 - - [25/Jun/2025 11:39:50] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-04-07&fecha_fin=2025-08-15&archivo=PRUEBA_texto2.xlsx&proceso=2&fecha_datos_inicio=&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:39:54,085 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:39:54,541 - INFO - 127.0.0.1 - - [25/Jun/2025 11:39:54] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-04-07&fecha_fin=2025-08-15&archivo=PRUEBA_texto2.xlsx&proceso=2&fecha_datos_inicio=&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:39:56,603 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:39:57,065 - INFO - 127.0.0.1 - - [25/Jun/2025 11:39:57] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-04-07&fecha_fin=2025-08-15&archivo=PRUEBA_texto2.xlsx&proceso=1&fecha_datos_inicio=&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:40:01,620 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:40:02,075 - INFO - 127.0.0.1 - - [25/Jun/2025 11:40:02] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-04-07&fecha_fin=2025-08-15&archivo=AnalisisDeUnidades2025+-+copia.xlsx&proceso=&fecha_datos_inicio=&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:40:16,506 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:40:16,987 - INFO - 127.0.0.1 - - [25/Jun/2025 11:40:16] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-04-07&fecha_fin=2025-08-15&archivo=Reporte_Cicloparqueaderos+(1).xlsx&proceso=&fecha_datos_inicio=&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:40:30,954 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:40:31,412 - INFO - 127.0.0.1 - - [25/Jun/2025 11:40:31] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-04-07&fecha_fin=2025-08-15&archivo=AnalisisDeUnidades2025+-+copia.xlsx&proceso=&fecha_datos_inicio=&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:40:36,637 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:40:37,104 - INFO - 127.0.0.1 - - [25/Jun/2025 11:40:37] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-04-07&fecha_fin=2025-08-15&archivo=&proceso=&fecha_datos_inicio=&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:40:38,971 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:40:39,439 - INFO - 127.0.0.1 - - [25/Jun/2025 11:40:39] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-04-07&fecha_fin=2025-08-15&archivo=AnalisisDeUnidades2025.xlsx&proceso=&fecha_datos_inicio=&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:40:41,874 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:40:42,337 - INFO - 127.0.0.1 - - [25/Jun/2025 11:40:42] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-04-07&fecha_fin=2025-08-15&archivo=Copia+de+PID_largo+2015+-+2025.xlsx&proceso=&fecha_datos_inicio=&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:40:43,892 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:40:44,353 - INFO - 127.0.0.1 - - [25/Jun/2025 11:40:44] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-04-07&fecha_fin=2025-08-15&archivo=Copia+de+PID_largo+2015+-+2025.xlsx&proceso=&fecha_datos_inicio=&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:42:31,203 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:42:31,674 - INFO - 127.0.0.1 - - [25/Jun/2025 11:42:31] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-04-07&fecha_fin=2025-08-15&archivo=Copia+de+PID_largo+2015+-+2025.xlsx&proceso=&fecha_datos_inicio=&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:45:25,155 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:45:25,638 - INFO - 127.0.0.1 - - [25/Jun/2025 11:45:25] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-04-07&fecha_fin=2025-08-15&archivo=Copia+de+PID_largo+2015+-+2025.xlsx&proceso=&fecha_datos_inicio=&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:46:13,631 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:46:14,105 - INFO - 127.0.0.1 - - [25/Jun/2025 11:46:14] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-04-07&fecha_fin=2025-08-15&archivo=Copia+de+PID_largo+2015+-+2025.xlsx&proceso=&fecha_datos_inicio=&fecha_datos_fin= HTTP/1.1" 200 -
+2025-06-25 11:50:06,451 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:50:06,689 - INFO - 127.0.0.1 - - [25/Jun/2025 11:50:06] "GET /filtro_informe HTTP/1.1" 200 -
+2025-06-25 11:50:35,823 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:50:36,290 - INFO - 127.0.0.1 - - [25/Jun/2025 11:50:36] "GET /ver_resultados?usuario=Luís+Eduardo+Olaya&fecha_inicio=2025-06-01&fecha_fin=2025-07-02 HTTP/1.1" 200 -
+2025-06-25 11:50:59,325 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:50:59,791 - INFO - 127.0.0.1 - - [25/Jun/2025 11:50:59] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-06-01&fecha_fin=2025-07-02 HTTP/1.1" 200 -
+2025-06-25 11:56:11,749 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:56:12,221 - INFO - 127.0.0.1 - - [25/Jun/2025 11:56:12] "GET /ver_resultados?usuario=juan+sebastian+barrios&fecha_inicio=2025-06-01&fecha_fin=2025-07-02 HTTP/1.1" 200 -
+2025-06-25 11:56:15,318 - INFO - 127.0.0.1 - - [25/Jun/2025 11:56:15] "GET /paginaInicial HTTP/1.1" 200 -
+2025-06-25 11:56:15,534 - INFO - 127.0.0.1 - - [25/Jun/2025 11:56:15] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-25 11:56:16,781 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:56:17,016 - INFO - 127.0.0.1 - - [25/Jun/2025 11:56:17] "GET /filtro_informe HTTP/1.1" 200 -
+2025-06-25 11:56:19,000 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 11:56:19,384 - INFO - 127.0.0.1 - - [25/Jun/2025 11:56:19] "GET /ver_resultados?usuario=&fecha_inicio=&fecha_fin= HTTP/1.1" 200 -
+2025-06-25 12:23:13,359 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 12:23:13,758 - INFO - 127.0.0.1 - - [25/Jun/2025 12:23:13] "GET /ver_resultados?usuario=&fecha_inicio=&fecha_fin= HTTP/1.1" 200 -
+2025-06-25 12:23:18,547 - INFO - Conexión a la base de datos exitosa.
+2025-06-25 12:23:18,773 - INFO - 127.0.0.1 - - [25/Jun/2025 12:23:18] "GET /filtro_informe HTTP/1.1" 200 -
+2025-06-25 12:24:08,577 - INFO - 127.0.0.1 - - [25/Jun/2025 12:24:08] "GET /paginaInicial HTTP/1.1" 200 -
+2025-06-25 12:24:08,631 - INFO - 127.0.0.1 - - [25/Jun/2025 12:24:08] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-06-25 12:24:10,376 - INFO - 127.0.0.1 - - [25/Jun/2025 12:24:10] "GET /historicos HTTP/1.1" 200 -
+2025-06-25 12:24:12,587 - INFO - 127.0.0.1 - - [25/Jun/2025 12:24:12] "GET /historicos?tipo_archivo=json HTTP/1.1" 200 -
+2025-06-25 12:24:15,476 - INFO - 127.0.0.1 - - [25/Jun/2025 12:24:15] "GET /historicos?tipo_archivo=excel HTTP/1.1" 200 -
+2025-06-25 12:41:42,242 - INFO - 127.0.0.1 - - [25/Jun/2025 12:41:42] "GET /historicos?tipo_archivo=excel HTTP/1.1" 200 -

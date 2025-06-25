@@ -4,44 +4,96 @@
     <meta charset="UTF-8">
     <title>Históricos</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #f8f9fa 60%, #e11d48 100%);
+            min-height: 100vh;
+        }
+        .container {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            padding: 32px 24px;
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+        h2 {
+            color: #a10f2b;
+            font-weight: 700;
+            margin-bottom: 32px;
+        }
+        .form-label {
+            color: #1e3a8a;
+            font-weight: 600;
+        }
+        .btn-info {
+            background-color: #1e3a8a;
+            border-color: #1e3a8a;
+            color: #fff;
+        }
+        .btn-info:hover {
+            background-color: #14213d;
+            border-color: #14213d;
+        }
+        .btn-success {
+            background-color: #a10f2b;
+            border-color: #a10f2b;
+        }
+        .btn-success:hover {
+            background-color: #870d24;
+            border-color: #870d24;
+        }
+        .table thead th {
+            background-color: #a10f2b !important;
+            color: #fff !important;
+            font-weight: 600;
+        }
+        .table-striped > tbody > tr:nth-of-type(odd) {
+            background-color: #f8f9fa;
+        }
+    </style>
 </head>
-<body class="bg-light">
+<body>
 <div class="container py-4">
-    <h2>Plantillas en Históricos</h2>
-    <form method="get" action="{{ url_for('ver_historicos') }}" class="mb-4">
-        <label for="tipo_archivo" class="form-label">Selecciona el tipo de archivo:</label>
-        <select name="tipo_archivo" id="tipo_archivo" class="form-select" onchange="this.form.submit()">
-            <option value="excel" {% if tipo_archivo == 'excel' %}selected{% endif %}>Excel</option>
-            <option value="json" {% if tipo_archivo == 'json' %}selected{% endif %}>JSON</option>
-        </select>
+    <h2 class="mb-4 text-center">Plantillas en Históricos</h2>
+    <form method="get" action="{{ url_for('ver_historicos') }}" class="mb-4 row g-3 align-items-end">
+        <div class="col-md-6">
+            <label for="tipo_archivo" class="form-label">Selecciona el tipo de archivo:</label>
+            <select name="tipo_archivo" id="tipo_archivo" class="form-select" onchange="this.form.submit()">
+                <option value="excel" {% if tipo_archivo == 'excel' %}selected{% endif %}>Excel</option>
+                <option value="json" {% if tipo_archivo == 'json' %}selected{% endif %}>JSON</option>
+            </select>
+        </div>
     </form>
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th>Nombre de archivo</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for archivo in archivos %}
-            <tr>
-                <td>{{ archivo }}</td>
-                <td class="d-flex gap-2">
-                    {% if tipo_archivo == 'json' %}
-                        <button type="button" class="btn btn-info" onclick="verJson('{{ archivo }}')">Ver</button>
-                    {% else %}
-                        <a href="{{ url_for('ver_archivo_historico', tipo_archivo=tipo_archivo, archivo=archivo) }}" class="btn btn-info" target="_blank">Ver</a>
-                    {% endif %}
-                    <form method="post" action="{{ url_for('restaurar_historico') }}">
-                        <input type="hidden" name="archivo" value="{{ archivo }}">
-                        <input type="hidden" name="tipo_archivo" value="{{ tipo_archivo }}">
-                        <button type="submit" class="btn btn-success">Restaurar</button>
-                    </form>
-                </td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped align-middle">
+            <thead>
+                <tr>
+                    <th>Nombre de archivo</th>
+                    <th class="text-center">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for archivo in archivos %}
+                <tr>
+                    <td>{{ archivo }}</td>
+                    <td class="d-flex gap-2 justify-content-center">
+                        {% if tipo_archivo == 'json' %}
+                            <button type="button" class="btn btn-info btn-sm" onclick="verJson('{{ archivo }}')">Ver</button>
+                        {% else %}
+                            <a href="{{ url_for('ver_archivo_historico', tipo_archivo=tipo_archivo, archivo=archivo) }}" class="btn btn-info btn-sm" target="_blank">Ver</a>
+                        {% endif %}
+                        <form method="post" action="{{ url_for('restaurar_historico') }}">
+                            <input type="hidden" name="archivo" value="{{ archivo }}">
+                            <input type="hidden" name="tipo_archivo" value="{{ tipo_archivo }}">
+                            <button type="submit" class="btn btn-success btn-sm">Restaurar</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 </div>
 
 <!-- Modal para mostrar JSON -->
