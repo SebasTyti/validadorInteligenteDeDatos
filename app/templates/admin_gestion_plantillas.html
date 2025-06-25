@@ -39,6 +39,7 @@
                         <th>Nombre Plantilla</th>
                         <th>Fecha de Carga</th>
                         <th>Descargar</th>
+                        <th>Ver</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -49,6 +50,9 @@
                         <td>{{ p.FechaCarga.strftime('%d/%m/%Y %H:%M') if p.FechaCarga else '' }}</td>
                         <td>
                             <a class="btn btn-sm btn-primary" href="{{ url_for('descargar_archivo', nombre_archivo=p.NombrePlantilla) }}">Descargar</a>
+                        </td>
+                        <td>
+                            <button class="btn btn-sm btn-info" onclick="verJson('{{ p.NombrePlantilla }}')">Ver</button>
                         </td>
                     </tr>
                     {% endfor %}
@@ -91,6 +95,37 @@
     </div>
 </div>
 
+<!-- Modal para mostrar el JSON -->
+<div class="modal fade" id="jsonModal" tabindex="-1" aria-labelledby="jsonModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="jsonModalLabel">Contenido de la Plantilla</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <pre id="jsonContent" style="white-space: pre-wrap; word-break: break-all;"></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+function verJson(nombrePlantilla) {
+    fetch(`/ver_json/${encodeURIComponent(nombrePlantilla)}`)
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('jsonContent').textContent = JSON.stringify(data, null, 2);
+            var modal = new bootstrap.Modal(document.getElementById('jsonModal'));
+            modal.show();
+        })
+        .catch(error => {
+            document.getElementById('jsonContent').textContent = 'Error al cargar el JSON.';
+            var modal = new bootstrap.Modal(document.getElementById('jsonModal'));
+            modal.show();
+        });
+}
+</script>
 </body>
 </html>

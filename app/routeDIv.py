@@ -624,7 +624,7 @@ def filtro_informe():
 
     return render_template('filtro_informe.html', usuarios=usuarios)
 
-app.route('/ver_resultados', methods=['GET'])
+@app.route('/ver_resultados', methods=['GET'])
 def ver_resultados():
     if 'user' not in session:
         flash("Debe iniciar sesión para ver los resultados.", "error")
@@ -1360,3 +1360,24 @@ def ver_json_historico(archivo):
         return jsonify(contenido)
     except Exception as e:
         return jsonify({"error": str(e)}), 404
+
+from flask import jsonify, send_from_directory
+
+@app.route('/ver_json/<nombre_archivo>')
+def ver_json(nombre_archivo):
+    import os, json
+    base_dir = os.path.abspath(os.path.dirname(__file__))
+    ruta_salida = os.path.join(base_dir, "Plantillas", "Salida", nombre_archivo)
+    ruta_historico = os.path.join(base_dir, "Plantillas", "historicos", "Json", nombre_archivo)
+    try:
+        with open(ruta_salida, 'r', encoding='utf-8') as f:
+            contenido = json.load(f)
+        return jsonify(contenido)
+    except Exception:
+        # Si no está en Salida, intenta buscar en históricos
+        if os.path.exists(ruta_historico):
+            return jsonify({
+                "mensaje": "Esta plantilla se encuentra en el histórico. Puedes descargarla desde la sección de históricos."
+            })
+        else:
+            return jsonify({'error': 'No se pudo leer el archivo'}), 404
